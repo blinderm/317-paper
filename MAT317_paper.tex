@@ -58,7 +58,7 @@ Hyperbolic geometry is a model of geometry resulting from the assumption of the 
 	
 Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$. %http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf
 	
-We will first set forth notation for aksdjflaskdfjn. WHEN WE SAY MATRIX JUST ASSUME THAT IT'S $2 \times 2$. In general, we will denote the coordinates of points corresponding to point reflections as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. We will then discuss general linear fractional transformations, point reflections, and two types of line reflections both algebraically and with the aid of the \poincare disk model. We first begin with an arbitrary field $F$ with the property that every positive $x \in F$ has a square root. We define the group of hyperbolic transformations over $F$ to be those linear fractional transformations given by
+We will first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points corresponding to point reflections as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. We will then discuss general linear fractional transformations, point reflections, and two types of line reflections both algebraically and with the aid of the \poincare disk model. We first begin with an arbitrary field $F$ with the property that every positive $x \in F$ has a square root. We define the group of hyperbolic transformations over $F$ to be those linear fractional transformations given by
 \begin{equation} 
 z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
@@ -66,15 +66,15 @@ For convenience, we will encode our transformations of the above form into matri
 \begin{equation} 
 \lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
-It should be explicitly noted that these matrices are used only to encode our transformations. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply the function $f: \C \rightarrow \C$ [HOW DO WE ENSURE IT'S $\C$? DO WE?] given by $f(z) = \frac{az+b}{cz+d}$ to the point $z_0$. Oh also, can we do like $f_P(P_0)$ for the point reflection of the point $P_0$ over a point $P$ and $f_l(P_0)$ for the line reflection of point $P_0$ over the line $l$? Just to make it clear that these things are actually functions.
-	
+It should be explicitly noted that these matrices are used only to encode our transformations. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply the function $f: \C \rightarrow \C$ [HOW DO WE ENSURE IT'S $\C$? DO WE?] given by $f(z) = \frac{az+b}{cz+d}$ to the point $z_0$. Because all linear fractional transformations we will use are of the above form, whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding functions, we will write  $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$.
+
 We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections. As in Euclidean geometry, both of these transformations are of order two. The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant (recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0). WHY THOUGH? THE STUFF WITH DETERMINANTS LIKE WHY IS IT TRUE
 
-Suppose that $M$ is a matrix encoding some linear fractional transformation. We wish that $M^2 = \lambda I$ for some constant $\lambda \in F$, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want
+Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$ HOW DO WE JUSTIFY THE EXISTENCE OF THE CONSTANT, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 \[\stanlftmat \stanlftmat = \lambda \lftmat{1}{0}{0}{1}\]
 for some $\lambda \in F$. Expanding this further, we see that we must have 
 \[\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}\]
-The only way this can be true is if $\Tr(M) = 0$ OR IF B AND C ARE ZERO AND A EQUALS D?? Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form
+The only way this can be true (BARRING THE TRIVIAL CASE IN WHICH $M$ IS ALREADY OF THE FORM $\lambda I$) is if $\Tr(M) = 0$. Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form I MEAN, DO WE REALLY *NEED* TO HAVE IT OF THIS FORM? 
 \begin{equation} 
 \lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
@@ -82,7 +82,7 @@ SO APPARENTLY WE'RE JUST SAYING THAT we will associate each point reflection wit
 
 To be clear, we are in no way mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are simply classifying the points from $F$ into three groups: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). 
 
-Next I GUESS WE'RE JUST ADDING ENDS SO WE CAN HAVE TWO KINDS OF LINES? Well anyway, we next define $F_*$ to be the extension of $F$ by $\infty$ as usual. We DEFINE?? an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ I STILL DON'T UNDERSTAND HOW A POINT DEFINES A LINE that does not pass through the end $\specialend$ can be encoded in the matrix
+Next I GUESS WE'RE JUST ADDING ENDS SO WE CAN HAVE TWO KINDS OF LINES? Well anyway, we next define $F_*$ to be the extension of $F$ by $\infty$ as usual CAN WE ACTUALLY JSUT SAY ``AS USUAL." We DEFINE?? an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ I STILL DON'T UNDERSTAND HOW A POINT DEFINES A LINE that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[\stanlineendmat\]
@@ -114,6 +114,11 @@ By considering the lower-left entry into these matrices we see that $\lambda = -
 \begin{equation}
 2y=l_1
 \end{equation} 
+
+Recall that we did everything up there in an arbitrary field $F$. 
+
+However, a similar process could be carried out 
+
 
 
 
