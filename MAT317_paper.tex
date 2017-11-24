@@ -69,11 +69,11 @@ For convenience, we will encode our transformations of the above form into matri
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
-It should be explicitly noted that these matrices are used only to encode our transformations\footnote{``See appendix" or something}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we will write $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ via the point reflection $f_P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$. In a similar vein, we define $M_P$ and $M_l$ to be a matrix representation of a point reflection about $P$ and a line reflection about $l$ respectively. We will associate each point reflection with a unique point in the disk\footnote{How exactly does this ``unique association" work? }. 
+It should be explicitly noted that these matrices are used only to encode our transformations\footnote{``See appendix" or something}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we will write $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ via the point reflection $f_P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$. In a similar vein, we define $M_P$ and $M_l$ to be a matrix representation of a point reflection about $P$ and a line reflection about $l$ respectively. We will associate each point reflection with a unique point in the disk\footnote{Explain how this association works in the appendix.}. 
 
 We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections. As in Euclidean geometry, both of these transformations are of order two. The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant (recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
 
-Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$ \footnote{$\lambda I$ is saying we can pick any representative of the coset $\lambda I$ and still get the identity, so $\lambda$ is a way of picking which representative. We can also think of $\lambda$ as $\lftmat{\lambda}{0}{0}{\lambda}$ to encode $\lambda$ as a matrix and make these cosets more clear, maybe call it $M_\lambda$?}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
+Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$, where $I$ is the usual $2 \times 2$ identity matrix. That is, $M^2$ must yield some member of the coset to which $I$ belongs. In this case, we want to have that 
 	\[
 		\stanlftmat \stanlftmat = \lambda \lftmat{1}{0}{0}{1}
 	\]
@@ -89,7 +89,7 @@ As mentioned, each point reflection is associated with a unique point in the dis
 
 To be clear, we are in no way mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are simply classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). 
 
-Next \footnote{I guess we're just adding ends so we can have two kinds of lines? Why doesn't Guggenheimer \textit{ever} give motivation?} we define $F_*$ to be the extension of $F$ by $\infty$ as usual \footnote{Elaborate in the appendix}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ \footnote{I still don't understand how a point defines a line, but I think it has to do with the whole thing conjugacy below and will become clearer once we plot more.} that does not pass through the end $\specialend$ can be encoded in the matrix
+Next \footnote{I guess we're just adding ends so we can have two kinds of lines? Why doesn't Guggenheimer \textit{ever} give motivation?} we define $F_*$ to be the extension of $F$ by $\infty$ as usual \footnote{Elaborate in the appendix}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix\footnote{Presumably there will be intuition for this as well once we generate our figures.}:
 \[
@@ -167,9 +167,26 @@ By considering the lower-left entry into these matrices we see that $\lambda = -
 
 This point $A'$, the intersection between the line segment $\overline{OA}$ and the circle of radius $d_H$ centered at $O$, is the \poincare Disk-equivalent of our original point $A$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage 
 
+As mentioned, lines in the \poincare disk are given by the arcs of circles orthogonal to the 
+\begin{tikzpicture}
+\draw (0,0) circle (3cm);
 
+%\draw (2.5,2.5) circle (3cm);
+%\draw[fill=black] (2.5,2.5) circle (0.05) node[right] {$A$};
 
+\draw (0,0) -- (0,-5);
+\draw (0,0) -- (-5,0);
+\draw (-3,-3) circle (3cm);
+
+\draw (0,0) -- (2,5);
+\draw (0,0) -- (5,2);
+\draw (2.3,2.3) circle (1.28cm);
+
+\draw (-5,-5) -- (5,5);
+\end{tikzpicture}
 
 
 
