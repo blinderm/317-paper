@@ -9,12 +9,10 @@
 \usepackage{tipa}
 \usepackage{graphicx}     
 \usepackage{ mathrsfs }
-\usepackage{tikz}
-\usepackage{tkz-euclide}
 
 %\geometry{legalpaper, portrait, margin=1in}
 %\linespread{2}
-\setlength{\parindent}{1.5cm}   
+\setlength{\parindent}{1.5cm}
 \setlength{\droptitle}{-5em}
 
 \newcommand{\N}{\mathbb{N}}
@@ -59,9 +57,7 @@
 \newtheorem{problem}[theorem]{Problem}
 \newtheorem{example}[definition]{Example}
 
-
-\title{Fixing Heinrich Guggenheimer's Fucking Wild Notation and Generally Shitty/Vague Paper}
-%\title{The Hyperbolic Geometry of Linear Fractional Transformations in Complexified Fields}
+\title{The Hyperbolic Geometry of Linear Fractional Transformations in Complexified Fields}
 \author{Anna Blinderman, Logan Goldberg}
 \date{}
 
@@ -74,19 +70,19 @@ Hyperbolic geometry is a model of geometry resulting from the assumption of the 
 	
 Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}.  \footnote{Put more stuff here once we decide which figures to include.} 
 	
-We will first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points corresponding to point reflections as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. We will then discuss general linear fractional transformations, point reflections, and two types of line reflections both algebraically and with the aid of the \poincare disk model. We first begin with an arbitrary field $F$ with the property that every positive $x \in F$ has a square root. We define the group of hyperbolic transformations over $F$ to be those linear fractional transformations\footnote{Cite class notes about this being a group} given by
+We will first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points corresponding to point reflections as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. We will then discuss general linear fractional transformations, point reflections, and two types of line reflections both algebraically and with the aid of the \poincare disk model. We first begin with an arbitrary field $F$ with the property that every positive $x \in F$ has a square root. We define the group of hyperbolic transformations over $F$ to be those linear fractional transformations\footnote{Might want to show this is a group??} given by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
-For convenience, we will encode our transformations of the above form into matrices
+For convenience, we will encode our transformations of the above form into matrices\footnote{Maybe make this into a set?} 
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
-It should be explicitly noted that these matrices are used only to encode our transformations\footnote{``See appendix" or something}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we will write $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ via the point reflection $f_P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$. In a similar vein, we define $M_P$ and $M_l$ to be a matrix representation of a point reflection about $P$ and a line reflection about $l$ respectively. We will associate each point reflection with a unique point in the disk\footnote{Explain how this association works in the appendix.}. 
+It should be explicitly noted that these matrices are used only to encode our transformations\footnote{We should make an appendix of off-hand proofs like this isomorphism}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. Because all linear fractional transformations we will use are of the above form\footnote{Which form? 2?}, whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we will write $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ via the point reflection $f_P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$\footnote{We might want to make note somewhere around here about the uniqueness of points to their point reflections and similarly for line reflections}. In a similar vein, we define $M_P$ and $M_l$ to be a matrix representation of a point reflection about $P$ and a line reflection about $l$ respectively\footnote{I think the solution here is to just be careful about when we are talking about the items we're talking about and use the specific $M$ or $f$ or actual elements in the correct context}.
 
 We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections. As in Euclidean geometry, both of these transformations are of order two. The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant (recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
 
-Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$, where $I$ is the usual $2 \times 2$ identity matrix. That is, $M^2$ must yield some member of the coset to which $I$ belongs. In this case, we want to have that 
+Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$ \footnote{$\lambda I$ is saying we can pick any representative of the coset $\lambda I$ and still get the identity, so $\lambda$ is a way of picking which representative. We can also think of $\lambda$ as $\lftmat{\lambda}{0}{0}{\lambda}$ to encode $\lambda$ as a matrix and make these cosets more clear, maybe call it $M_\lambda$?}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
 		\stanlftmat \stanlftmat = \lambda \lftmat{1}{0}{0}{1}
 	\]
@@ -94,15 +90,15 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Barring the trivial case in which $M$ is already of the form $\lambda I$, this can only be true if $\Tr(M) = 0$. Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form \footnote{Is it strictly necessary that we have this form or is it just an easy classification mechanism?} 
+The only way this can be true \footnote{barring the trivial case in which $M$ is already of the form $\lambda I$} is if $\Tr(M) = 0$. Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form \footnote{Is it strictly necessary that we have this form or is it just an easy classification mechanism?} 
 \begin{equation} 
 	\lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
-As mentioned, each point reflection is associated with a unique point in the disk. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
+We will associate each point reflection with a unique point in the disk\footnote{So apparently we're just saying this...?}. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
 
 To be clear, we are in no way mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are simply classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). 
 
-Next \footnote{I guess we're just adding ends so we can have two kinds of lines? Why doesn't Guggenheimer \textit{ever} give motivation?} we define $F_*$ to be the extension of $F$ by $\infty$ as usual \footnote{Elaborate in the appendix}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
+Next \footnote{I guess we're just adding ends so we can have two kinds of lines? Why doesn't Guggenheimer \textit{ever} give motivation?} we define $F_*$ to be the extension of $F$ by $\infty$ as usual \footnote{We should definitely elaborate on this point rather than just say ``as usual". More appendix!}. We define\footnote{is ``define" the right word here?} an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ \footnote{I still don't understand how a point defines a line, but I think it has to do with the whole thing conjugacy below and will become clearer once we plot more.} that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix\footnote{Presumably there will be intuition for this as well once we generate our figures.}:
 \[
@@ -136,80 +132,7 @@ By considering the lower-left entry into these matrices we see that $\lambda = -
 	2y = l_1
 \end{equation} 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%https://tex.stackexchange.com/questions/16617/use-tikz-for-example-to-draw-pictures-in-hyperbolic-geometry
-\newpage
-% https://tex.stackexchange.com/questions/61316/draw-a-plot-with-point
-% https://tex.stackexchange.com/questions/230566/making-curly-braces-with-tikz
-
-\noindent Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
-
-\begin{tikzpicture}
-\draw (0,0) circle (2.2cm);
-\draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
-\end{tikzpicture}
-
-\noindent We begin by constructing a line segment between $A$ and the origin $O$ and in order to find the Euclidean distance, $d_E$, between points $A$ and $O$.
-
-\begin{tikzpicture}
-\draw (0,0) circle (2.2cm);
-\draw (0,0) -- (2.2,2.2);
-\draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
-\draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
-\draw[decoration={brace,raise=4pt},decorate]
-  (0,0) -- node[above left= 6pt] {$d_E$} (2.2,2.2);
-\end{tikzpicture}
-
-%http://www.ms.uky.edu/~droyster/courses/spring08/math6118/Classnotes/Chapter09.pdf
-\noindent We then use the metric on pg.~103\footnote{???} to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a hyperbolic circle\footnote{which is apparently just a circle} of radius $d_H$ centered at $O$.
-
-\begin{tikzpicture}
-\draw (0,0) circle (2.2cm);
-\draw (0,0) circle (1.41cm);
-\draw (0,0) -- (2.2,2.2);
-\draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
-\draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
-\draw[fill=black] (1,1) circle (0.05) node[right] {$A'$};
-\draw[decoration={brace,raise=4pt},decorate]
-  (0,0) -- node[above left= 6pt] {$d_E$} (2.2,2.2);
-\draw[decoration={brace,mirror,raise=4pt},decorate]
-  (0,0) -- node[below right = 4pt] {$d_H$} (.95,.95);
-\end{tikzpicture}
-
-This point $A'$, the intersection between the line segment $\overline{OA}$ and the circle of radius $d_H$ centered at $O$, is the \poincare Disk-equivalent of our original point $A$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage 
-
-As mentioned, lines in the \poincare disk are given by the arcs of circles orthogonal to the 
-\begin{tikzpicture}
-\draw (0,0) circle (3cm);
-
-%\draw (2.5,2.5) circle (3cm);
-%\draw[fill=black] (2.5,2.5) circle (0.05) node[right] {$A$};
-
-\draw (0,0) -- (0,-5);
-\draw (0,0) -- (-5,0);
-\draw (-3,-3) circle (3cm);
-
-\draw (0,0) -- (2,5);
-\draw (0,0) -- (5,2);
-\draw (2.3,2.3) circle (1.28cm);
-
-\draw (-5,-5) -- (5,5);
-\end{tikzpicture}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage 
-i'm just separating the paper from the appendix for when i scroll through
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%% VI.preA %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage 
 
 Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
 \begin{enumerate}
@@ -318,9 +241,8 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
  	In other words, $-1$ is the square of $\frac{b}{a}\in F$, a contradiction since we assumed that no element in $F$ had $-1$ as its square. A similar argument can be made for when $b \neq 0$ using the fraction $\frac{a}{b}$. Hence $a^2 + b^2 \neq 0$ for any $(a,b)\in F^\C\backslash\{(0,0)\}$. Therefore $F^\C$ has multiplicative inverses. Therefore $(F^\C,\oplus,\odot)$ is a field. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
 
-\noindent Define the group
+Define the group
 	\[
 		A = \left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a,b,c,d\in F\text{ with } ad - bc \neq 0\right\rbrace
 	\]
@@ -332,7 +254,7 @@ of linear fractional transformations and let $GL_2(F)$ denote the group of inver
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
-	We claim that $\varphi$ is a homomorphism.  \footnote{Insert more math here}Now that we've established that $\varphi$ is a homomorphism, we now argue that $\varphi$ is surjective.  \footnote{And a little bit more right here}  Next we identify the kernel of $\varphi$ in order to establish an isomorphism between $A/\ker(\varphi)$ and $GL_2(F)/F^*$\footnote{Technically we don't need the kernel to identify the isomorphism; it's just noteworthy and tells us when we can't recover a linear fractional transformation.}. Finally by the First Isomorphism Theorem, we conclude that $A/\ker(\varphi)$ \footnote{insert whatever the kernel turns out to be here} is isomorphic to $GL_2(F)/F^*$. 
+	We claim that $\varphi$ is a homomorphism.  \footnote{Insert more math here}Now that we've established that $\varphi$ is a homomorphism, we argue that $\varphi$ is surjective.  \footnote{And a little bit more right here}  Next we identify the kernel of $\varphi$ in order to establish an isomorphism between $A/\ker(\varphi)$ and $GL_2(F)/F^*$\footnote{Technically we don't need the kernel to identify the isomorphism; it's just noteworthy and tells us when we can't recover a linear fractional transformation.}. Finally by the First Isomorphism Theorem, we conclude that $A/\ker(\varphi)$ \footnote{insert whatever the kernel turns out to be here} is isomorphic to $GL_2(F)/F^*$. 
 	
 
 
