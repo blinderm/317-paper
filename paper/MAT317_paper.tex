@@ -150,12 +150,28 @@ It should be explicitly noted that these matrices are used only to encode our tr
 
 
 
-
-
 \[\]\wtflatex{What this Guggenheimer asshole did}
 
 
-We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections. As in Euclidean geometry, both of these transformations are of order two. The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant (recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
+We should split this into theorems and like definitions/conventions.
+
+\noindent Definitions/Conventions/Facts
+\begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
+	\item order two
+	\item positive and negative determinants??
+\end{enumerate}
+
+\noindent Theorems
+\begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
+	\item points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$?
+	\item can partition points in/on/out of disk with $x=y^2$?
+	\item how to get form of first kind of line
+	\item how to get form of second kind of line
+\end{enumerate}
+
+
+
+We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections. As in Euclidean geometry, both of these transformations are of order two (that is, the composition of a transformation upon itself yields the identity transformation). The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant (recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
 
 Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{$\lambda I$ is saying we can pick any representative of the coset $\lambda I$ and still get the identity, so $\lambda$ is a way of picking which representative. We can also think of $\lambda$ as $\lftmat{\lambda}{0}{0}{\lambda}$ to encode $\lambda$ as a matrix and make these cosets more clear, maybe call it $M_\lambda$?}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
@@ -180,7 +196,7 @@ If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$
 	\stanlineendmat
 \]
 
-Just as we uniquely associated all points with their reflections, we will uniquely associate all lines $l$ with their reflections.\footnote{What about scalar multiples? I tried to work it out on 11/14 and I think it's impossible  but I want to make sure these are actually unique.} 
+Just as we uniquely associated all points with their reflections, we will uniquely associate all lines $l$ with their reflections.
 
 Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason\footnote{presumably...}, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
 \begin{equation} 
@@ -211,7 +227,7 @@ By considering the lower-left entry into these matrices we see that $\lambda = -
 
 
 
-\iffalse
+
 
 
 \newpage\wtflatex{Examples in $\R$}
@@ -230,7 +246,8 @@ Recall that we are working with linear fractional transformations $f: \C \righta
 
 \includegraphics[scale=.35]{../images/triangle-2-point-reflection-2-1.png}
 
-blah blah blah we can see that line reflections are just point refelctions with $\lamda = -1$ if we include that thing that has the fixed points? 
+blah blah blah we can see that line reflections are just point refelctions with $\lambda = -1$ if we include that thing that has the fixed points? 
+
 
 
 
@@ -260,7 +277,7 @@ blah blah blah we can see that line reflections are just point refelctions with 
 \end{tikzpicture}
 
 %http://www.ms.uky.edu/~droyster/courses/spring08/math6118/Classnotes/Chapter09.pdf
-\noindent We then use the metric on pg.~103\footnote{???} to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a hyperbolic circle\footnote{which is apparently just a circle} of radius $d_H$ centered at $O$.
+\noindent We then use the metric [INSERT THE METRIC YOU USE HERE] to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a circle of radius $d_H$ centered at $O$.
 
 \begin{tikzpicture}
 \draw (0,0) circle (2.2cm);
@@ -276,6 +293,7 @@ blah blah blah we can see that line reflections are just point refelctions with 
 \end{tikzpicture}
 
 This point $A'$, the intersection between the line segment $\overline{OA}$ and the circle of radius $d_H$ centered at $O$, is the \poincare Disk-equivalent of our original point $A$.
+
 
 
 
@@ -418,11 +436,13 @@ of linear fractional transformations and let $GL_2(F)$ denote the group of inver
 \newpage
 \wtflatex{Appendix A4: Coode}
 
+Below is the code we used to apply point reflections and line reflections to various points. 
+
 \noindent[here we will cahpy-past our coode]
 
 
 
-\fi
+
 
 
 \end{document}
