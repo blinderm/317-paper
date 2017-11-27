@@ -1,20 +1,21 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath, amssymb, amsthm}    
 \usepackage{parskip}  
-\usepackage{enumerate}  
+\usepackage{enumitem}  
 \usepackage{geometry}    
 \usepackage{titling}     
 \usepackage{color}       
 \usepackage{hyperref}   
 \usepackage{tipa}
 \usepackage{graphicx}     
-\usepackage{ mathrsfs }
+\usepackage{mathrsfs}
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 
 %\geometry{legalpaper, portrait, margin=1in}
 %\linespread{2}
 \setlength{\parindent}{3em}   
+\setlength{\parskip}{1em}   
 \setlength{\droptitle}{-5em}
 
 \newcommand{\N}{\mathbb{N}}
@@ -92,8 +93,22 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \[\]\wtflatex{Introduction}
 
-Hyperbolic geometry is a model of geometry resulting from the assumption of the first four postulates of Euclid (the ability to draw a straight line segment by joining any two points, the ability to extend any line segment indefinitely to a straight line, the ability to take a line segment and draw a circle with that segment as radius and one end as center, and the congruency of all right angles) and the negation of the fifth \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]}. The fifth postulate states that ``if a straight line, which intersects two straight lines, form interior angles on the same side, smaller than two right angles, then these straight lines, extended to infinite, will intersect on the side where the interior angles are less than two right angles." [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]. In hyperbolic geometry, this postulate is replaced with its negation, ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line." \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[source]}.
-	
+To understand hyperbolic geometry, we must consider Euclid's five postulates, which make up the axiomatic structure (??) of Euclidean geometry [phrasing of this whole damn sentence...]. The first four are as follows: \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]} [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]
+\begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
+	\item A straight line segment can be drawn joining any two points.
+	\item Any straight line segment can be extended indefinitely in a straight line.
+	\item Given any straight line segment, a circle can be drawn having the segment as radius and one endpoint as center.
+	\item All right angles are congruent.
+\end{enumerate}
+These four postulates hold in hyperbolic geometry. However, the fifth postulate, 
+\begin{enumerate}[leftmargin = 4em, itemsep=-1em]
+	\setcounter{enumi}{4}
+	\item If a straight line, which intersects two straight lines, form interior angles on the same side, smaller than two right angles, then these straight lines, extended to infinite, will intersect on the side where the interior angles are less than two right angles.
+\end{enumerate}
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line." \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[source]}.
+
+
+
 Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}. \footnote{Put more stuff here once we decide which figures to include.} 
 	
 	
@@ -183,7 +198,7 @@ By considering the lower-left entry into these matrices we see that $\lambda = -
 
 
 
-
+\iffalse
 
 
 \newpage\wtflatex{Examples in $\R$}
@@ -394,7 +409,7 @@ of linear fractional transformations and let $GL_2(F)$ denote the group of inver
 
 
 
-
+\fi
 
 
 \end{document}
