@@ -109,9 +109,22 @@ is replaced with its negation: ``Through an exterior point to a straight line we
 
 
 
-Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}. \footnote{Put more stuff here once we decide which figures to include.} 
+Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}. Lines are given by arcs of circles that are orthogonal to the boundary of the disk (does a diameter fall into this category because generalized circles or whatever? For example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$.
+
+\begin{tikzpicture}
+\draw (0,0) circle (2.2cm);
+\draw (-1.85,1.85) circle (1.41cm);
+\draw[fill=black] (0,0) circle (0.05) node[right] {$O$};
+\draw[fill=black] (-1.85,1.85) circle (0.05) node[left] {$C$};
+\draw[fill=black] (-2.15,.48) circle (0.05) node[below right] {$A$};
+\draw[fill=black] (-.48,2.15) circle (0.05) node[above right] {$B$};
+(-2.15,.48)
+\draw (-2.3,.35)  -- (-2.26,.5);
+\draw (-2.3,.35)  -- (-2.18,.32);
+%wtf add actual right angles and make the arc part bold?
+\end{tikzpicture}
 	
-	
+Please see the appendix for further information on the \poincare disk model, namely its distance metric and the transformation we use to place points from $R^2$ into the \poincare disk.
 
 
 
