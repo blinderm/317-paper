@@ -55,6 +55,11 @@
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
 
 % Problem environments
 \theoremstyle{definition}
@@ -175,7 +180,7 @@ Because all linear fractional transformations we will use are of the form given 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$. We also denote the matrix encoding a reflection about a point $P$ by $M_P$ and a matrix encoding a reflection over a line $l$ by $M_l$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $(\infty, \infty^2)$\footnote{To be defined on pg.???} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $(\infty, \infty^2)$).
+Finally, we will discuss two types of line reflections: ones passing through the end $(\infty, \infty^2)$\footnote{To be defined on pg.~???} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $(\infty, \infty^2)$).
 
 
 
@@ -193,13 +198,12 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 
 Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
-
 \begin{theorem}
-If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]\footnote{I will give you two options. The first requires defining $F^*$ and referring to the exercise which shows it is a normal subgroup, to which we can then say $A F^*$ where $A$ is any matrix, or we stick with the $\lambda$ as scalars. The first option keeps all the multiplications between matrices while the second introduces this awkward scalar and obfuscates the underlying cosets though flows better with the rest of the paper.}
+If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}
 \end{theorem}
 
 \begin{proof}
- Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
+ Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
 		\stanlftmat \stanlftmat = \lambda \lftmat{1}{0}{0}{1}
 	\]
@@ -211,7 +215,7 @@ Looking at the upper-right and lower-left entries in these matrices, we see that
 \end{proof}
 
 
-Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer?) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
+Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer??) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
 
 Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
@@ -220,9 +224,9 @@ Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding
 \end{equation}	
 As mentioned, we choose to associate each point reflection with a unique point in the disk. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
 
-To be clear, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). 
+To be clear, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
-Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{Elaborate in the appendix}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
+Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{TODO: Elaborate in the appendix.}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. We claim (without proof nor justification??) that the end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[
