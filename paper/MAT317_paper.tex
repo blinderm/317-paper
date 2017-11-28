@@ -81,7 +81,10 @@
 
 \wtflatex{Abstract}
 
-In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ into point reflections and two types of line reflections in the context of hyperbolic geometry. In this paper we first introduce a clear notation for such transformations and attempt to motivate the algebra behind Guggenheimer's classifications. We then choose the real ordered field $F = \R$ and illustrate various transformations in $F$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See appendix.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). lol this breaks in a buncha ways and we'll show you how! wheee!! 
+In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ into point reflections and two types of line reflections in the context of hyperbolic geometry. In this paper we first introduce a clear notation for such transformations and attempt to motivate the algebra behind Guggenheimer's classifications. We then choose the real ordered field $F = \R$ and illustrate various transformations in $F$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See appendix.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). 
+
+
+We therefore discuss 
 
 
 
@@ -141,7 +144,7 @@ For convenience, we will encode our transformations of the above form into matri
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
-It should be explicitly noted that these matrices are used only to encode our transformations\footnote{``See appendix" or something}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we will write $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ via the point reflection $f_P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$. In a similar vein, we define $M_P$ and $M_l$ to be a matrix representation of a point reflection about $P$ and a line reflection about $l$ respectively. We will associate each point reflection with a unique point in the disk\footnote{How exactly does this ``unique association" work? }. 
+It should be explicitly noted that these matrices are used only to encode our transformations\footnote{``See appendix" or something}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Finally, later we will be associating points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we will write $f_P(P_0)$ to mean the point reflection of the point $P_0$ over a point $P$ via the point reflection $f_P$ and $f_l(P_0)$ to be the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$. In a similar vein, we define $M_P$ and $M_l$ to be a matrix representation of a point reflection about $P$ and a line reflection about $l$ respectively. We will associate each point reflection with a unique point in the disk\footnote{How exactly does this ``unique association" work? }. Finally, we will discuss two types of line reflections: ones passing through the end $(\infty, \infty^2)$\footnote{see wherever} and ones not passing through this end. Throughout, the line to which we will refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say ``line reflection," then this line does not pass through the end $(\infty, \infty^2)$).
 
 
 
@@ -151,20 +154,20 @@ It should be explicitly noted that these matrices are used only to encode our tr
 
 
 \[\]\wtflatex{What this Guggenheimer asshole did}
-
+%\[\]\wtflatex{What this Guggenheimer fellow did}
 
 We should split this into theorems and like definitions/conventions.
 
 \noindent Definitions/Conventions/Facts
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item order two
-	\item positive and negative determinants??
+	\item positive and negative determinants
 \end{enumerate}
 
 \noindent Theorems
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$?
-	\item can partition points in/on/out of disk with $x=y^2$?
+	\item corollary/fact: can partition points in/on/out of disk with $x=y^2$?
 	\item how to get form of first kind of line
 	\item how to get form of second kind of line
 \end{enumerate}
@@ -223,7 +226,7 @@ By considering the lower-left entry into these matrices we see that $\lambda = -
 	2y = l_1
 \end{equation} 
 
-
+With this in hand, 
 
 
 
@@ -246,7 +249,25 @@ Recall that we are working with linear fractional transformations $f: \C \righta
 
 \includegraphics[scale=.35]{../images/triangle-2-point-reflection-2-1.png}
 
-blah blah blah we can see that line reflections are just point refelctions with $\lambda = -1$ if we include that thing that has the fixed points? 
+blah blah blah we can see that line reflections are just point reflections with $\lambda = -1$ if we include that thing that has the fixed points? 
+
+
+From these diagrams we notice two oddities. For one, 
+
+We will discuss them in turn.
+
+
+Firstly, these point reflections match an intuitive conception of a line reflection more than they do a point reflection. That is, the triangles seem to be ``reflected" and ``stretched" rather than ``rotated." However, a closer look at the matrix encodings of point reflections and line reflections sheds light on this. 
+
+Theorem: All line reflections defined by a point $l = (l_1, l_2)$ can be encoded as point reflections if we take the representative given by $\lambda = 1$
+
+Proof: Suppose that we have a line reflection $f_l$ given by $l = (l_1, l_2)$. Then, by WHATEVER WE CALL IT we encode the corresponding reflection in the matrix $M_l = \stanlinenoendmat$. To show that $f_l$ can be encoded as a point reflection, notice that 
+\[ -1 \cdot \stanlinenoendmat = \]
+
+
+More importantly, we now see that Guggenheimer's insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to simply as $E$) has no clear geometric motivation. Further, the examples in $\R$ demonstrate that this restriction is in fact entirely unnecessary. Consider Figure 2. We begin with a triangle $T_1$ defined by points contained in $D$. However, $T_1'$ (the result of reflecting $T_1$ over the point $(2, 1)$)  is given by points that cannot be mapped from $D$ VERIFY AND REPHRASE. 
+
+
 
 
 
@@ -257,6 +278,7 @@ blah blah blah we can see that line reflections are just point refelctions with 
 % https://tex.stackexchange.com/questions/230566/making-curly-braces-with-tikz
 \newpage
 \wtflatex{Appendix A1: You wanna draw? Let's fuckin' draw!}
+%\wtflatex{Appendix A1: Drawing things!}
 
 \noindent Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
@@ -439,6 +461,23 @@ of linear fractional transformations and let $GL_2(F)$ denote the group of inver
 Below is the code we used to apply point reflections and line reflections to various points. 
 
 \noindent[here we will cahpy-past our coode]
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\wtflatex{``Bibliography" (List of Sources)} 
+
+
+
 
 
 

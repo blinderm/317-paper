@@ -1,7 +1,7 @@
 add
-    - describe examples in R
-    - bibliography
-    - talk about what went wrong
+    - describe examples in R [AB]
+    - bibliography (list) [LG]
+    - talk about what went wrong [AB]
         - classification of translations by determinant
             - this breaks when we complexify (and thus lose ordering)
             - line reflections are just point reflections with lambda = -1
@@ -10,19 +10,20 @@ add
             - no geometric motivations 
 
 edit heavily
-    - abstract
-    - intro to hyperbolic geometry
+    - abstract [Tuesday] 
+    - intro to hyperbolic geometry [LG] 
 
 
 reorganize 
-    - split ``what guggen did" into definitions/conventions 
+    - split ``what guggen did" into definitions/conventions [AB Monday, LG Tuesday]
 
 
 check   
-    - intro to poincare disk
-    - notation
+    - intro to poincare disk [LG Tuesday?]
+    - notation [LG Tuesday?]
 
 nits   
-    - fix notation on examples in R
-    - pg. 10 insert metric used
-    - weird implication arrows pg. 15 
+    - fix notation on examples in R [LG]
+    - pg. 10 insert metric used [LG]
+    - weird implication arrows pg. 15 [LG] 
+    - add code [??] 
