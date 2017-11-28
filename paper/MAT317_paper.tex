@@ -396,20 +396,39 @@ Next, we argue that $F^\C$ has an additive identity.\\
 \end{lemma}
 
 \begin{proof}
-Now we argue that $F$ has an additive identity. Let $(a,b)\in F$ be arbitrary. We claim that $(0,0)\in F^\C$ is the additive identity of $F$. Using the fact that $0\in F$ is the additive identity, we obtain
+Let $(a,b)\in F$ be arbitrary. We claim that $(0,0)\in F^\C$ is the additive identity of $F$. Using the fact that $0\in F$ is the additive identity, we obtain
 	\[
 		(a,b)\oplus (0,0) = (a + 0\ttc b + 0) = (a,b) = (0 + a\ttc, 0 + b) = (0,0) \oplus (a,b).
 	\]
 Therefore $(0,0)\in F^\C$ is an additive identity.
 \end{proof} 
 
-Finally we argue that $F^\C$ has additive inverses. Let $(a,b)\in F^\C$ be arbitrary. We claim that $(-a,-b)\in F^\C$ is the additive inverse of $(a,b)$. Note that since $F$ is a field, $-a\ttc -b$ exist and so $(-a,-b)\in F^\C$. Furthermore,
+Since $F^\C$ has an additive identity, we may conjecture that $F^\C$ has additive inverses. 
+
+\begin{lemma}
+	For all $(x,y)\in F^\C$, there exists $(a,b)\in F^\C$ with 
+	\[	
+		(x,y)\oplus (a,b) = (0,0) = (a,b)\oplus (x,y).
+	\]
+	In other words, $F^\C$ has additive inverses.
+\end{lemma}
+
+\begin{proof}
+Let $(a,b)\in F^\C$ be arbitrary. We claim that $(-a,-b)\in F^\C$ is the additive inverse of $(a,b)$. Note that since $F$ is a field, $-a\ttc -b$ exist and so $(-a,-b)\in F^\C$. Furthermore,
 	\[
 		(a,b)\oplus (-a,-b) = (a + -a\ttc b + -b) = (0,0) = (-a + a\ttc, -b + b) = (-a,-b) \oplus (a,b).
 	\]
-Hence $\oplus$ behaves like field addition. 
+	Hence $\oplus$ is closed under inverses.
+\end{proof}
 
-	Now we argue via a similar line of reasoning that $\odot$ satisfies the properties of field multiplication. First we claim that $\odot$ is associative. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Using distributivity in $F$ and associativity and commutativity of $\oplus$ and $\odot$, we obtain
+Now we've proved that $\oplus$ has the desired properties that addition needs in a field. We therefore set our sights on resolving the properties of $\odot$.\\
+
+\begin{lemma}
+	The operation $\odot$ is associative and commutative.
+\end{lemma}
+
+\begin{proof}
+	Now we argue via a similar line of reasoning that $\odot$ satisfies the properties of field multiplication. First we claim that $\odot$ is associative. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Using distributivity in $F$ and associativity and commutativity of $+$ and $\cdot$, we obtain
 \begin{align*}
 		((a,b)\odot(c,d))\odot(e,f) & = (ac - bd\ttc ad + bc)\odot (e,f)\\
 		& = ((ac - bd)e - (ad + bc)f\ttc (ac - bd)f + (ad + bc)e)\\
@@ -424,7 +443,17 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 		& = (ca - db\ttc da + cb) & \text{(commutativity of $\cdot$)}\\
 		& = (c,d)\odot (a,b)
 	\end{align*}
-	Therefore $\odot$ is commutative. Next we show that $F^\C$ has the distributive property. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Since $\odot$ is commutative, it suffices to argue that
+	Therefore $\odot$ is commutative.
+\end{proof}
+
+With these properties in mind, we now show that $F^\C$'s operations obey the distributive property.\\
+
+\begin{lemma}
+	The complexification $(F^\C,\oplus,\odot)$ obeys the distributive property.
+\end{lemma}
+
+\begin{proof}
+Next we show that $F^\C$ has the distributive property. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Since $\odot$ is commutative, it suffices to argue that
 	\[
 		(a,b)\odot((c,d)\oplus(e,f)) = (a,b)\odot(c,d)\oplus(a,b)\odot(e,f).
 	\]
@@ -437,11 +466,35 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 		& = (ac - bd\ttc ad + bc)\oplus (ae - bf\ttc af + be)\\
 		& = (a,b)\odot (c,d)\oplus (a,b)\odot(e,f)
 	\end{align*}
-	Hence $F^\C$ has the distributive property. Next we show that $F^\C$ has a multiplicative identity. We claim that $(1,0)$ is the multiplicative identity of $F^\C$. Let $(a,b)\in F^\C$ be arbitrary. Note that since $F$ is a field, $1\in F$ is the multiplicative identity. Then
+	Hence $F^\C$ has the distributive property. 
+\end{proof}	
+
+Since $F^\C$ satisfies the distributive property, we only have two properties left to demonstrate: multiplicative identities and multiplicative inverses. \\
+
+\begin{lemma}
+	The element $(1,0)\in F^\C$ is a multiplicative identity.
+\end{lemma}
+
+\begin{proof}
+We claim that $(1,0)$ is the multiplicative identity of $F^\C$. Let $(a,b)\in F^\C$ be arbitrary. Note that since $F$ is a field, $1\in F$ is the multiplicative identity. Then
 	\[
 		(a,b)\odot(1,0) = (a\cdot 1 - b\cdot 0\ttc a\cdot 0 + b\cdot 1) = (a,b) = (1\cdot a - 0\cdot b\ttc 0\cdot a + 1\cdot b) = (1,0)\cdot (a,b).
 	\]
-	Hence $F^\C$ has a multiplicative identity. Finally we claim that $F^\C$ has multiplicative inverses. Suppose $(a,b)\in F^\C\backslash\{(0,0)\}$. We hope to find $(x,y)\in F^\C$ with $(a,b)\odot(x,y) = (1,0)$. Since $\odot$ is commutative, this result holds for $(x,y)\odot(a,b)$ as well. Performing the multiplication, we find that
+	Hence $F^\C$ has a multiplicative identity.
+\end{proof}
+
+Since $F^\C$ has a multiplicative identity, we may conjecture that $F^\C$ has multiplicative inverses. \\
+ 
+\begin{lemma}
+	For all $(x,y)\in F^\C\backslash\{(0,0)\}$, there exists $(a,b)\in F^\C\backslash\{(0,0)\}$ with 
+	\[	
+		(x,y)\odot (a,b) = (1,0) = (a,b)\odot (x,y).
+	\]
+	In other words, $F^\C$ has multiplicative inverses.	
+\end{lemma} 
+
+\begin{proof}
+Suppose $(a,b)\in F^\C\backslash\{(0,0)\}$. We hope to find $(x,y)\in F^\C$ with the property $(a,b)\odot(x,y) = (1,0)$. Since $\odot$ is commutative, this result holds for $(x,y)\odot(a,b)$ as well. Performing the multiplication, we find that
 	\[
 		(a,b)\odot(x,y) = (ax - by\ttc ay + bx) = (1,0)
 	\]
@@ -463,13 +516,16 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 	\[
 		y = \frac{-b}{a^2 + b^2}.
 	\]
-	Now we hope that there is no $(a,b)\in F^\C\backslash\{(0,0)\}$ with $a^2 + b^2 = 0$. Suppose such values do exist however. Since $(a,b)\neq (0,0)$, suppose $a\neq 0$. Then [LOGAN: fix the arrow things]
+	Now we hope that there is no $(a,b)\in F^\C\backslash\{(0,0)\}$ with $a^2 + b^2 = 0$. Suppose such values do exist however. Since $(a,b)\neq (0,0)$, suppose $a\neq 0$. Then we conclude that
 	\begin{align*}
-		a^2 + b^2 = 0 & \Rightarrow b^2 = -a^2\\
-		& \Rightarrow \frac{b^2}{a^2} = -1\\
-		& \Rightarrow \left(\frac{b}{a}\right)^2 = -1.
+		a^2 + b^2 = 0 & \text{ which implies } b^2 = -a^2\\
+		& \text{ which implies } \frac{b^2}{a^2} = -1\\
+		& \text{ which implies } \left(\frac{b}{a}\right)^2 = -1.
 	\end{align*}
- 	In other words, $-1$ is the square of $\frac{b}{a}\in F$, a contradiction since we assumed that no element in $F$ had $-1$ as its square. A similar argument can be made for when $b \neq 0$ using the fraction $\frac{a}{b}$. Hence $a^2 + b^2 \neq 0$ for any $(a,b)\in F^\C\backslash\{(0,0)\}$. Therefore $F^\C$ has multiplicative inverses. Therefore $(F^\C,\oplus,\odot)$ is a field. 
+ 	In other words, $-1$ is the square of $\frac{b}{a}\in F$, a contradiction since we assumed that no element in $F$ had $-1$ as its square. A similar argument can be made for when $b \neq 0$ using the fraction $\frac{a}{b}$. Hence $a^2 + b^2 \neq 0$ for any $(a,b)\in F^\C\backslash\{(0,0)\}$. Therefore $F^\C$ has multiplicative inverses.
+\end{proof} 	
+ 	
+Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field as desired. Hence the theorem is true and so the complexification of a field is a field. 
 
 
 
