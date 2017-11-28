@@ -73,7 +73,7 @@
 
 \newcommand{\wtftitle}[1]{\noindent\begin{Large}\textbf{{#1}}\end{Large}\vspace{3mm}}
 \newcommand{\wtftheorem}[1]{\noindent\textbf{{#1}}. \hspace{1mm}}
-\newcommand{\wtfqed}{\begin{flushright} \qedsymbol \end{flushright}}
+\newcommand{\wtfqed}{\vspace{-5mm}\begin{flushright} \qedsymbol \end{flushright}}
 
 
 
@@ -162,24 +162,9 @@ Finally, we will discuss two types of line reflections: ones passing through the
 \[\]\wtftitle{What this Guggenheimer asshole did}
 %\[\]\wtftitle{What this Guggenheimer fellow did}
 
-We should split this into theorems and like definitions/conventions.
-
-\noindent Definitions/Conventions/Facts
-\begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
-	\item positive and negative determinants
-\end{enumerate}
-
-\noindent Theorems
-\begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
-	\item points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$?
-	\item corollary/fact: can partition points in/on/out of disk with $x=y^2$?
-	\item how to get form of first kind of line
-	\item how to get form of second kind of line
-\end{enumerate}
-
-
-
 We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
+
+Let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$.
 
 Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
@@ -193,35 +178,34 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. [LOGAN: this doesn't mean that it's $\lambda I$ since we can have $a^2 = d^2$ but not $a = d$...] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved. 
-\wtfqed
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. [LOGAN: this doesn't mean that it's $\lambda I$ since we can have $a^2 = d^2$ but not $a = d$...] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.\wtfqed
+
+Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer?) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
 
-
-
-
-The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant. Recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
-
-
-
-Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form\footnote{Is it strictly necessary that we have this form or is it just an easy classification mechanism?} 
+Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
 \begin{equation} 
 	\lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
-As mentioned, each point reflection is associated with a unique point in the disk. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
+As mentioned, we choose to associate each point reflection with a unique point in the disk. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
 
-To be clear, we are in no way mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are simply classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). 
+To be clear, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). 
 
-Next\footnote{I guess we're just adding ends so we can have two kinds of lines? Why doesn't Guggenheimer \textit{ever} give motivation?} we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{Elaborate in the appendix}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$\footnote{I still don't understand how a point defines a line, but I think it has to do with the whole thing conjugacy below and will become clearer once we plot more.} that does not pass through the end $\specialend$ can be encoded in the matrix
+Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{Elaborate in the appendix}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. The end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
-If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix\footnote{Presumably there will be intuition for this as well once we generate our figures.}:
+If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[
 	\stanlineendmat
 \]
 
 Just as we uniquely associated all points with their reflections, we will uniquely associate all lines $l$ with their reflections.
 
-Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason\footnote{presumably...}, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
+
+\wtftheorem{Theorem} The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
+	x - 2l_2y + l_1  = 0
+\end{equation} 
+
+\wtftheorem{Proof} Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason\footnote{presumably...}, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -229,11 +213,17 @@ Expanding, we see that we must have
 	\[
 		\lftmat{-l_2y+l_1}{-l_2x+l_1y}{y-l_2}{x-l_2y} \spceq \lambda \lftmat{-l_2y+x}{-l_1y+l_2x}{l_2-y}{l_1-l_2y}
 	\]
-Looking at the lower-left corner of our matrices, we see that we must have $\lambda = -1$ since $y - l_2 = -1(l_2 - y)$. If we then consider the upper-left corner, we must have that $-l_2y + l_1 = -1(-l_2y + x)$. Simplifying, we see that equations of lines not passing through the end $\specialend$ must be of the form
+Looking at the lower-left corner of our matrices, we see that we must have $\lambda = -1$ since $y - l_2 = -1(l_2 - y)$. If we then consider the upper-left corner, we must have that $-l_2y + l_1 = -1(-l_2y + x)$. Simplifying, we see that equations of lines not passing through the end $\specialend$ must be of the form $x - 2l_2y + l_1  = 0$ as desired.
+
+
+
+
+\wtftheorem{Theorem} The equation of a line passing through the end $\specialend$ must be of the form 
 \begin{equation}
-	x - 2l_2y + l_1  = 0
+	2y = l_1
 \end{equation} 
-Now, if $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
+
+\wtftheorem{Proof} Now, if $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
 \begin{equation} 
 	\stanlineendmat\stanpointmat \spceq \lambda \stanpointmat\stanlineendmat
 \end{equation}	
@@ -241,12 +231,9 @@ We again expand to see that
 	\[
 		\lftmat{-y+l_1}{-x+l_1y}{-1}{-y} \spceq \lambda \lftmat{-y}{-l_1y+x}{1}{l_1-y}
 	\]
-By considering the lower-left entry into these matrices we see that $\lambda = -1$. We can now find the general form of such lines by seeing from the upper-left entries that $-y+l_1 = -y$. Simplified, our form is 
-\begin{equation}
-	2y = l_1
-\end{equation} 
+By considering the lower-left entry into these matrices we see that $\lambda = -1$. We can now find the general form of such lines by seeing from the upper-left entries that $-y+l_1 = -y$. Simplified, our form is $2y = l_1$. 
 
-With this in hand, 
+With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$.
 
 
 
