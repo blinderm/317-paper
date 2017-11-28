@@ -95,7 +95,9 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \[\]\wtftitle{Introduction}
 
-To understand hyperbolic geometry, we must consider Euclid's five postulates, which make up the axiomatic structure (??) of Euclidean geometry [phrasing of this whole damn sentence...]. The first four are as follows: \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]} [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]
+Non-euclidean geometry follows as a consequence of the independence of Euclid's parallel postulate. For centuries, mathematicians (such as Proclus, Clairaut, and Playfair)\footnote{cite Hartshorne section 33} tried tirelessly to prove that the parallel postulate followed from the first four axioms but to no avail. It was not until the 19th century with the work of Gauss and Bolyai that the parallel postulate was shown to be independent of the other four axioms, opening a door to new geometric models to be explored.  In particular, hyperbolic geometry was born out of this shocking result. (I already hate this paragraph).
+
+To understand hyperbolic geometry, we must consider Euclid's five postulates, which axiomatize Euclidean geometry [that better?]. The first four axioms are as follows: \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]} [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -105,11 +107,32 @@ To understand hyperbolic geometry, we must consider Euclid's five postulates, wh
 These four postulates hold in hyperbolic geometry. However, the fifth postulate, 
 \begin{enumerate}[leftmargin = 4em, itemsep=-1em]
 	\setcounter{enumi}{4}
-	\item If a straight line, which intersects two straight lines, form interior angles on the same side, smaller than two right angles, then these straight lines, extended to infinite, will intersect on the side where the interior angles are less than two right angles.
+	\item Given a line and a point no on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
+
 is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line." \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[source]}.
 
+INSERT SOME DESCRIPTION HERE
 
+\begin{center}
+	\begin{minipage}{.3\textwidth}
+	\begin{tikzpicture}
+		\draw[fill=black] (-1,1) circle (0.05) node[right] {$P$};
+		\draw (-2,-2) -- (2,2) node[right] {$l$};
+		\draw (-2,0) -- (0,2) node[right] {$m$};
+	% Playfair's axiom
+	\end{tikzpicture} 
+	\end{minipage}
+	\begin{minipage}{.3\textwidth}
+		\begin{tikzpicture}
+		\draw[fill=black] (-1,1) circle (0.05) node[right] {$P$};
+		\draw (-2,-2) -- (2,2) node[right] {$l$};
+		\draw (-1.5,.835) arc (-80:-40:2cm) node[right] {$m$};
+		\draw (-1.43,.5) arc (-50:-10:2cm) node[right] {$n$};
+	% Hyperbolic axiom
+	\end{tikzpicture} 
+	\end{minipage}
+\end{center}
 
 Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}. Lines are given by arcs of circles that are orthogonal to the boundary of the disk (does a diameter fall into this category because generalized circles or whatever? For example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$.
 
@@ -126,7 +149,7 @@ Henri \poincare put forth two models for hyperbolic geometry: the \poincare half
 %wtf add actual right angles and make the arc part bold?
 \end{tikzpicture}
 	
-Please see the appendix ??? for further information on the \poincare disk model, namely its distance metric and the transformation we use to place points from $R^2$ into the \poincare disk.
+Please see the appendix ??? for further information on the \poincare disk model, namely its distance metric and the transformation we use to place points from $\R^2$ into the \poincare disk.
 
 
 
@@ -168,7 +191,7 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 
 Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
-\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]
+\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]\footnote{I will give you two options. The first requires defining $F^*$ and referring to the exercise which shows it is a normal subgroup, to which we can then say $A F^*$ where $A$ is any matrix, or we stick with the $\lambda$ as scalars. The first option keeps all the multiplications between matrices while the second introduces this awkward scalar and obfuscates the underlying cosets though flows better with the rest of the paper.}
 
 \wtftheorem{Proof} Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
@@ -178,7 +201,7 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. [LOGAN: this doesn't mean that it's $\lambda I$ since we can have $a^2 = d^2$ but not $a = d$...] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.\wtfqed
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$.\footnote{That's okay since we're not trying to get $M = \lambda I$, just $M^2 = \lambda I$. We know that $a^2 = d^2$ and $bc = bc$, so $a^2 + bc = d^2 + bc = \lambda$.} [LOGAN] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.\wtfqed
 
 Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer?) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
@@ -282,11 +305,11 @@ Further,
 %\wtftitle{Appendix A1: You wanna draw? Let's fuckin' draw!}
 \wtftitle{Appendix A1: From $\R^2$ to the \poincare Disk}
 
-Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
+Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm);
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
 \end{tikzpicture}
 \end{center}
@@ -295,7 +318,7 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm);
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
 \draw (0,0) -- (2.2,2.2);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -304,12 +327,24 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-We then use the metric [LOGAN: insert the metric you use here] to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a circle of radius $d_H$ centered at $O$.
+To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \href{}{[source]} Theorem 9.1, we obtain the hyperbolic metric
+\[
+	d_H(O,A') = \ln\frac{1 + r}{1 - r}
+\]
+where $r\in\R$ is the radius of the circle we wish to draw. Let's call this new circle $\Delta$. Computing $r$, we find that
+\[
+	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
+\]
+
+\vfill
+\pagebreak
+
+Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta$. 
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm);
-\draw (0,0) circle (1.41cm);
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\draw (0,0) circle (1.41cm) node[below right=.85cm] {$\Delta$};
 \draw (0,0) -- (2.2,2.2);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -321,7 +356,7 @@ We then use the metric [LOGAN: insert the metric you use here] to find the hyper
 \end{tikzpicture}
 \end{center}
 
-This point $A'$, the intersection between the line segment $\overline{OA}$ and the circle of radius $d_H$ centered at $O$, is the \poincare Disk-equivalent of our original point $A$.
+This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare Disk-equivalent of our original point $A$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% VI.preA %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage 
@@ -329,9 +364,15 @@ This point $A'$, the intersection between the line segment $\overline{OA}$ and t
 
 Let $F$ be a field in which $-1$ is not a square. We define a new field $\fc$ ($F$ ``complexified") to contain a copy of $F$ along with an element $i$ with the property that $i^2 = -1$.
 
+<<<<<<< HEAD
 \wtftheorem{Theorem} $\fc$ (as described above) is a field.
 
 \wtftheorem{Proof} Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms:
+=======
+	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$.
+
+	Formally, recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
+>>>>>>> 99dc452dc1a71829eb7ed1cae0b17af7b8c8cb83
 \begin{enumerate}
 	\item $+$ must be associative and commutative.
 	\item There exists an additive identity in $F$.
@@ -349,7 +390,19 @@ and
 	\[
 		(a,b)\odot(c,d) = (ac - bd\ttc ad + bc).
 	\]
-wherein $+,-,\cdot$ are from $F$. We call $(F^\C,\oplus,\odot)$ the complexification of $F$ and claim that it is a field. 
+wherein $+,-,\cdot$ are from $F$. We call $(F^\C,\oplus,\odot)$ the complexification of $F$. From hereon the rest of this section will be dedicated to proving the following theorem.
+
+\begin{theorem}
+	Let $(F,+,\cdot)$ be a field in which $-1$ is not a square. Then the complexification $(F^\C,\oplus,\odot)$ as defined above is a field.
+\end{theorem}
+
+\noindent First, let's resolve some properties of $\oplus$.\\
+
+\begin{lemma}
+	Given a complexification $(F^\C,\oplus,\odot)$, $\oplus$ is associative and commutative.
+\end{lemma}
+
+\begin{proof}
 
 First we will show that $\oplus$ is associative. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$.
 \begin{align*}
@@ -365,17 +418,49 @@ Hence $\oplus$ is associative. Now we argue that $\oplus$ is commutative. Let $(
 	& = (c + a\ttc d + b) & \text{(commutativity of $\oplus$)}\\
 	& = (c,d)\oplus (a,b)
 \end{align*}
-Hence $\oplus$ is commutative. Now we argue that $F$ has an additive identity. Let $(a,b)\in F$ be arbitrary. We claim that $(0,0)\in F^\C$ is the additive identity of $F$. Using the fact that $0\in F$ is the additive identity, we obtain
+Hence $\oplus$ is commutative. 
+\end{proof}
+
+Next, we argue that $F^\C$ has an additive identity.\\
+
+\begin{lemma}
+	The element $(0,0)\in F^\C$ is an additive identity.
+\end{lemma}
+
+\begin{proof}
+Let $(a,b)\in F$ be arbitrary. We claim that $(0,0)\in F^\C$ is the additive identity of $F$. Using the fact that $0\in F$ is the additive identity, we obtain
 	\[
 		(a,b)\oplus (0,0) = (a + 0\ttc b + 0) = (a,b) = (0 + a\ttc, 0 + b) = (0,0) \oplus (a,b).
 	\]
-Therefore $(0,0)\in F^\C$ is the additive identity. Finally we argue that $F^\C$ has additive inverses. Let $(a,b)\in F^\C$ be arbitrary. We claim that $(-a,-b)\in F^\C$ is the additive inverse of $(a,b)$. Note that since $F$ is a field, $-a\ttc -b$ exist and so $(-a,-b)\in F^\C$. Furthermore,
+Therefore $(0,0)\in F^\C$ is an additive identity.
+\end{proof} 
+
+Since $F^\C$ has an additive identity, we may conjecture that $F^\C$ has additive inverses. 
+
+\begin{lemma}
+	For all $(x,y)\in F^\C$, there exists $(a,b)\in F^\C$ with 
+	\[	
+		(x,y)\oplus (a,b) = (0,0) = (a,b)\oplus (x,y).
+	\]
+	In other words, $F^\C$ has additive inverses.
+\end{lemma}
+
+\begin{proof}
+Let $(a,b)\in F^\C$ be arbitrary. We claim that $(-a,-b)\in F^\C$ is the additive inverse of $(a,b)$. Note that since $F$ is a field, $-a\ttc -b$ exist and so $(-a,-b)\in F^\C$. Furthermore,
 	\[
 		(a,b)\oplus (-a,-b) = (a + -a\ttc b + -b) = (0,0) = (-a + a\ttc, -b + b) = (-a,-b) \oplus (a,b).
 	\]
-Hence $\oplus$ behaves like field addition. 
+	Hence $\oplus$ is closed under inverses.
+\end{proof}
 
-	Now we argue via a similar line of reasoning that $\odot$ satisfies the properties of field multiplication. First we claim that $\odot$ is associative. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Using distributivity in $F$ and associativity and commutativity of $\oplus$ and $\odot$, we obtain
+Now we've proved that $\oplus$ has the desired properties that addition needs in a field. We therefore set our sights on resolving the properties of $\odot$.\\
+
+\begin{lemma}
+	The operation $\odot$ is associative and commutative.
+\end{lemma}
+
+\begin{proof}
+	Now we argue via a similar line of reasoning that $\odot$ satisfies the properties of field multiplication. First we claim that $\odot$ is associative. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Using distributivity in $F$ and associativity and commutativity of $+$ and $\cdot$, we obtain
 \begin{align*}
 		((a,b)\odot(c,d))\odot(e,f) & = (ac - bd\ttc ad + bc)\odot (e,f)\\
 		& = ((ac - bd)e - (ad + bc)f\ttc (ac - bd)f + (ad + bc)e)\\
@@ -390,7 +475,17 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 		& = (ca - db\ttc da + cb) & \text{(commutativity of $\cdot$)}\\
 		& = (c,d)\odot (a,b)
 	\end{align*}
-	Therefore $\odot$ is commutative. Next we show that $F^\C$ has the distributive property. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Since $\odot$ is commutative, it suffices to argue that
+	Therefore $\odot$ is commutative.
+\end{proof}
+
+With these properties in mind, we now show that $F^\C$'s operations obey the distributive property.\\
+
+\begin{lemma}
+	The complexification $(F^\C,\oplus,\odot)$ obeys the distributive property.
+\end{lemma}
+
+\begin{proof}
+Next we show that $F^\C$ has the distributive property. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$ be arbitrary. Since $\odot$ is commutative, it suffices to argue that
 	\[
 		(a,b)\odot((c,d)\oplus(e,f)) = (a,b)\odot(c,d)\oplus(a,b)\odot(e,f).
 	\]
@@ -403,11 +498,35 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 		& = (ac - bd\ttc ad + bc)\oplus (ae - bf\ttc af + be)\\
 		& = (a,b)\odot (c,d)\oplus (a,b)\odot(e,f)
 	\end{align*}
-	Hence $F^\C$ has the distributive property. Next we show that $F^\C$ has a multiplicative identity. We claim that $(1,0)$ is the multiplicative identity of $F^\C$. Let $(a,b)\in F^\C$ be arbitrary. Note that since $F$ is a field, $1\in F$ is the multiplicative identity. Then
+	Hence $F^\C$ has the distributive property. 
+\end{proof}	
+
+Since $F^\C$ satisfies the distributive property, we only have two properties left to demonstrate: multiplicative identities and multiplicative inverses. \\
+
+\begin{lemma}
+	The element $(1,0)\in F^\C$ is a multiplicative identity.
+\end{lemma}
+
+\begin{proof}
+We claim that $(1,0)$ is the multiplicative identity of $F^\C$. Let $(a,b)\in F^\C$ be arbitrary. Note that since $F$ is a field, $1\in F$ is the multiplicative identity. Then
 	\[
 		(a,b)\odot(1,0) = (a\cdot 1 - b\cdot 0\ttc a\cdot 0 + b\cdot 1) = (a,b) = (1\cdot a - 0\cdot b\ttc 0\cdot a + 1\cdot b) = (1,0)\cdot (a,b).
 	\]
-	Hence $F^\C$ has a multiplicative identity. Finally we claim that $F^\C$ has multiplicative inverses. Suppose $(a,b)\in F^\C\backslash\{(0,0)\}$. We hope to find $(x,y)\in F^\C$ with $(a,b)\odot(x,y) = (1,0)$. Since $\odot$ is commutative, this result holds for $(x,y)\odot(a,b)$ as well. Performing the multiplication, we find that
+	Hence $F^\C$ has a multiplicative identity.
+\end{proof}
+
+Since $F^\C$ has a multiplicative identity, we may conjecture that $F^\C$ has multiplicative inverses. \\
+ 
+\begin{lemma}
+	For all $(x,y)\in F^\C\backslash\{(0,0)\}$, there exists $(a,b)\in F^\C\backslash\{(0,0)\}$ with 
+	\[	
+		(x,y)\odot (a,b) = (1,0) = (a,b)\odot (x,y).
+	\]
+	In other words, $F^\C$ has multiplicative inverses.	
+\end{lemma} 
+
+\begin{proof}
+Suppose $(a,b)\in F^\C\backslash\{(0,0)\}$. We hope to find $(x,y)\in F^\C$ with the property $(a,b)\odot(x,y) = (1,0)$. Since $\odot$ is commutative, this result holds for $(x,y)\odot(a,b)$ as well. Performing the multiplication, we find that
 	\[
 		(a,b)\odot(x,y) = (ax - by\ttc ay + bx) = (1,0)
 	\]
@@ -429,13 +548,16 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 	\[
 		y = \frac{-b}{a^2 + b^2}.
 	\]
-	Now we hope that there is no $(a,b)\in F^\C\backslash\{(0,0)\}$ with $a^2 + b^2 = 0$. Suppose such values do exist however. Since $(a,b)\neq (0,0)$, suppose $a\neq 0$. Then [LOGAN: fix the arrow things]
+	Now we hope that there is no $(a,b)\in F^\C\backslash\{(0,0)\}$ with $a^2 + b^2 = 0$. Suppose such values do exist however. Since $(a,b)\neq (0,0)$, suppose $a\neq 0$. Then we conclude that
 	\begin{align*}
-		a^2 + b^2 = 0 & \Rightarrow b^2 = -a^2\\
-		& \Rightarrow \frac{b^2}{a^2} = -1\\
-		& \Rightarrow \left(\frac{b}{a}\right)^2 = -1.
+		a^2 + b^2 = 0 & \text{ which implies } b^2 = -a^2\\
+		& \text{ which implies } \frac{b^2}{a^2} = -1\\
+		& \text{ which implies } \left(\frac{b}{a}\right)^2 = -1.
 	\end{align*}
- 	In other words, $-1$ is the square of $\frac{b}{a}\in F$, a contradiction since we assumed that no element in $F$ had $-1$ as its square. A similar argument can be made for when $b \neq 0$ using the fraction $\frac{a}{b}$. Hence $a^2 + b^2 \neq 0$ for any $(a,b)\in F^\C\backslash\{(0,0)\}$. Therefore $F^\C$ has multiplicative inverses. Therefore $(F^\C,\oplus,\odot)$ is a field. 
+ 	In other words, $-1$ is the square of $\frac{b}{a}\in F$, a contradiction since we assumed that no element in $F$ had $-1$ as its square. A similar argument can be made for when $b \neq 0$ using the fraction $\frac{a}{b}$. Hence $a^2 + b^2 \neq 0$ for any $(a,b)\in F^\C\backslash\{(0,0)\}$. Therefore $F^\C$ has multiplicative inverses.
+\end{proof} 	
+ 	
+Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field as desired. Hence the theorem is true and so the complexification of a field is a field. 
 
 
 
