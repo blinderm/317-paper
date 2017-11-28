@@ -181,9 +181,9 @@ We should split this into theorems and like definitions/conventions.
 
 We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
-Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two (that is, the composition of a transformation upon itself yields the identity transformation). 
+Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
-\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ NOTATION???.
+\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]
 
 \wtftheorem{Proof} Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
@@ -193,8 +193,8 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Barring the trivial case in which $M$ is already of the form $\lambda I$, this can only be true if $\Tr(M) = 0$. 
-
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. [LOGAN: this doesn't mean that it's $\lambda I$ since we can have $a^2 = d^2$ but not $a = d$...] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved. 
+\wtfqed
 
 
 
@@ -258,6 +258,7 @@ With this in hand,
 We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles and two points about which each of them will be reflected\footnote{See Appendix ?? for the coode}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 2 - 2i$. The points about which we will perform our reflections are $X = (2, 1)$ and $Y = (2, -1)$.
 
 \iffalse
+[LOGAN: change the notation to match]
 \begin{tabular}{cc}
  \includegraphics[width=65mm]{../images/triangle-1-point-reflection-2--1.png} & \includegraphics[width=65mm]{../images/triangle-1-point-reflection-2-1.png} \\
 Triangle $T_1$ over point $X$ & Triangle $T_1$ over point $Y$  \\
@@ -315,7 +316,7 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-We then use the metric [INSERT THE METRIC YOU USE HERE] to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a circle of radius $d_H$ centered at $O$.
+We then use the metric [LOGAN: insert the metric you use here] to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a circle of radius $d_H$ centered at $O$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
@@ -343,7 +344,7 @@ This point $A'$, the intersection between the line segment $\overline{OA}$ and t
 \newpage 
 \wtftitle{Appendix A2: Proof that $\fc$ Is a Field}
 
-SAY WHAT COMPLEXIFICATION ACTUALLY IS LOL
+[LOGAN: say briefly what complexification actually is?]
 
 \noindent Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
 \begin{enumerate}
@@ -443,7 +444,7 @@ Hence $\odot$ is associative. Now we show that $\odot$ is commutative. Let $(a,b
 	\[
 		y = \frac{-b}{a^2 + b^2}.
 	\]
-	Now we hope that there is no $(a,b)\in F^\C\backslash\{(0,0)\}$ with $a^2 + b^2 = 0$. Suppose such values do exist however. Since $(a,b)\neq (0,0)$, suppose $a\neq 0$. Then
+	Now we hope that there is no $(a,b)\in F^\C\backslash\{(0,0)\}$ with $a^2 + b^2 = 0$. Suppose such values do exist however. Since $(a,b)\neq (0,0)$, suppose $a\neq 0$. Then [LOGAN: fix the arrow things]
 	\begin{align*}
 		a^2 + b^2 = 0 & \Rightarrow b^2 = -a^2\\
 		& \Rightarrow \frac{b^2}{a^2} = -1\\
