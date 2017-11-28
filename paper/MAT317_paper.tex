@@ -166,7 +166,6 @@ We should split this into theorems and like definitions/conventions.
 
 \noindent Definitions/Conventions/Facts
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
-	\item order two
 	\item positive and negative determinants
 \end{enumerate}
 
@@ -180,9 +179,17 @@ We should split this into theorems and like definitions/conventions.
 
 
 
-We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections. As in Euclidean geometry, both of these transformations are of order two (that is, the composition of a transformation upon itself yields the identity transformation). The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant (recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
+We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
+<<<<<<< HEAD
 Suppose that $M$ is a matrix encoding some linear fractional transformation of order two. We must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
+=======
+Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two (that is, the composition of a transformation upon itself yields the identity transformation). 
+
+\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ NOTATION???.
+
+\wtftheorem{Proof} Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
+>>>>>>> 4454004d55fffc49b04fb4b271bacb82fee2dd4f
 	\[
 		\stanlftmat \stanlftmat = \lambda \lftmat{1}{0}{0}{1}
 	\]
@@ -190,7 +197,18 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Barring the trivial case in which $M$ is already of the form $\lambda I$, this can only be true if $\Tr(M) = 0$. Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form\footnote{Is it strictly necessary that we have this form or is it just an easy classification mechanism?} 
+Barring the trivial case in which $M$ is already of the form $\lambda I$, this can only be true if $\Tr(M) = 0$. 
+
+
+
+
+
+
+The matrices encoding point reflections have positive determinant; those encoding line reflections have negative determinant. Recall by (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses). 
+
+
+
+Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we must have that $M$ is of the form\footnote{Is it strictly necessary that we have this form or is it just an easy classification mechanism?} 
 \begin{equation} 
 	\lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
@@ -320,9 +338,15 @@ We then use the metric [INSERT THE METRIC YOU USE HERE] to find the hyperbolic d
 
 This point $A'$, the intersection between the line segment $\overline{OA}$ and the circle of radius $d_H$ centered at $O$, is the \poincare Disk-equivalent of our original point $A$.
 
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> 4454004d55fffc49b04fb4b271bacb82fee2dd4f
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% VI.preA %%%%%%%%%%%%%%%%%%%%%%%%%%%
