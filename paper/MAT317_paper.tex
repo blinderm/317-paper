@@ -95,7 +95,9 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \[\]\wtftitle{Introduction}
 
-To understand hyperbolic geometry, we must consider Euclid's five postulates, which make up the axiomatic structure (??) of Euclidean geometry [phrasing of this whole damn sentence...]. The first four are as follows: \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]} [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]
+Non-euclidean geometry follows as a consequence of the independence of Euclid's parallel postulate. For centuries, mathematicians (such as Proclus, Clairaut, and Playfair)\footnote{cite Hartshorne section 33} tried tirelessly to prove that the parallel postulate followed from the first four axioms but to no avail. It was not until the 19th century with the work of Gauss and Bolyai that the parallel postulate was shown to be independent of the other four axioms, opening a door to new geometric models to be explored.  In particular, hyperbolic geometry was born out of this shocking result. (I already hate this paragraph).
+
+To understand hyperbolic geometry, we must consider Euclid's five postulates, which axiomatize Euclidean geometry [that better?]. The first four axioms are as follows: \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]} [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -105,11 +107,32 @@ To understand hyperbolic geometry, we must consider Euclid's five postulates, wh
 These four postulates hold in hyperbolic geometry. However, the fifth postulate, 
 \begin{enumerate}[leftmargin = 4em, itemsep=-1em]
 	\setcounter{enumi}{4}
-	\item If a straight line, which intersects two straight lines, form interior angles on the same side, smaller than two right angles, then these straight lines, extended to infinite, will intersect on the side where the interior angles are less than two right angles.
+	\item Given a line and a point no on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
+
 is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line." \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[source]}.
 
+INSERT SOME DESCRIPTION HERE
 
+\begin{center}
+	\begin{minipage}{.3\textwidth}
+	\begin{tikzpicture}
+		\draw[fill=black] (-1,1) circle (0.05) node[right] {$P$};
+		\draw (-2,-2) -- (2,2) node[right] {$l$};
+		\draw (-2,0) -- (0,2) node[right] {$m$};
+	% Playfair's axiom
+	\end{tikzpicture} 
+	\end{minipage}
+	\begin{minipage}{.3\textwidth}
+		\begin{tikzpicture}
+		\draw[fill=black] (-1,1) circle (0.05) node[right] {$P$};
+		\draw (-2,-2) -- (2,2) node[right] {$l$};
+		\draw (-1.5,.835) arc (-80:-40:2cm) node[right] {$m$};
+		\draw (-1.43,.5) arc (-50:-10:2cm) node[right] {$n$};
+	% Hyperbolic axiom
+	\end{tikzpicture} 
+	\end{minipage}
+\end{center}
 
 Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}. Lines are given by arcs of circles that are orthogonal to the boundary of the disk (does a diameter fall into this category because generalized circles or whatever? For example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$.
 
@@ -126,7 +149,7 @@ Henri \poincare put forth two models for hyperbolic geometry: the \poincare half
 %wtf add actual right angles and make the arc part bold?
 \end{tikzpicture}
 	
-Please see the appendix ??? for further information on the \poincare disk model, namely its distance metric and the transformation we use to place points from $R^2$ into the \poincare disk.
+Please see the appendix ??? for further information on the \poincare disk model, namely its distance metric and the transformation we use to place points from $\R^2$ into the \poincare disk.
 
 
 
@@ -168,7 +191,7 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 
 Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
-\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]
+\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]\footnote{I will give you two options. The first requires defining $F^*$ and referring to the exercise which shows it is a normal subgroup, to which we can then say $A F^*$ where $A$ is any matrix, or we stick with the $\lambda$ as scalars. The first option keeps all the multiplications between matrices while the second introduces this awkward scalar and obfuscates the underlying cosets though flows better with the rest of the paper.}
 
 \wtftheorem{Proof} Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
@@ -178,7 +201,7 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. [LOGAN: this doesn't mean that it's $\lambda I$ since we can have $a^2 = d^2$ but not $a = d$...] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.\wtfqed
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$.\footnote{That's okay since we're not trying to get $M = \lambda I$, just $M^2 = \lambda I$. We know that $a^2 = d^2$ and $bc = bc$, so $a^2 + bc = d^2 + bc = \lambda$.} [LOGAN] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.\wtfqed
 
 Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer?) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
