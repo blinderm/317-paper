@@ -281,11 +281,11 @@ Further,
 %\wtftitle{Appendix A1: You wanna draw? Let's fuckin' draw!}
 \wtftitle{Appendix A1: From $\R^2$ to the \poincare Disk}
 
-Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
+Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm);
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
 \end{tikzpicture}
 \end{center}
@@ -294,7 +294,7 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm);
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
 \draw (0,0) -- (2.2,2.2);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -303,12 +303,24 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-We then use the metric [LOGAN: insert the metric you use here] to find the hyperbolic distance, $d_H$, between $O$ and $A'$. We construct a circle of radius $d_H$ centered at $O$.
+To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \href{}{[source]} Theorem 9.1, we obtain the hyperbolic metric
+\[
+	d_H(O,A') = \ln\frac{1 + r}{1 - r}
+\]
+where $r\in\R$ is the radius of the circle we wish to draw. Let's call this new circle $\Delta$. Computing $r$, we find that
+\[
+	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
+\]
+
+\vfill
+\pagebreak
+
+Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta$. 
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm);
-\draw (0,0) circle (1.41cm);
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\draw (0,0) circle (1.41cm) node[below right=.85cm] {$\Delta$};
 \draw (0,0) -- (2.2,2.2);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -320,15 +332,15 @@ We then use the metric [LOGAN: insert the metric you use here] to find the hyper
 \end{tikzpicture}
 \end{center}
 
-This point $A'$, the intersection between the line segment $\overline{OA}$ and the circle of radius $d_H$ centered at $O$, is the \poincare Disk-equivalent of our original point $A$.
+This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare Disk-equivalent of our original point $A$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% VI.preA %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage 
 \wtftitle{Appendix A2: Proof that $\fc$ Is a Field}
 
-[LOGAN: say briefly what complexification actually is?]
+	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$.
 
-\noindent Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
+	Formally, recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
 \begin{enumerate}
 	\item $+$ must be associative and commutative.
 	\item There exists an additive identity in $F$.
@@ -346,7 +358,19 @@ and
 	\[
 		(a,b)\odot(c,d) = (ac - bd\ttc ad + bc).
 	\]
-wherein $+,-,\cdot$ are from $F$. We call $(F^\C,\oplus,\odot)$ the complexification of $F$ and claim that it is a field. 
+wherein $+,-,\cdot$ are from $F$. We call $(F^\C,\oplus,\odot)$ the complexification of $F$. From hereon the rest of this section will be dedicated to proving the following theorem.
+
+\begin{theorem}
+	Let $(F,+,\cdot)$ be a field in which $-1$ is not a square. Then the complexification $(F^\C,\oplus,\odot)$ as defined above is a field.
+\end{theorem}
+
+\noindent First, let's resolve some properties of $\oplus$.\\
+
+\begin{lemma}
+	Given a complexification $(F^\C,\oplus,\odot)$, $\oplus$ is associative and commutative.
+\end{lemma}
+
+\begin{proof}
 
 First we will show that $\oplus$ is associative. Let $(a,b)\ttc(c,d)\ttc(e,f)\in F^\C$.
 \begin{align*}
@@ -362,11 +386,24 @@ Hence $\oplus$ is associative. Now we argue that $\oplus$ is commutative. Let $(
 	& = (c + a\ttc d + b) & \text{(commutativity of $\oplus$)}\\
 	& = (c,d)\oplus (a,b)
 \end{align*}
-Hence $\oplus$ is commutative. Now we argue that $F$ has an additive identity. Let $(a,b)\in F$ be arbitrary. We claim that $(0,0)\in F^\C$ is the additive identity of $F$. Using the fact that $0\in F$ is the additive identity, we obtain
+Hence $\oplus$ is commutative. 
+\end{proof}
+
+Next, we argue that $F^\C$ has an additive identity.\\
+
+\begin{lemma}
+	The element $(0,0)\in F^\C$ is an additive identity.
+\end{lemma}
+
+\begin{proof}
+Now we argue that $F$ has an additive identity. Let $(a,b)\in F$ be arbitrary. We claim that $(0,0)\in F^\C$ is the additive identity of $F$. Using the fact that $0\in F$ is the additive identity, we obtain
 	\[
 		(a,b)\oplus (0,0) = (a + 0\ttc b + 0) = (a,b) = (0 + a\ttc, 0 + b) = (0,0) \oplus (a,b).
 	\]
-Therefore $(0,0)\in F^\C$ is the additive identity. Finally we argue that $F^\C$ has additive inverses. Let $(a,b)\in F^\C$ be arbitrary. We claim that $(-a,-b)\in F^\C$ is the additive inverse of $(a,b)$. Note that since $F$ is a field, $-a\ttc -b$ exist and so $(-a,-b)\in F^\C$. Furthermore,
+Therefore $(0,0)\in F^\C$ is an additive identity.
+\end{proof} 
+
+Finally we argue that $F^\C$ has additive inverses. Let $(a,b)\in F^\C$ be arbitrary. We claim that $(-a,-b)\in F^\C$ is the additive inverse of $(a,b)$. Note that since $F$ is a field, $-a\ttc -b$ exist and so $(-a,-b)\in F^\C$. Furthermore,
 	\[
 		(a,b)\oplus (-a,-b) = (a + -a\ttc b + -b) = (0,0) = (-a + a\ttc, -b + b) = (-a,-b) \oplus (a,b).
 	\]
