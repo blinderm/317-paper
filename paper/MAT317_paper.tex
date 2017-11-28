@@ -94,9 +94,9 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \[\]\wtftitle{Introduction}
 
-Non-euclidean geometry follows as a consequence of the independence of Euclid's parallel postulate. For centuries, mathematicians (such as Proclus, Clairaut, and Playfair)\footnote{TODO: Cite Hartshorne section 33.} tried tirelessly to prove that the parallel postulate followed from the first four axioms but to no avail. It was not until the 19th century with the work of Gauss and Bolyai that the parallel postulate was shown to be independent of the other four axioms, opening a door to new geometric models to be explored. In particular, hyperbolic geometry was born out of this shocking result. (I already hate this paragraph).
+Non-euclidean geometry is a consequence of the independence of Euclid's parallel postulate. For centuries, mathematicians (such as Proclus, Clairaut, and Playfair [what's the purpose of name-dropping here?])\footnote{TODO: Cite Hartshorne section 33.} tried tirelessly to prove that the parallel postulate followed from the first four axioms but to no avail. It was not until the 19th century with the work of Gauss and Bolyai that the parallel postulate was shown to be independent of the other four axioms, opening a door to new geometric models to be explored. In particular, hyperbolic geometry was born out of this shocking result. 
 
-To understand hyperbolic geometry, we must consider Euclid's five postulates, which axiomatize Euclidean geometry [that better?]. The first four axioms are as follows: \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[source]} [\href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{source}]
+To understand hyperbolic geometry, we must consider Euclid's five postulates, which axiomatize Euclidean geometry. The first four axioms are as follows:\footnote{TODO: Cite \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[this]} and \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[this]}.}
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -108,32 +108,32 @@ These four postulates hold in hyperbolic geometry. However, the fifth postulate,
 	\setcounter{enumi}{4}
 	\item Given a line and a point no on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-
-is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line." \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[source]}.
-
-INSERT SOME DESCRIPTION HERE
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line."\footnote{TODO: Cite \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[this].}}.
 
 \begin{center}
-	\begin{minipage}{.3\textwidth}
+\begin{tabular}{cc}
 	\begin{tikzpicture}
 		\draw[fill=black] (-1,1) circle (0.05) node[right] {$P$};
 		\draw (-2,-2) -- (2,2) node[right] {$l$};
 		\draw (-2,0) -- (0,2) node[right] {$m$};
 	% Playfair's axiom
 	\end{tikzpicture} 
-	\end{minipage}
-	\begin{minipage}{.3\textwidth}
-		\begin{tikzpicture}
+	& 	\begin{tikzpicture}
 		\draw[fill=black] (-1,1) circle (0.05) node[right] {$P$};
 		\draw (-2,-2) -- (2,2) node[right] {$l$};
 		\draw (-1.5,.835) arc (-80:-40:2cm) node[right] {$m$};
 		\draw (-1.43,.5) arc (-50:-10:2cm) node[right] {$n$};
 	% Hyperbolic axiom
-	\end{tikzpicture} 
-	\end{minipage}
+	\end{tikzpicture}   \\
+Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \\
+& \\
+\end{tabular}
 \end{center}
 
-Henri \poincare put forth two models for hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$ \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[source]}. Lines are given by arcs of circles that are orthogonal to the boundary of the disk (does a diameter fall into this category because generalized circles or whatever? For example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$.
+
+
+
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$\footnote{TODO: Cite \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[this].}}. Lines are given by arcs of generalized circles that are orthogonal to the boundary of the disk. Therefore any diameter $d$ of circle $O$ is also a hyperbolic line in this disk, as $d$ is a generalized circle orthogonal to the boundary of the disk. For example another example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$. 
 
 \begin{tikzpicture}
 \draw (0,0) circle (2.2cm);
@@ -148,7 +148,7 @@ Henri \poincare put forth two models for hyperbolic geometry: the \poincare half
 %wtf add actual right angles and make the arc part bold?
 \end{tikzpicture}
 	
-Please see the appendix ??? for further information on the \poincare disk model, namely its distance metric and the transformation we use to place points from $\R^2$ into the \poincare disk.
+Appendix A1 contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
 
 
 
