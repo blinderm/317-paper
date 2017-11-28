@@ -84,7 +84,8 @@
 
 \wtftitle{Abstract}
 
-In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ into point reflections and two types of line reflections in the context of hyperbolic geometry. In this paper we first introduce a clear notation for such transformations and attempt to motivate the algebra behind Guggenheimer's classifications. We then choose the real ordered field $F = \R$ and illustrate various transformations in $F$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See appendix.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). 
+In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ into point reflections and two types of line reflections. In this paper we first introduce a clear notation for such transformations and attempt to motivate the algebra behind Guggenheimer's classifications. We then illustrate the effects linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See appendix.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with 
+and raise questions about Guggenheimer's claim that 
 
 
 
@@ -191,9 +192,13 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 
 Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
-\wtftheorem{Theorem} If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]\footnote{I will give you two options. The first requires defining $F^*$ and referring to the exercise which shows it is a normal subgroup, to which we can then say $A F^*$ where $A$ is any matrix, or we stick with the $\lambda$ as scalars. The first option keeps all the multiplications between matrices while the second introduces this awkward scalar and obfuscates the underlying cosets though flows better with the rest of the paper.}
 
-\wtftheorem{Proof} Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
+\begin{theorem}
+If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M \in \lambda I$ [LOGAN: what do you want for coset notation here?]\footnote{I will give you two options. The first requires defining $F^*$ and referring to the exercise which shows it is a normal subgroup, to which we can then say $A F^*$ where $A$ is any matrix, or we stick with the $\lambda$ as scalars. The first option keeps all the multiplications between matrices while the second introduces this awkward scalar and obfuscates the underlying cosets though flows better with the rest of the paper.}
+\end{theorem}
+
+\begin{proof}
+ Let $M$ be a matrix that encodes a linear fractional transformation of order two. We then must have that $M^2 = \lambda I$ for some constant $\lambda \in F$\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}, where $I$ is the usual $2 \times 2$ identity matrix. In this case, we want to have that 
 	\[
 		\stanlftmat \stanlftmat = \lambda \lftmat{1}{0}{0}{1}
 	\]
@@ -201,7 +206,9 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$.\footnote{That's okay since we're not trying to get $M = \lambda I$, just $M^2 = \lambda I$. We know that $a^2 = d^2$ and $bc = bc$, so $a^2 + bc = d^2 + bc = \lambda$.} [LOGAN] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.\wtfqed
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$.\footnote{That's okay since we're not trying to get $M = \lambda I$, just $M^2 = \lambda I$. We know that $a^2 = d^2$ and $bc = bc$, so $a^2 + bc = d^2 + bc = \lambda$.} [LOGAN] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.
+\end{proof}
+
 
 Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer?) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
@@ -224,11 +231,12 @@ If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$
 Just as we uniquely associated all points with their reflections, we will uniquely associate all lines $l$ with their reflections.
 
 
-\wtftheorem{Theorem} The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
+\begin{theorem}The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
 	x - 2l_2y + l_1  = 0
 \end{equation} 
+\end{theorem}
 
-\wtftheorem{Proof} Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
+\begin{proof}Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -237,16 +245,18 @@ Expanding, we see that we must have
 		\lftmat{-l_2y+l_1}{-l_2x+l_1y}{y-l_2}{x-l_2y} \spceq \lambda \lftmat{-l_2y+x}{-l_1y+l_2x}{l_2-y}{l_1-l_2y}
 	\]
 Looking at the lower-left corner of our matrices, we see that we must have $\lambda = -1$ since $y - l_2 = -1(l_2 - y)$. If we then consider the upper-left corner, we must have that $-l_2y + l_1 = -1(-l_2y + x)$. Simplifying, we see that equations of lines not passing through the end $\specialend$ must be of the form $x - 2l_2y + l_1  = 0$ as desired.
+\end{proof}
 
 
 
 
-\wtftheorem{Theorem} The equation of a line passing through the end $\specialend$ must be of the form 
+\begin{theorem} The equation of a line passing through the end $\specialend$ must be of the form 
 \begin{equation}
 	2y = l_1
 \end{equation} 
+\end{theorem}
 
-\wtftheorem{Proof} Now, if $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
+\begin{proof} Now, if $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
 \begin{equation} 
 	\stanlineendmat\stanpointmat \spceq \lambda \stanpointmat\stanlineendmat
 \end{equation}	
@@ -255,6 +265,7 @@ We again expand to see that
 		\lftmat{-y+l_1}{-x+l_1y}{-1}{-y} \spceq \lambda \lftmat{-y}{-l_1y+x}{1}{l_1-y}
 	\]
 By considering the lower-left entry into these matrices we see that $\lambda = -1$. We can now find the general form of such lines by seeing from the upper-left entries that $-y+l_1 = -y$. Simplified, our form is $2y = l_1$. 
+\end{proof}
 
 With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$. Then, motivated by Guggenheimer's claim that hyperbolic geometry can be derived along these lines if we instead take the coefficients of our linear fractional transformations from the complexified\footnote{See Appendix A2.} field $\fc$.
 
@@ -281,14 +292,17 @@ From these diagrams we notice two oddities that we will discuss in turn.
 
 Firstly, these point reflections match an intuitive conception of a line reflection more than they do a point reflection. That is, the triangles seem to be ``reflected" and ``stretched" rather than ``rotated." However, a closer look at the matrix encodings of point reflections and line reflections sheds light on this. 
 
-\wtftheorem{Theorem} All line reflections can be encoded as point reflections. 
+\begin{theorem}
+All line reflections can be encoded as point reflections. 
+\end{theorem}
 
-\wtftheorem{Proof} Suppose that we have a line reflection $f_l$ given by $l = (l_1, l_2)$. Then, by WHATEVER WE CALL IT we encode the corresponding reflection in the matrix 
+\begin{proof}
+Suppose that we have a line reflection $f_l$ given by $l = (l_1, l_2)$. Then, by WHATEVER WE CALL IT we encode the corresponding reflection in the matrix 
 \[ M_l := \stanlinenoendmat. \]
 To show that $f_l$ can be encoded as a point reflection, notice that 
 \[ -1 \cdot \stanlinenoendmat = \lftmat{l_2}{l_1}{-1}{-l_2}.\]
 Notice further that this matrix takes the form of a point reflection about $l = (l_1, l_2)$ if we take $\lambda = -1$. It follows that all line reflections can indeed be encoded as point reflections.
-\wtfqed
+\end{proof}
 
 A further issue is introduced once we complexify $\R$ as suggested by Guggenheimer: the fact that $\R^{\C} = \C$ is not ordered renders the partition of matrices by their determinants useless. 
 
@@ -362,17 +376,12 @@ This point $A'$, the intersection between the line segment $\overline{OA}$ and $
 \newpage 
 \wtftitle{Appendix A2: $\fc$ Is a Field}
 
-Let $F$ be a field in which $-1$ is not a square. We define a new field $\fc$ ($F$ ``complexified") to contain a copy of $F$ along with an element $i$ with the property that $i^2 = -1$.
-
-<<<<<<< HEAD
-\wtftheorem{Theorem} $\fc$ (as described above) is a field.
-
-\wtftheorem{Proof} Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms:
-=======
 	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$.
 
-	Formally, recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
->>>>>>> 99dc452dc1a71829eb7ed1cae0b17af7b8c8cb83
+\wtftheorem{Theorem} $\fc$ (as described above) is a field.
+
+\wtftheorem{Proof} Formally, recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms:
+
 \begin{enumerate}
 	\item $+$ must be associative and commutative.
 	\item There exists an additive identity in $F$.
