@@ -205,7 +205,7 @@ Just as we uniquely associated all points with their reflections, we will unique
 	x - 2l_2y + l_1  = 0
 \end{equation} 
 
-\wtftheorem{Proof} Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason\footnote{presumably...}, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
+\wtftheorem{Proof} Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -233,8 +233,7 @@ We again expand to see that
 	\]
 By considering the lower-left entry into these matrices we see that $\lambda = -1$. We can now find the general form of such lines by seeing from the upper-left entries that $-y+l_1 = -y$. Simplified, our form is $2y = l_1$. 
 
-With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$.
-
+With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$. Then, motivated by Guggenheimer's claim that hyperbolic geometry can be derived along these lines if we instead take the coefficients of our linear fractional transformations from the complexified\footnote{See Appendix A2.} field $\fc$.
 
 
 
@@ -268,8 +267,10 @@ To show that $f_l$ can be encoded as a point reflection, notice that
 Notice further that this matrix takes the form of a point reflection about $l = (l_1, l_2)$ if we take $\lambda = -1$. It follows that all line reflections can indeed be encoded as point reflections.
 \wtfqed
 
+A further issue is introduced once we complexify $\R$ as suggested by Guggenheimer: the fact that $\R^{\C} = \C$ is not ordered renders the partition of matrices by their determinants useless. 
 
-More importantly, we now see that Guggenheimer's insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to simply as $E$) has no clear geometric motivation. Further, the examples in $\R$ demonstrate that this restriction is in fact entirely unnecessary. Consider Figure 2. We begin with a triangle $T_1$ defined by points contained in $D$. However, $T_1'$ (the result of reflecting $T_1$ over the point $(2, 1)$) is given by points that cannot be mapped from $D$ VERIFY AND REPHRASE. 
+
+More importantly, we now see that Guggenheimer's insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to simply as $E$) has no clear geometric motivation. In fact, the examples in $\R$ demonstrate that this restriction is in fact entirely unnecessary. Consider Figure 2. We begin with a triangle $T_1$ defined by points contained in $D$. However, $T_1'$ (the result of reflecting $T_1$ over the point $(2, 1)$) is given by points that cannot be mapped from $D$ VERIFY AND REPHRASE. 
 
 Further, 
 
@@ -324,11 +325,13 @@ This point $A'$, the intersection between the line segment $\overline{OA}$ and t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% VI.preA %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage 
-\wtftitle{Appendix A2: Proof that $\fc$ Is a Field}
+\wtftitle{Appendix A2: $\fc$ Is a Field}
 
-[LOGAN: say briefly what complexification actually is?]
+Let $F$ be a field in which $-1$ is not a square. We define a new field $\fc$ ($F$ ``complexified") to contain a copy of $F$ along with an element $i$ with the property that $i^2 = -1$.
 
-\noindent Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms.
+\wtftheorem{Theorem} $\fc$ (as described above) is a field.
+
+\wtftheorem{Proof} Recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms:
 \begin{enumerate}
 	\item $+$ must be associative and commutative.
 	\item There exists an additive identity in $F$.

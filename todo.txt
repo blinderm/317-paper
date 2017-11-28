@@ -1,24 +1,21 @@
 add
-    - describe examples in R [AB]
-    - bibliography (list) [LG]
-    - talk about what went wrong [AB]
+    - talk about what went wrong
         - classification of translations by determinant
             - this breaks when we complexify (and thus lose ordering)
-            - line reflections are just point reflections with lambda = -1
         - x = y^2 lol
             - also breaks wuthout ordering
             - no geometric motivations 
+    - say what complexifiation actually is... [LG]
 
 edit heavily
-    - abstract [Tuesday] 
+	- examples in R section (includes all the stuff that went wrong) [AB]
+    - abstract [both Tuesday] 
     - intro to hyperbolic geometry [LG] 
-
-
-reorganize 
-    - split ``what guggen did" into definitions/conventions [AB Monday, LG Tuesday]
+    - all the titles lol
 
 
 check   
+	- split ``what guggen did" into definitions/conventions [LG]
     - intro to poincare disk [LG Tuesday?]
     - notation [LG Tuesday?]
 
@@ -26,4 +23,4 @@ nits
     - fix notation on examples in R [LG]
     - pg. 10 insert metric used [LG]
     - weird implication arrows pg. 15 [LG] 
-    - add code [??] 
+    - add code [either?] 
