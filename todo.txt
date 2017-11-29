@@ -12,5 +12,8 @@ add
     - LFT! [LG]
     - appendix D? [LG]
     
+edit 
+	- examples in r (aka 'what got fucked up') [AB]
+
 nits   
     - fix notation on examples in R [LG]
