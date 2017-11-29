@@ -205,7 +205,22 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\]
 Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.
 
-TODO(AB): add other direction
+For the other direction, first suppose that $M$ is a matrix with trace 0. Then
+\[M = \lftmat{a}{b}{c}{-a}\]
+for some $a \ttc b \ttc c \in F$. Notice that
+\begin{align*}
+M^2 & = \lftmat{a}{b}{c}{-a} \lftmat{a}{b}{c}{-a} \\[2ex]
+& = \lftmat{a^2+bc}{ab - ba}{ca - ac}{cb+a^2} \\[2ex]
+& = \lftmat{a^2+bc}{0}{0}{a^2 + bc}
+\end{align*}
+Therefore $M^2 = \lambda I$ if we take $\lambda = a^2 + bc$.
+
+Finally, suppose that $M = \gamma I$ for some $\gamma \in F$. Then
+\begin{align*}
+M^2 & = \lftmat{\gamma}{0}{0}{\gamma} \lftmat{\gamma}{0}{0}{\gamma} \\[2ex]
+& = \lftmat{\gamma^2}{0}{0}{\gamma^2}
+\end{align*}
+Therefore $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 \end{proof}
 
 
