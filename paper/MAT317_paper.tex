@@ -68,8 +68,7 @@
 \newtheorem{example}[definition]{Example}
 
 
-\title{Fixing Heinrich Guggenheimer's Fucking Wild Notation and Generally Shitty/Vague Paper}
-%\title{The Hyperbolic Geometry of Linear Fractional Transformations in Complexified Fields}
+\title{The Hyperbolic Geometry of Linear Fractional Transformations in the \poincare Disk}
 \author{Anna Blinderman, Logan Goldberg}
 \date{}
 
@@ -77,21 +76,14 @@
 
 \maketitle
 
-\newcommand{\wtftitle}[1]{\noindent\begin{Large}\textbf{{#1}}\end{Large}\vspace{3mm}}
-\newcommand{\wtftheorem}[1]{\noindent\textbf{{#1}}. \hspace{1mm}}
-\newcommand{\wtfqed}{\vspace{-5mm}\begin{flushright} \qedsymbol \end{flushright}}
 
 
 
 
 
-
-
-
-\wtftitle{Abstract}
-
-In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ into point reflections and two types of line reflections. In this paper we first introduce a clear notation for such transformations and attempt to motivate the algebra behind Guggenheimer's classifications. We then illustrate the effects linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
-
+\begin{abstract}
+In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and two types of line reflections. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
+\end{abstract}
 
 
 
@@ -100,9 +92,9 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \section{Introduction}
 
-Non-Euclidean geometry is a consequence of the independence of Euclid's parallel postulate. For centuries, mathematicians (such as Proclus, Clairaut, and Playfair [what's the purpose of name-dropping here?])\footnote{TODO: Cite Hartshorne section 33.} tried tirelessly to prove that the parallel postulate followed from the first four axioms but to no avail. It was not until the 19th century with the work of Gauss and Bolyai that the parallel postulate was shown to be independent of the other four axioms, opening a door to new geometric models to be explored. In particular, hyperbolic geometry was born out of this shocking result. 
+\hspace{10mm} Non-Euclidean geometry is a consequence of the independence of Euclid's parallel postulate. For centuries, mathematicians tried tirelessly to prove that the parallel postulate followed from the first four axioms but to no avail. It was not until the 19th century with the work of Gauss and Bolyai that the parallel postulate was shown to be independent of the other four axioms, opening a door to new geometric models to be explored\footnote{TODO: Cite Hartshorne section 33.}. In particular, hyperbolic geometry was born out of this shocking result. 
 
-To understand hyperbolic geometry, we must consider Euclid's five postulates, which axiomatize Euclidean geometry. The first four axioms are as follows:\footnote{TODO: Cite \href{http://mathworld.wolfram.com/EuclidsPostulates.html}{[this]} and \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[this]}.}
+To understand hyperbolic geometry, we must consider Euclid's five postulates, which axiomatize Euclidean geometry. The first four axioms are as follows:\footnote{TODO: Cite Hartshorne section 40.} 
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -137,7 +129,7 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 \end{tabular}
 \end{center}
 
-	Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$\footnote{TODO: Cite \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[this].}}. Lines are given by arcs of generalized circles that are orthogonal to the boundary of the disk. Therefore any diameter $d$ of circle $O$ is also a hyperbolic line in this disk, as $d$ is a generalized circle orthogonal to the boundary of the disk. For example another example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$. 
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$\footnote{TODO: Cite \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[this].}}. Lines are given by arcs of generalized circles that are orthogonal to the boundary of the disk. Therefore any diameter $d$ of circle $O$ is also a hyperbolic line in this disk, as $d$ is a generalized circle orthogonal to the boundary of the disk. For example another example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$. 
 
 \begin{center}
 	\begin{tikzpicture}
@@ -163,7 +155,7 @@ Appendix A1 contains further information on the \poincare disk model, particular
 	
 \section{Notation}
 	
-We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
 
 The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. The group\footnote{TODO: Cite class notes about this being a group.} of hyperbolic transformations over $F$ are those linear fractional transformations given by
 \begin{equation} 
@@ -180,7 +172,7 @@ Because all linear fractional transformations we will use are of the form given 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$. We also denote the matrix encoding a reflection about a point $P$ by $M_P$ and a matrix encoding a reflection over a line $l$ by $M_l$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $(\infty, \infty^2)$\footnote{To be defined on pg.~???} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $(\infty, \infty^2)$).
+Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$\footnote{To be defined on pg.~???} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $\specialend$).
 
 
 
@@ -189,10 +181,9 @@ Finally, we will discuss two types of line reflections: ones passing through the
 
 
 
-\[\]\section{What this Guggenheimer asshole did}
-%\[\]\wtftitle{What this Guggenheimer fellow [real chap, bud, homeslice breadslice] did}
+\section{Guggenheimer's Classifications of Linear Fractional Transformations}
 
-We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
+\hspace{10mm} We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
 Let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$.
 
@@ -211,7 +202,9 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$.\footnote{That's okay since we're not trying to get $M = \lambda I$, just $M^2 = \lambda I$. We know that $a^2 = d^2$ and $bc = bc$, so $a^2 + bc = d^2 + bc = \lambda$.} [LOGAN] Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.
+
+TODO(AB): add other direction
 \end{proof}
 
 
@@ -278,11 +271,9 @@ With this in hand, we go forth to develop and visualize examples of these transf
 
 
 
-\newpage\section{Examples in $F = \R$}
+\section{Examples in $F = \R$}
 
 \hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles and two points about which each of them will be reflected\footnote{See Appendix C for the coode}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 2 - 2i$. The points about which we will perform our reflections are $X = (2, 1)$ and $Y = (2, -1)$.
-
-[LOGAN: change the notation to match]
 
 \iffalse
 \begin{tabular}{cc}
@@ -324,7 +315,6 @@ More importantly, we now see that Guggenheimer's insistence that points be taken
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-%\wtftitle{Appendix A1: You wanna draw? Let's fuckin' draw!}
 \begin{appendices}
 \section{From $\R^2$ to the \poincare Disk} \label{appendixA}
 
@@ -359,8 +349,6 @@ where $r\in\R$ is the radius of the circle we wish to draw. Let's call this new 
 	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
 \]
 
-\vfill
-\pagebreak
 
 Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta$. 
 
@@ -375,7 +363,7 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 \draw[decoration={brace,raise=4pt},decorate]
   (0,0) -- node[above left= 6pt] {$d_E$} (2.2,2.2);
 \draw[decoration={brace,mirror,raise=4pt},decorate]
-  (0,0) -- node[below right = 4pt] {$d_H$} (.95,.95);
+  (0,0) -- node[below right = 4pt] {$r$} (.95,.95);
 \end{tikzpicture}
 \end{center}
 
@@ -387,9 +375,11 @@ This point $A'$, the intersection between the line segment $\overline{OA}$ and $
 
 	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$.
 
-\wtftheorem{Theorem} $\fc$ (as described above) is a field.
+\begin{theorem} 
+$\fc$ (as described above) is a field.
+\end{theorem}
 
-\wtftheorem{Proof} Formally, recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms:
+\begin{proof} Formally, recall that in order for $(F,+,\cdot)$ to be a field, it must satisfy the following axioms:
 
 \begin{enumerate}
 	\item $+$ must be associative and commutative.
@@ -577,27 +567,13 @@ Suppose $(a,b)\in F^\C\backslash\{(0,0)\}$. We hope to find $(x,y)\in F^\C$ with
  	
 Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field as desired. Hence the theorem is true and so the complexification of a field is a field. 
 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Coode} \label{appendixC}
-
-Below is the code we used to apply point reflections and line reflections to various points. 
-
-\noindent[here we will cahpy-past our coode]
-
-
-
-
+\end{proof}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\wtftitle{Appendix A3: Do we actually need this...?}
+\newpage 
+\section{Encoding Linear Fractional Transformations as Matrices} \label{appendixC}
 
 \noindent Define the group
 	\[
@@ -625,22 +601,41 @@ of linear fractional transformations and let $GL_2(F)$ denote the group of inver
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\wtftitle{``Bibliography" (List of Sources)} 
+\section{Code Simulating Linear Fractional Transformations} \label{appendixD}
+
+Below is the code we used to apply point reflections and line reflections to various points in $\C$. 
+
+\noindent[here we will cahpy-past our coode]
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{``Bibliography" (List of Sources)}
+
 
 \begin{enumerate}
-	\item http://people.reed.edu/mayer/math112.html/chap04.pdf (Complexification of a Field)
 	\item H. Guggenheimer, Plane Geometry and Its Groups, Holden-Day San Francisco (now Kreiger, Huntington N.Y.), 1967, Chap, 9.
 	\item Guggenheimer's paper itself
 	\item Robin Hartshorne, Geometry: Euclid And Beyond, Srpinger-Verlag New York, 2000, Chap, 7.
-	\item https://www.geogebra.org/material/show/id/7005
-	\item https://www.geogebra.org/home
+	\item \href{http://people.reed.edu/mayer/math112.html/chap04.pdf}{http://people.reed.edu/mayer/math112.html/chap04.pdf}
+	\item \href{https://www.geogebra.org/material/show/id/7005}{https://www.geogebra.org/material/show/id/7005}
+	\item \href{https://www.geogebra.org/home}{https://www.geogebra.org/home}
+	\item \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}
+	\item \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{http://math2.uncc.edu/$\sim$frothe/3181alllhyp1$\_$7.pdf}
 \end{enumerate}
 
 
-%https://tex.stackexchange.com/questions/16617/use-tikz-for-example-to-draw-pictures-in-hyperbolic-geometry
-% https://tex.stackexchange.com/questions/61316/draw-a-plot-with-point
-% https://tex.stackexchange.com/questions/230566/making-curly-braces-with-tikz
-%http://www.ms.uky.edu/~droyster/courses/spring08/math6118/Classnotes/Chapter09.pdf
 
 
 

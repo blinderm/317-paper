@@ -1,26 +1,18 @@
-add
-    - talk about what went wrong
-        - classification of translations by determinant
-            - this breaks when we complexify (and thus lose ordering)
-        - x = y^2 lol
-            - also breaks wuthout ordering
-            - no geometric motivations 
-    - say what complexifiation actually is... [LG]
-
-edit heavily
-	- examples in R section (includes all the stuff that went wrong) [AB]
-    - abstract [both Tuesday] 
-    - intro to hyperbolic geometry [LG] 
-    - all the titles lol
-
-
 check   
-	- split ``what guggen did" into definitions/conventions [LG]
-    - intro to poincare disk [LG Tuesday?]
-    - notation [LG Tuesday?]
-
+	- intro to hyperbolic geometry [AB]
+	- notation [LG]
+	- split ``what guggen did" into definitions/conventions [LG] 
+    - intro to poincare disk [LG]
+    - notation [LG]
+    
+    
+add 
+	- other direction of theorem 3.1 [AB]
+	- recover A', B', C' from T1 over Y [LG]
+	- biblio from intro [AB]
+    - code to appendix C [LG]
+    - LFT! [LG]
+    - appendix D? [LG]
+    
 nits   
     - fix notation on examples in R [LG]
-    - pg. 10 insert metric used [LG]
-    - weird implication arrows pg. 15 [LG] 
-    - add code [either?] 
