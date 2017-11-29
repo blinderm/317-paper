@@ -1,16 +1,14 @@
 check   
 	- intro to hyperbolic geometry [AB]
-	- notation [LG]
 	- split ``what guggen did" into definitions/conventions [LG] 
     - intro to poincare disk [LG]
-    - notation [LG]
     
     
 add 
-	- recover A', B', C' from T1 over Y [LG]
-    - code to appendix C [LG]
+    - sanitize code in appendix C [LG]
     - LFT! [LG]
-    - appendix D? [LG]
+    - Add discussion on kernel [LG]
+    - Discussion on division by zero? [LG]
     
-nits   
-    - fix notation on examples in R [LG]
+nits
+	- footnote 10?
