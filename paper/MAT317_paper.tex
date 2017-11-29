@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 \usepackage[toc,page]{appendix} % Appendix and Table of Contents!
+\usepackage{listings}
 
 %\geometry{legalpaper, portrait, margin=1in}
 %\linespread{2}
@@ -48,12 +49,43 @@
 
 \newcommand{\specialend}{(\infty^2\ttc\infty)}
 
+% Colors for listings
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{purple}{rgb}{.5,0,0.5}
+\definecolor{dgreen}{rgb}{.1, .7, .2}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+% Listings style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
 % Theorem counters
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}{Definition}[section]
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}{Lemma}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 
 \makeatletter
@@ -92,9 +124,9 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \section{Introduction}
 
-\hspace{10mm} For centuries, mathematicians tried tirelessly to prove that Euclid's fifth postulate -- equivalent to the parallel postulate -- followed from the first four. It was not until the 19$^{\text{th}}$ century that Gauss and Bolyai showed that the the fifth postulate was independent from the others. This shocking result opened doors to the exploration of non-Euclidean geometric models, particularly those of hyperbolic geometry\footnote{TODO: Cite Hartshorne section 33.}.
+\hspace{10mm} For centuries, mathematicians tried tirelessly to prove that Euclid's fifth postulate -- an equivalent formulation of the parallel postulate -- followed from the first four. It was not until the 19$^{\text{th}}$ century that Carl Friedrich Gauss and J\'{a}nos Bolyai showed that the the fifth postulate was independent from the others. This shocking result opened doors to the exploration of non-Euclidean geometric models, particularly those of hyperbolic geometry\footnote{TODO: Cite Hartshorne section 33.}.
 
-To understand hyperbolic geometry we must first consider these five postulates, which axiomatize Euclidean geometry. The first four are as follows\footnote{TODO: Cite Hartshorne section 40.}:
+To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows\footnote{TODO: Cite Hartshorne section 40.}:
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -127,9 +159,9 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 & \\
 \end{tabular}
 \end{center}
-As we can see in the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. Further, there are infinitely many distinct lines with these properties.
+In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. Further, there are infinitely many distinct lines with these two properties.
 
-Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$\footnote{TODO: Cite \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[this].}}. Lines are given by arcs of generalized circles that are orthogonal to the boundary of the disk. Therefore any diameter $d$ of circle $O$ is also a hyperbolic line in this disk, as $d$ is a generalized circle orthogonal to the boundary of the disk. For example another example, the minor arc $AB$ of circle $C$ pictured below is a hyperbolic line in the \poincare disk realized by circle $O$. 
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$\footnote{TODO: Cite \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[this].}}. Lines are given by arcs of generalized circles that are orthogonal to the boundary of the disk. Consider the following figure: 
 
 \begin{center}
 	\begin{tikzpicture}
@@ -142,11 +174,13 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	(-2.15,.48)
 	\draw (-2.3,.35)  -- (-2.26,.5);
 	\draw (-2.3,.35)  -- (-2.18,.32);
-	%wtf add actual right angles and make the arc part bold?
+	%add actual right angles and make the arc part bold?
 	\end{tikzpicture}
 \end{center}
+
+The minor arc $AB$ of circle $C$ pictured above is a hyperbolic line in the \poincare disk realized by circle $O$. Further, any diameter $d$ of circle $O$ is a hyperbolic line in this disk, as $d$ is a generalized circle orthogonal to the boundary of the disk. 
 	
-Appendix A1 contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
+Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
 
 
 
@@ -155,24 +189,25 @@ Appendix A1 contains further information on the \poincare disk model, particular
 	
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in this interior of our \poincare disk. On the other hand, points defining lines (which lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
+
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
 
 The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. The group\footnote{TODO: Cite class notes about this being a group.} of hyperbolic transformations over $F$ are those linear fractional transformations given by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
-For convenience, we will encode our transformations of the above form into matrices
+under function composition. For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
 
-It should be explicitly noted that these matrices are used only to encode our transformations\footnote{See Appendix A3.}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0 \in \C$, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. 
+It should be explicitly noted that these matrices are used only to encode our transformations\footnote{See Appendix \ref{appendixC}.}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. 
 
 Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$. We also denote the matrix encoding a reflection about a point $P$ by $M_P$ and a matrix encoding a reflection over a line $l$ by $M_l$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$\footnote{To be defined on pg.~???} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $\specialend$).
+Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$\footnote{To be defined on pg.~7.} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $\specialend$).
 
 
 
@@ -181,8 +216,7 @@ Finally, we will discuss two types of line reflections: ones passing through the
 
 
 
-\[\]\section{Guggenheimer's Classifications of Linear Fractional Transformations}
-
+\section{Guggenheimer's Classifications of Linear Fractional Transformations}
 
 \hspace{10mm} We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
@@ -191,7 +225,7 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. 
 
 \begin{theorem}
-If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}
+If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}
 \end{theorem}
 
 \begin{proof}
@@ -220,7 +254,7 @@ Finally, suppose that $M = \gamma I$ for some $\gamma \in F$. Then
 M^2 & = \lftmat{\gamma}{0}{0}{\gamma} \lftmat{\gamma}{0}{0}{\gamma} \\[2ex]
 & = \lftmat{\gamma^2}{0}{0}{\gamma^2}
 \end{align*}
-Therefore $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
+It follows that $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 \end{proof}
 
 
@@ -233,9 +267,9 @@ Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding
 \end{equation}	
 As mentioned, we choose to associate each point reflection with a unique point in the disk. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
 
-To be clear, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
+To be clear, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $\R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
-Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{TODO: Elaborate in the appendix.}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. We follow Guggenheimer in simply claiming that the end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
+Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{TODO: Elaborate in an appendix.}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. We follow Guggenheimer in simply claiming that the end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[
@@ -246,7 +280,7 @@ Just as we uniquely associated all points with their reflections, we will unique
 
 
 \begin{theorem}The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
-	x - 2l_2y + l_1  = 0
+	x - 2l_2y + l_1  = 0.
 \end{equation} 
 \end{theorem}
 
@@ -266,11 +300,11 @@ Looking at the lower-left corner of our matrices, we see that we must have $\lam
 
 \begin{theorem} The equation of a line passing through the end $\specialend$ must be of the form 
 \begin{equation}
-	2y = l_1
+	2y = l_1.
 \end{equation} 
 \end{theorem}
 
-\begin{proof} Now, if $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
+\begin{proof} If $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
 \begin{equation} 
 	\stanlineendmat\stanpointmat \spceq \lambda \stanpointmat\stanlineendmat
 \end{equation}	
@@ -281,7 +315,7 @@ We again expand to see that
 By considering the lower-left entry into these matrices we see that $\lambda = -1$. We can now find the general form of such lines by seeing from the upper-left entries that $-y+l_1 = -y$. Simplified, our form is $2y = l_1$. 
 \end{proof}
 
-With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$. Then, motivated by Guggenheimer's claim that hyperbolic geometry can be derived along these lines if we instead take the coefficients of our linear fractional transformations from the complexified\footnote{See Appendix A2.} field $\fc$.
+With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$. Then, motivated by Guggenheimer's claim that hyperbolic geometry can be derived along these lines if we instead take the coefficients of our linear fractional transformations from the complexified\footnote{See Appendix B.} field $\fc$.
 
 
 
@@ -289,12 +323,8 @@ With this in hand, we go forth to develop and visualize examples of these transf
 
 \section{Examples in $F = \R$}
 
-\hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles and two points about which each of them will be reflected\footnote{See Appendix C for the coode}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 2 - 2i$. The points about which we will perform our reflections are $X = (2, 1)$ and $Y = (2, -1)$.
+\hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles and two points about which each of them will be reflected\footnote{See Appendix D for the code used.}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 0.2 - 2i$. The points about which we will perform our reflections are $X = (2, -1)$ and $Y = (2, 1)$.
 
-
-TODO(
-
-\iffalse
 \begin{tabular}{cc}
  \includegraphics[width=65mm]{../images/triangle-1-point-reflection-2--1.png} & \includegraphics[width=65mm]{../images/triangle-1-point-reflection-2-1.png} \\
 Triangle $T_1$ over point $X$ & Triangle $T_1$ over point $Y$  \\
@@ -302,7 +332,6 @@ Triangle $T_1$ over point $X$ & Triangle $T_1$ over point $Y$  \\
 \includegraphics[width=65mm]{../images/triangle-2-point-reflection-2--1.png} & \includegraphics[width=65mm]{../images/triangle-2-point-reflection-2-1.png}\\
 Triangle $T_2$ over point $X$ & Triangle $T_2$ over point $Y$  \\
 \end{tabular}
-\fi
 
 From these diagrams we notice two oddities that we will discuss in turn. 
 
@@ -325,11 +354,6 @@ It follows that the ``distinction" between line reflections and point reflection
 parabola also breaks with ordering
 
 More importantly, we now see that Guggenheimer's insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to simply as $E$) has no clear geometric motivation. In fact, the examples in $\R$ demonstrate that this restriction is in fact entirely unnecessary. Consider Figure 2. We begin with a triangle $T_1$ defined by points contained in $D$. However, $T_1'$ (the result of reflecting $T_1$ over the point $(2, 1)$) is given by points that cannot be mapped from $D$ VERIFY AND REPHRASE. 
-
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -382,7 +406,7 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 \draw[decoration={brace,raise=4pt},decorate]
   (0,0) -- node[above left= 6pt] {$d_E$} (2.2,2.2);
 \draw[decoration={brace,mirror,raise=4pt},decorate]
-  (0,0) -- node[below right = 4pt] {$d_H$} (.95,.95);
+  (0,0) -- node[below right = 4pt] {$r$} (.95,.95);
 \end{tikzpicture}
 \end{center}
 
@@ -594,51 +618,87 @@ Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field 
 \newpage 
 \section{Encoding Linear Fractional Transformations as Matrices} \label{appendixC}
 
-\noindent Define the group
+\noindent Define the set
 	\[
 		A = \left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a,b,c,d\in F\text{ with } ad - bc \neq 0\right\rbrace
 	\]
-of linear fractional transformations and let $GL_2(F)$ denote the group of invertible $2\times 2$ matrices with entries in $F$. Also define the subset
+of linear fractional transformations under function composition and let $GL_2(F)$ denote the group of invertible $2\times 2$ matrices with entries in $F$. Also define the subset
 	\[
 		F^* = \left\lbrace\lftmat{\lambda}{0}{0}{\lambda}\colon \lambda\in F\text{ with } \lambda\neq 0 \right\rbrace.
 	\]
-	We argue that $F^*$ is a normal subgroup of $GL_2(F)$.\footnote{Insert math here} With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*$ by
+	We argue that $F^*$ is a normal subgroup of $GL_2(F)$.
+\begin{lemma}
+	The subset $F^*$ defined above forms a normal subgroup of $GL_2(F)$.
+\end{lemma}
+\begin{proof}
+	Let $F^*$ be defined as above. We first argue that $F^*$ is a subgroup of $GL_2(F)$. Let $A,B\in F^*$ be arbitrary. Then
+	\[
+		AB = \lftmat{\lambda_A}{0}{0}{\lambda_A}\lftmat{\lambda_B}{0}{0}{\lambda_B} = \lftmat{\lambda_A\lambda_B}{0}{0}{\lambda_A\lambda_B}
+	\]
+	and since $\lambda_A\lambda_B\in F$ and $F$ has no zero divisors, we conclude that $AB\in F^*$. It's worth noting that the matrices in $F^*$ commute with one another since $\lambda_A\lambda_B = \lambda_B\lambda_A$. From here, notice that the identity element of $F^*$ remains the identity matrix as
+	\[
+		AI = \lftmat{\lambda_A}{0}{0}{\lambda_A}\lftmat{1}{0}{0}{1} = A
+	\]
+	and $IA = A$ by commutativity. In a similar vain, if $A\in F^*$ has entry $\lambda_A$, then $B\in F^*$ with $\lambda_B = \frac{1}{\lambda_A}$ is the inverse of $A\in F^*$, following from the assumption that $\lambda_A \neq 0$. Hence $F^*$ forms a subgroup of $GL_2(F)$. Now we show that $F^*$ is normal. Let $A\in GL_2(F)$ and choose some $B\in F^*$. We argue that $AB = CA$ for some $C\in F^*$. Observe that
+	\[
+		AB = \stanlftmat\lftmat{\lambda_B}{0}{0}{\lambda_B} = \lftmat{a\lambda_B}{b\lambda_B}{c\lambda_B}{d\lambda_B} = \lftmat{\lambda_B a}{\lambda_B b}{\lambda_B c}{\lambda_B d} = \lftmat{\lambda_B}{0}{0}{\lambda_B}\stanlftmat = BA.
+	\]
+	Therefore $F^*$ is normal as desired.
+\end{proof}
+	
+	\footnote{Insert math here} With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*$ by
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
-	We claim that $\varphi$ is a homomorphism. \footnote{Insert more math here}Now that we've established that $\varphi$ is a homomorphism, we now argue that $\varphi$ is surjective. \footnote{And a little bit more right here}  Next we identify the kernel of $\varphi$ in order to establish an isomorphism between $A/\ker(\varphi)$ and $GL_2(F)/F^*$\footnote{Technically we don't need the kernel to identify the isomorphism; it's just noteworthy and tells us when we can't recover a linear fractional transformation.}. Finally by the First Isomorphism Theorem, we conclude that $A/\ker(\varphi)$\footnote{insert whatever the kernel turns out to be here} is isomorphic to $GL_2(F)/F^*$. 
+	We claim that $\varphi$ is a surjective homomorphism.
+\begin{theorem}
+		The map $\varphi\colon A\rightarrow GL_2(F)/F^*$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
+		\[
+			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d\neq 0\text{ and } b = c = 0\right\rbrace.
+		\]
+\end{theorem}
 
+Effectively, we lose injectivity because we may have linear fractional transformations that differ by the same constant multiple in the numerator and denominator. More concretely, if $\lambda \neq 0$ with $a + b = a\lambda + b\lambda$ and $c + d = c\lambda + d\lambda$, then the maps
+\[
+	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{a\lambda z + b\lambda}{c\lambda z + d\lambda}
+\]  
+are the same transformation.
+	
+\begin{proof}
+	First, we argue that $\varphi$ is a homomorphism. Let $f,g\in A$ be two distinct maps. Notice that
+	\begin{align*}
+		\varphi(g\circ f) & = \varphi\left(g\left(\frac{a_fz + b_f}{c_fz + d}\right)\right)\\
+		& = \varphi\left(\frac{a_g\frac{a_fz + b_f}{c_fz + d_f} + b_g}{c_g\frac{a_fz + b_f}{c_fz + d_f} + d_g}\right)\\
+		& = \varphi\left(\frac{a_ga_fz + a_gb_f + b_gc_fz + b_gd_f}{c_ga_fz + c_gb_f + d_gc_fz + d_gd_f}\right) & \text{(simplifying common denominators)}\\
+		& = \varphi\left(\frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)}\right) & \text{(grouping terms for map)}\\
+		& = \lftmat{a_ga_f + b_gc_f}{a_gb_f + b_gd_f}{c_ga_f + d_gc_f}{c_gb_f + d_gd_f} F^*\\
+		& = \lftmat{a_g}{b_g}{c_g}{d_g}\lftmat{a_f}{b_f}{c_f}{d_f}F^*\\
+		& = \varphi(g)\varphi(f)F^*
+	\end{align*}
+	Hence $\varphi$ is a homomorphism. Now we argue that $\varphi$ is surjective. Suppose $M F^*\in GL_2(F)/F^*$ is some matrix with entries $a,b,c,d$. Then the linear fractional transformation given by 
+	\[
+		f(z) = \frac{az + b}{cz + d}
+	\]
+	is mapped to $M F^*$ by $\varphi$. Hence $\varphi$ is a surjective homomorphism. Now, notice that if a map $f$ is in $\ker(\varphi)$, then 
+\end{proof}		
 	
 
+\begin{corollary}
+	The groups $A/\ker(\varphi)$ and $GL_2(F)/F^*$ are isomorphic.
+\end{corollary}
+\begin{proof}
+	Apply the First Isomorphism Theorem for groups to $A$ using the fact that $\Range(\varphi) = GL_2(F)/F^*$.
+\end{proof}
 
-\end{appendices}
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Code Simulating Linear Fractional Transformations} \label{appendixD}
 
 Below is the code we used to apply point reflections and line reflections to various points in $\C$. 
 
-\noindent[here we will cahpy-past our coode]
+\lstinputlisting[language=Python]{../python/eh.py}
 
+\end{appendices}
 
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{``Bibliography" (List of Sources)}
 
