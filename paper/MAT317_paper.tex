@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 \usepackage[toc,page]{appendix} % Appendix and Table of Contents!
+\usepackage{listings}
 
 %\geometry{legalpaper, portrait, margin=1in}
 %\linespread{2}
@@ -48,12 +49,43 @@
 
 \newcommand{\specialend}{(\infty^2\ttc\infty)}
 
+% Colors for listings
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{purple}{rgb}{.5,0,0.5}
+\definecolor{dgreen}{rgb}{.1, .7, .2}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+% Listings style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
 % Theorem counters
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}{Definition}[section]
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}{Lemma}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 
 \makeatletter
@@ -306,11 +338,6 @@ It follows that the ``distinction" between line reflections and point reflection
 parabola also breaks with ordering
 
 More importantly, we now see that Guggenheimer's insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to simply as $E$) has no clear geometric motivation. In fact, the examples in $\R$ demonstrate that this restriction is in fact entirely unnecessary. Consider Figure 2. We begin with a triangle $T_1$ defined by points contained in $D$. However, $T_1'$ (the result of reflecting $T_1$ over the point $(2, 1)$) is given by points that cannot be mapped from $D$ VERIFY AND REPHRASE. 
-
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -575,51 +602,87 @@ Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field 
 \newpage 
 \section{Encoding Linear Fractional Transformations as Matrices} \label{appendixC}
 
-\noindent Define the group
+\noindent Define the set
 	\[
 		A = \left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a,b,c,d\in F\text{ with } ad - bc \neq 0\right\rbrace
 	\]
-of linear fractional transformations and let $GL_2(F)$ denote the group of invertible $2\times 2$ matrices with entries in $F$. Also define the subset
+of linear fractional transformations under function composition and let $GL_2(F)$ denote the group of invertible $2\times 2$ matrices with entries in $F$. Also define the subset
 	\[
 		F^* = \left\lbrace\lftmat{\lambda}{0}{0}{\lambda}\colon \lambda\in F\text{ with } \lambda\neq 0 \right\rbrace.
 	\]
-	We argue that $F^*$ is a normal subgroup of $GL_2(F)$.\footnote{Insert math here} With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*$ by
+	We argue that $F^*$ is a normal subgroup of $GL_2(F)$.
+\begin{lemma}
+	The subset $F^*$ defined above forms a normal subgroup of $GL_2(F)$.
+\end{lemma}
+\begin{proof}
+	Let $F^*$ be defined as above. We first argue that $F^*$ is a subgroup of $GL_2(F)$. Let $A,B\in F^*$ be arbitrary. Then
+	\[
+		AB = \lftmat{\lambda_A}{0}{0}{\lambda_A}\lftmat{\lambda_B}{0}{0}{\lambda_B} = \lftmat{\lambda_A\lambda_B}{0}{0}{\lambda_A\lambda_B}
+	\]
+	and since $\lambda_A\lambda_B\in F$ and $F$ has no zero divisors, we conclude that $AB\in F^*$. It's worth noting that the matrices in $F^*$ commute with one another since $\lambda_A\lambda_B = \lambda_B\lambda_A$. From here, notice that the identity element of $F^*$ remains the identity matrix as
+	\[
+		AI = \lftmat{\lambda_A}{0}{0}{\lambda_A}\lftmat{1}{0}{0}{1} = A
+	\]
+	and $IA = A$ by commutativity. In a similar vain, if $A\in F^*$ has entry $\lambda_A$, then $B\in F^*$ with $\lambda_B = \frac{1}{\lambda_A}$ is the inverse of $A\in F^*$, following from the assumption that $\lambda_A \neq 0$. Hence $F^*$ forms a subgroup of $GL_2(F)$. Now we show that $F^*$ is normal. Let $A\in GL_2(F)$ and choose some $B\in F^*$. We argue that $AB = CA$ for some $C\in F^*$. Observe that
+	\[
+		AB = \stanlftmat\lftmat{\lambda_B}{0}{0}{\lambda_B} = \lftmat{a\lambda_B}{b\lambda_B}{c\lambda_B}{d\lambda_B} = \lftmat{\lambda_B a}{\lambda_B b}{\lambda_B c}{\lambda_B d} = \lftmat{\lambda_B}{0}{0}{\lambda_B}\stanlftmat = BA.
+	\]
+	Therefore $F^*$ is normal as desired.
+\end{proof}
+	
+	\footnote{Insert math here} With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*$ by
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
-	We claim that $\varphi$ is a homomorphism. \footnote{Insert more math here}Now that we've established that $\varphi$ is a homomorphism, we now argue that $\varphi$ is surjective. \footnote{And a little bit more right here}  Next we identify the kernel of $\varphi$ in order to establish an isomorphism between $A/\ker(\varphi)$ and $GL_2(F)/F^*$\footnote{Technically we don't need the kernel to identify the isomorphism; it's just noteworthy and tells us when we can't recover a linear fractional transformation.}. Finally by the First Isomorphism Theorem, we conclude that $A/\ker(\varphi)$\footnote{insert whatever the kernel turns out to be here} is isomorphic to $GL_2(F)/F^*$. 
+	We claim that $\varphi$ is a surjective homomorphism.
+\begin{theorem}
+		The map $\varphi\colon A\rightarrow GL_2(F)/F^*$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
+		\[
+			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d\neq 0\text{ and } b = c = 0\right\rbrace.
+		\]
+\end{theorem}
 
+Effectively, we lose injectivity because we may have linear fractional transformations that differ by the same constant multiple in the numerator and denominator. More concretely, if $\lambda \neq 0$ with $a + b = a\lambda + b\lambda$ and $c + d = c\lambda + d\lambda$, then the maps
+\[
+	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{a\lambda z + b\lambda}{c\lambda z + d\lambda}
+\]  
+are the same transformation.
+	
+\begin{proof}
+	First, we argue that $\varphi$ is a homomorphism. Let $f,g\in A$ be two distinct maps. Notice that
+	\begin{align*}
+		\varphi(g\circ f) & = \varphi\left(g\left(\frac{a_fz + b_f}{c_fz + d}\right)\right)\\
+		& = \varphi\left(\frac{a_g\frac{a_fz + b_f}{c_fz + d_f} + b_g}{c_g\frac{a_fz + b_f}{c_fz + d_f} + d_g}\right)\\
+		& = \varphi\left(\frac{a_ga_fz + a_gb_f + b_gc_fz + b_gd_f}{c_ga_fz + c_gb_f + d_gc_fz + d_gd_f}\right) & \text{(simplifying common denominators)}\\
+		& = \varphi\left(\frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)}\right) & \text{(grouping terms for map)}\\
+		& = \lftmat{a_ga_f + b_gc_f}{a_gb_f + b_gd_f}{c_ga_f + d_gc_f}{c_gb_f + d_gd_f} F^*\\
+		& = \lftmat{a_g}{b_g}{c_g}{d_g}\lftmat{a_f}{b_f}{c_f}{d_f}F^*\\
+		& = \varphi(g)\varphi(f)F^*
+	\end{align*}
+	Hence $\varphi$ is a homomorphism. Now we argue that $\varphi$ is surjective. Suppose $M F^*\in GL_2(F)/F^*$ is some matrix with entries $a,b,c,d$. Then the linear fractional transformation given by 
+	\[
+		f(z) = \frac{az + b}{cz + d}
+	\]
+	is mapped to $M F^*$ by $\varphi$. Hence $\varphi$ is a surjective homomorphism. Now, notice that if a map $f$ is in $\ker(\varphi)$, then 
+\end{proof}		
 	
 
+\begin{corollary}
+	The groups $A/\ker(\varphi)$ and $GL_2(F)/F^*$ are isomorphic.
+\end{corollary}
+\begin{proof}
+	Apply the First Isomorphism Theorem for groups to $A$ using the fact that $\Range(\varphi) = GL_2(F)/F^*$.
+\end{proof}
 
-\end{appendices}
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Code Simulating Linear Fractional Transformations} \label{appendixD}
 
 Below is the code we used to apply point reflections and line reflections to various points in $\C$. 
 
-\noindent[here we will cahpy-past our coode]
+\lstinputlisting[language=Python]{../python/eh.py}
 
+\end{appendices}
 
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% I.A %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{``Bibliography" (List of Sources)}
 
