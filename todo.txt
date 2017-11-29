@@ -7,9 +7,7 @@ check
     
     
 add 
-	- other direction of theorem 3.1 [AB]
 	- recover A', B', C' from T1 over Y [LG]
-	- biblio from intro [AB]
     - code to appendix C [LG]
     - LFT! [LG]
     - appendix D? [LG]
