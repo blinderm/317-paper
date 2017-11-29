@@ -138,7 +138,8 @@ These all hold in hyperbolic geometry. However, the fifth postulate
 	\setcounter{enumi}{4}
 	\item Given a line and a point no on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line."\footnote{TODO: Cite \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[this].}}. The difference between the original fifth postulate and its negation is pictured below:
+is replaced with its logical negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line."\footnote{TODO: Cite \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[this].}}. As demonstrated below, line $m$ is the unique line through $P$ parallel to $l$ in Euclidean Geometry while lines $n_1$ and $n_2$ through $P$ are parallel to $l$ in hyperbolic geometry.
+
 \begin{center}
 \begin{tabular}{cc}
 	\begin{tikzpicture}
@@ -161,25 +162,28 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 \end{center}
 In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. Further, there are infinitely many distinct lines with these two properties.
 
-Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. The set of points in the model are given by $D = \{(x\ttc y): x^2 + y^2 < 1\}$\footnote{TODO: Cite \href{http://math2.uncc.edu/~frothe/3181alllhyp1_7.pdf}{[this].}}. Lines are given by arcs of generalized circles that are orthogonal to the boundary of the disk. Consider the following figure: 
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the \poincare disk model. Let $\Gamma$ be any circle in the Cartesian plane centered with center $O$. The set of points in this model is the interior of $\Gamma$ and excludes the points on $\Gamma$\footnote{TODO: Cite \href{Hartshorne p356 section 39}{[this].}}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: 
 
 \begin{center}
 	\begin{tikzpicture}
-	\draw (0,0) circle (2.2cm);
-	\draw (-1.85,1.85) circle (1.41cm);
-	\draw[fill=black] (0,0) circle (0.05) node[right] {$O$};
+	\draw (0,0) circle (2.2cm) node[below right=2.1cm] {$\Gamma$};
+	\draw (-1.85,1.85) circle (1.41cm) node[left=1.5cm] {$\Delta$};
+	\draw[fill=black] (0,0) circle (0.05) node[below right] {$O$};
 	\draw[fill=black] (-1.85,1.85) circle (0.05) node[left] {$C$};
 	\draw[fill=black] (-2.15,.48) circle (0.05) node[below right] {$A$};
 	\draw[fill=black] (-.48,2.15) circle (0.05) node[above right] {$B$};
+	\draw[fill=black] (-1.95,-1) circle (0.05) node[below left] {$E$};
+	\draw[fill=black] (1.95,1) circle (0.05) node[above right] {$F$};
 	(-2.15,.48)
+	\draw (-1.95, -1) -- (1.95, 1) node[below left] {$l$};
 	\draw (-2.3,.35)  -- (-2.26,.5);
 	\draw (-2.3,.35)  -- (-2.18,.32);
 	%add actual right angles and make the arc part bold?
 	\end{tikzpicture}
 \end{center}
 
-The minor arc $AB$ of circle $C$ pictured above is a hyperbolic line in the \poincare disk realized by circle $O$. Further, any diameter $d$ of circle $O$ is a hyperbolic line in this disk, as $d$ is a generalized circle orthogonal to the boundary of the disk. 
-	
+The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured above is a hyperbolic line in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $E$ and $F$ is also a hyperbolic line in the \poincare disk model realized by $O$.
+
 Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
 
 
@@ -196,14 +200,14 @@ The general linear fractional transformations, point reflections, and line refle
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
-under function composition. For convenience, we will encode our transformations of form (1) into matrices
+under function composition. Remarkably, Guggenheimer does not say anything about the case when $z = -\frac{d}{c}$. For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
 
 It should be explicitly noted that these matrices are used only to encode our transformations\footnote{See Appendix \ref{appendixC}.}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. 
 
-Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. 
+Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Furthermore, we will may refer to linear fractional transformations as LFTs for convenience. 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$. We also denote the matrix encoding a reflection about a point $P$ by $M_P$ and a matrix encoding a reflection over a line $l$ by $M_l$. 
 
@@ -258,7 +262,7 @@ It follows that $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 \end{proof}
 
 
-Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. We (Guggenheimer??) decide that we will encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
+Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer encodes point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
 
 Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
@@ -653,6 +657,7 @@ of linear fractional transformations under function composition and let $GL_2(F)
 \end{proof}
 	
 With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*$ by
+
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
@@ -668,7 +673,7 @@ Effectively, we lose injectivity because we may have linear fractional transform
 \[
 	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{a\lambda z + b\lambda}{c\lambda z + d\lambda}
 \]  
-are the same transformation.
+are the same.
 	
 \begin{proof}
 	First, we argue that $\varphi$ is a homomorphism. Let $f,g\in A$ be two distinct maps. Notice that
@@ -676,7 +681,7 @@ are the same transformation.
 		\varphi(g\circ f) & = \varphi\left(g\left(\frac{a_fz + b_f}{c_fz + d}\right)\right)\\
 		& = \varphi\left(\frac{a_g\frac{a_fz + b_f}{c_fz + d_f} + b_g}{c_g\frac{a_fz + b_f}{c_fz + d_f} + d_g}\right)\\
 		& = \varphi\left(\frac{a_ga_fz + a_gb_f + b_gc_fz + b_gd_f}{c_ga_fz + c_gb_f + d_gc_fz + d_gd_f}\right) & \text{(simplifying common denominators)}\\
-		& = \varphi\left(\frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)}\right) & \text{(grouping terms for map)}\\
+		& = \varphi\left(\frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)}\right) & \text{(grouping terms for $\varphi$)}\\
 		& = \lftmat{a_ga_f + b_gc_f}{a_gb_f + b_gd_f}{c_ga_f + d_gc_f}{c_gb_f + d_gd_f} F^*\\
 		& = \lftmat{a_g}{b_g}{c_g}{d_g}\lftmat{a_f}{b_f}{c_f}{d_f}F^*\\
 		& = \varphi(g)\varphi(f)F^*
@@ -697,7 +702,7 @@ are the same transformation.
 \end{proof}
 
 \newpage
-\section{Code Simulating Linear Fractional Transformations} \label{appendixD}
+\section{Code Simulating LFTs} \label{appendixD}
 
 Below is the code we used to apply point reflections and line reflections to various points in $\C$. 
 

@@ -1,15 +1,7 @@
-check   
-	- split ``what guggen did" into definitions/conventions [LG] 
-    - intro to poincare disk [LG]
-    
-add 
-    - sanitize code in appendix C [LG]
-    - LFT! [LG]
-    - Add discussion on kernel [LG]
-    - Discussion on division by zero? [LG]
+add  
+    - (defer to afterwards) sanitize code in appendix C [LG]
+    - (defer to afterwards)Add discussion on kernel [LG]
+
     
 edit 
-	- examples in r (aka 'what got fucked up') [AB]
-
-nits   
-    - fix notation on examples in R [LG]
+    - examples in r (aka 'what got fucked up') [AB]
