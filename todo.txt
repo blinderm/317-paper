@@ -1,14 +1,7 @@
-check   
-	- intro to hyperbolic geometry [AB]
-	- split ``what guggen did" into definitions/conventions [LG] 
-    - intro to poincare disk [LG]
+add  
+    - (defer to afterwards) sanitize code in appendix C [LG]
+    - (defer to afterwards)Add discussion on kernel [LG]
+
     
-    
-add 
-    - sanitize code in appendix C [LG]
-    - LFT! [LG]
-    - Add discussion on kernel [LG]
-    - Discussion on division by zero? [LG]
-    
-nits
-	- footnote 10?
+edit 
+    - examples in r (aka 'what got fucked up') [AB]
