@@ -132,7 +132,7 @@ To understand hyperbolic geometry we must first consider the five postulates tha
 These all hold in hyperbolic geometry. However, the fifth postulate
 \begin{enumerate}[leftmargin = 4em, itemsep=-1em]
 	\setcounter{enumi}{4}
-	\item Given a line and a point no on that line, at most one line parallel to the given line can be drawn through that line.
+	\item Given a line and a point on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
 is replaced with its logical negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line."\footnote{TODO: Cite \href{https://pdfs.semanticscholar.org/ed0e/d1fee9bbe60b24be373ac1207d17ecb90b4a.pdf}{[this].}}. As demonstrated below, line $m$ is the unique line through $P$ parallel to $l$ in Euclidean Geometry while lines $n_1$ and $n_2$ through $P$ are parallel to $l$ in hyperbolic geometry.
 
@@ -193,7 +193,9 @@ The general linear fractional transformations, point reflections, and line refle
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
-under function composition. Remarkably, Guggenheimer does not say anything about the case when $z = -\frac{d}{c}$. For convenience, we will encode our transformations of form (1) into matrices
+under function composition. Remarkably, Guggenheimer does not say anything about the case when $z = -\frac{d}{c}$. However, we believe this case to correspond to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections.
+
+For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
@@ -204,7 +206,7 @@ Because all linear fractional transformations we will use are of the form given 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$. We also denote the matrix encoding a reflection about a point $P$ by $M_P$ and a matrix encoding a reflection over a line $l$ by $M_l$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$\footnote{To be defined on pg.~7.} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ is some line reflection, then $l$ does not pass through the end $\specialend$).
+Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$\footnote{To be defined on pg.~7.} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
 
 
 
@@ -230,7 +232,7 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. Thus, since $a = d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.
+Looking at the upper-right and lower-left entries in these matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. Thus, since $a = -d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved.
 
 For the other direction, first suppose that $M$ is a matrix with trace 0. Then
 \[M = \lftmat{a}{b}{c}{-a}\]
@@ -252,7 +254,7 @@ It follows that $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 
 Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer encodes point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
-Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M)$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
+Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M) = 0$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
 \begin{equation} 
 	\lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
@@ -272,10 +274,11 @@ Following Guggenheimer's decision, we will uniquely associate all lines $l$ with
 \begin{theorem}The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
 	x - 2l_2y + l_1  = 0.
 \end{equation} 
+where $l_1\ttc l_2 \ttc x$, and $y$ are all elements of $F_*$.
 \end{theorem}
 
 \begin{proof}
-Notice that if a point $P$ is on a line $l$, then the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$. For the same reason, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$.}:
+Notice that if a point $P$ is on a line $l$, then BY GEOMETRIC INTUITION?? the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$.}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -290,6 +293,7 @@ Looking at the lower-left corner of our matrices, we see that we must have $\lam
 \begin{equation}
 	2y = l_1.
 \end{equation} 
+where $l_1$ and $y$ are elements of $F_*$.
 \end{theorem}
 
 \begin{proof} If $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
@@ -303,7 +307,7 @@ We again expand to see that
 By considering the lower-left entry into these matrices we see that $\lambda = -1$. We can now find the general form of such lines by seeing from the upper-left entries that $-y+l_1 = -y$. Simplified, our form is $2y = l_1$. 
 \end{proof}
 
-With this in hand, we go forth to develop and visualize examples of these transformations with coefficients in the real ordered field $\R$. Then, motivated by Guggenheimer's claim that hyperbolic geometry can be derived along these lines if we instead take the coefficients of our linear fractional transformations from the complexified field $\fc$.
+With this in hand, we now develop and visualize examples of these transformations with coefficients in the real ordered field $\R$. Then, motivated by Guggenheimer's claim that hyperbolic geometry can be derived along these lines if we instead take the coefficients of our linear fractional transformations from the complexified field $\fc$.
 
 
 
@@ -312,6 +316,7 @@ With this in hand, we go forth to develop and visualize examples of these transf
 
 \hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles\footnote{To define a triangle, we take three points in the disk and connect them with hyperbolic lines.} and two points about which each of them will be reflected\footnote{To reflect a triangle over a point $P$, we apply $f_P$ to each of its three vertices and then ``redraw" the edges. See Appendix D for the code used.}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 0.2 - 2i$. The points about which we will perform our reflections are $X = (2, -1)$ and $Y = (2, 1)$.
 
+\iffalse
 \begin{tabular}{cc}
  \includegraphics[width=65mm]{../images/t1_over_x.png} & \includegraphics[width=65mm]{../images/t1_over_y.png} \\
 Triangle $T_1$ over point $X$ & Triangle $T_1$ over point $Y$  \\
@@ -319,6 +324,7 @@ Triangle $T_1$ over point $X$ & Triangle $T_1$ over point $Y$  \\
 \includegraphics[width=65mm]{../images/t2_over_x.png} & \includegraphics[width=65mm]{../images/t2_over_y.png}\\
 Triangle $T_2$ over point $X$ & Triangle $T_2$ over point $Y$  \\
 \end{tabular}
+\fi
 
 From these diagrams we notice two oddities. For one, these point reflections look more like line reflections than they do point reflections. That is, the triangles seem to be ``reflected" and ``stretched" rather than simply ``rotated." Also, it is unclear from these diagrams why we restricted our choice of points to those from the convex domain defined by the parabola $x = y^2$. We now discuss these issues and their implications in turn.
 fx
@@ -344,17 +350,19 @@ Another crucial element of Guggenheimer's geometry is rendered nonsensical once 
 
 However, there is no clear geometric motivation behind this choice anyway. To investigate this, we reflect triangles $T_1$ and $T_2$ as defined above over a new point $Z = (-2, 1)$, which does not satisfy the condition $x > y^2$. 
 
+\iffalse
 \begin{tabular}{cc}
  \includegraphics[width=65mm]{../images/t1_over_z.png} & \includegraphics[width=65mm]{../images/t2_over_z.png} \\
 Triangle $T_1$ over point $Z$ & Triangle $T_2$ over point $Z$  \\
 & \\
 \end{tabular}
+\fi
 
 Although Guggenheimer would claim that it is invalid to reflect points over $Z$ since $Z \notin D$, these reflections function similarly to those given by points within $D$. Thus, his restriction that points defining reflections must be contained in $D$ is entirely unnecessary. 
 
 In summary, we find three problems with Guggenheimer's geometry. For one, his algebraic distinction between line reflections and point reflections appears to be largely unimportant from a geometric perspective. Similarly, his imposition of the domain $D$ has neither algebraic motivation nor geometric justification. Finally, these two crucial elements to Guggenheimer's geometry are not even applicable to fields that are unordered. It is therefore impossible to substantiate his claim that this geometry can be developed in complexified fields.
 
-
+MOVE THIS SOMEWHERE Further, in order to distinguish line reflections given by lines through the end $\specialend$ and those not through $\specialend$, Guggenheimer takes the field in question and defines $F_*$ to be the extension of $F$ by $\infty$ as usual. While we can certainly do this in $\R$, it is unclear how to do this in an arbitrary field. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
