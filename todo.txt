@@ -1,7 +1,25 @@
-add  
-    - (defer to afterwards) sanitize code in appendix C [LG]
-    - (defer to afterwards)Add discussion on kernel [LG]
+Typos on p. 2 
+Infinitely many lines? [LG]
+Particular models, finite hyperbolic models? [LG]
+P. 4, add points to picture that give an interior definition [LG]
+What is a hyperbolic motion? look at wiki for hyperbolic motion and hartshorne [LG]
+Use pageref????? How does one page ref [LG]
+State as fact that lft composition is mat mul. [AB]
+PGL(2,F) [LG]
+Polish converse of Theorem 3.1 [AB]
+Appendix C, invertibility [AB]
+What is hyperbolic action, assume too much, p.9 [LG]
+p.9, make unique and points more clear with flipping sentence around [AB]
+Move bottom of p.9 paragraph to top of section
+Infinity in an arbitrary real ordered field [LG]
+Note earlier in the paper what guggenheimer didn’t do 
+Shitty formallity fixxing with Theorem 3.2
+Make bottom of p. 10 mroe explicit [AB]
+Refine division by zero case by stating that we will ignore points that map to infinity. [AB]
+make clearer end v infinity^2, infinity [AB]
+Cite quick result for not being able to order C [LG]
+Ask Karen for style preference on p. 17
+Do a line map, not just a point map [LG]
 
-    
-edit 
-    - examples in r (aka 'what got fucked up') [AB]
+
+
