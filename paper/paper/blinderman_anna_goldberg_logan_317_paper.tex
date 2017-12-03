@@ -274,7 +274,13 @@ for some $\lambda \in F$. Expanding this further, we see that we must have
 	\[
 		\lftmat{a^2 + bc}{b(a+d)}{c(a+d)}{bc+d^2} =  \lftmat{\lambda}{0}{0}{\lambda}
 	\]
-Looking at the upper-right and lower-left entries in the two above matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$ and $a^2 = d^2$. Thus, since $a = -d$ implies that $\Tr(M) = 0$ by definition, our theorem is proved. TODO: SUPPOSED TO MAKE MORE EXPLICIT KAREN'S COMMENT \#1 ON BOTTOM OF PG.~7 IN FEEDBACK?
+Looking at the upper-right and lower-left entries in the two above matrices, we see that $M^2 = \lambda I$ can hold if $a + d = 0$ or if $b = c = 0$. We consider these two cases in turn.
+
+If $a + d = 0$, then by definition we have that $\Tr(M) = 0$.
+
+On the other hand, if $b = c = 0$, then it remains to ensure that $a^2 + bc = \lambda$ (the upper-left entries of the above matrices) and that $bc + d^2 = \lambda$ (the lower-right entries). Because we know that $b = c = 0$, we can simplify to see that $a^2 = \lambda$ and that $d^2 = \lambda$. Thus we know that $a = -d$ or that $a = d$. In the first case, $a = -d$ implies that $a + d = 0$, whence $\Tr(M) = 0$. If $a = d$, then $M$ is of the form 
+\[\lftmat{a}{0}{0}{a}\]
+for some $a \in F$. That is, $M$ is of the form $\lambda I$ if we take $\lambda = a$. 
 
 For the other direction, first suppose that $M$ is a matrix with trace 0. Then
 \[M = \lftmat{a}{b}{c}{-a}\]
