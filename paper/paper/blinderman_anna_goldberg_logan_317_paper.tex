@@ -253,6 +253,14 @@ Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional
 	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields a member of the coset TODO: DO WE NEED TO CITE SOMETHING TO BE TLAKING ABOUT COSETS? containing the identity matrix $I$. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$ .
 \end{proof}
 
+\begin{lemma}
+	If $f$ is a linear fractional transformation and $M_f$ is the matrix encoding $f$, then we must have that $\det M_f \neq 0$.
+\end{lemma}
+
+\begin{proof}
+	Suppose that for each $z \in \C$, $f$ is given by $f(z) = \frac{az+b}{cz+d}$ for some $a\ttc b\ttc c\ttc d \in F$. We have by (1) that $ad-bc \neq 0$. Thus, since $\det M_f = ad-bc$, we must have that $\det M_f \neq 0$ as well.
+\end{proof}
+
 \begin{theorem}
 If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some member of the coset containing the identity.}
 \end{theorem}
@@ -286,7 +294,7 @@ M^2 & = \lftmat{\gamma}{0}{0}{\gamma} \lftmat{\gamma}{0}{0}{\gamma} \\[2ex]
 It follows that $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 \end{proof}
 
-Now, recall by equation (1) that no linear fractional transformation can be encoded in a matrix with determinant 0 since linear fractional transformations with $ad - bc = 0$ do not have inverses. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer encodes point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
+Now, recall by Lemma 3.3 that no linear fractional transformation can be encoded in a matrix with determinant 0. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer encodes point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
 Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M) = 0$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
 \begin{equation} 
@@ -305,10 +313,10 @@ If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$
 
 Following Guggenheimer's decision, we will uniquely associate all lines $l$ with their reflections, just as we did with point reflections. We now discuss the forms that our two types of line reflections must take. 
 
-\begin{theorem}The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
+\begin{theorem}The equation of a line in $F_*^2$ not passing through the end $\specialend$ must be of the form \begin{equation}
 	x - 2l_2y + l_1  = 0.
 \end{equation} 
-where $l_1\ttc l_2 \ttc x$, and $y$ are all elements of $F_*$.
+where $l_1$ and $l_2$ are in $F_*$; $x \in F_*$; and $y \in F_*$.
 \end{theorem}
 
 \begin{proof}
@@ -323,7 +331,7 @@ Expanding, we see that we must have
 Looking at the lower-left corner of our matrices, we see that we must have $\lambda = -1$ since $y - l_2 = -1(l_2 - y)$. If we then consider the upper-left corner, we must have that $-l_2y + l_1 = -1(-l_2y + x)$. Simplifying, we see that equations of lines not passing through the end $\specialend$ must be of the form $x - 2l_2y + l_1  = 0$ as desired.
 \end{proof}
 
-\begin{theorem} The equation of a line passing through the end $\specialend$ must be of the form 
+\begin{theorem} The equation of a line in $F_*^2$ passing through the end $\specialend$ must be of the form 
 \begin{equation}
 	2y = l_1.
 \end{equation} 
@@ -378,7 +386,7 @@ Notice further that this matrix takes the form of a point reflection about $l = 
 
 Therefore the ``distinction" between line reflections and point reflections as put forth by Guggenheimer is indeed as arbitrary as it originally seemed. 
 
-A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary and best and entirely non-applicable at worst.
+A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered TODO: CITE THE THING. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary and best and entirely non-applicable at worst.
 
 Another crucial element of Guggenheimer's geometry is rendered nonsensical once we begin to work with complexified fields. In particular, his insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to as $D$) has no meaning in fields that are not ordered.
 
@@ -697,7 +705,7 @@ With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*
 \begin{theorem}
 		The map $\varphi\colon A\rightarrow GL_2(F)/F^*$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
 		\[
-			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d\neq 0\text{ and } b = c = 0\right\rbrace.
+			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d; d \neq 0\text{ and } b = c = 0\right\rbrace.
 		\]
 \end{theorem}
 
