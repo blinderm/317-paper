@@ -159,6 +159,7 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 \end{center}
 In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. Further, there are infinitely many distinct lines with these two properties.
 
+TODO: use Karen's whole $\Gamma_{F^2}$ or whatever thing
 Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$\footnote{TODO: Cite \href{Hartshorne p356 section 39}{[this].}}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: 
 
 \begin{center}
@@ -218,7 +219,9 @@ Finally, we will discuss two types of line reflections: ones passing through the
 
 Let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$.
 
-Inspired by Euclidean geometry, we begin with the notion that both types of reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
+However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $\R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
+
+Returning to our linear fractional transformations, we begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
 
 \begin{lemma} 
 	TODO: PHRASING? The composition of linear fractional transformation corresponds to the multiplication of their respective matrix encodings.
@@ -289,18 +292,18 @@ Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding
 \begin{equation} 
 	\lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
-As mentioned, we choose to associate each point reflection with a unique point in the disk. It follows that our points are given uniquely by $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
+As mentioned, we choose to associate each point reflection with a unique point in the disk. It follows that the points in our \poincare disk are given by those points $(x \ttc y) \in F^2$ inside the convex domain of the parabola $x = y^2$.
 
-To be clear, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $\R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
+It is important to remember that we are not mapping this parabola to the unit disk; we are instead using this parabola to define three disjoint subsets of $F^2$. In particular, the points in $F^2$ contained in the convex domain defined by the parabola $x=y^2$ correspond to the interior of the \poincare disk, those in $F^2$ that lie on the parabola $x=y^2$ correspond to the \poincare disk itself, and those neither inside nor on the parabola $x=y^2$ correspond to points outside the \poincare disk.
 
-Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{TODO: Define precisely (in an appendix).}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. We follow Guggenheimer in simply claiming that the end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
+Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{TODO: If we take $F = \R$, then we follow the convention set forth in CLASS NOTES. However, it is unclear how to do this in an arbitrary field. Guggenheimer does not address this complication.}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. We follow Guggenheimer in simply claiming that the end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[
 	\stanlineendmat
 \]
 
-Following Guggenheimer's decision, we will uniquely associate all lines $l$ with their reflections, just as we did with point reflections.
+Following Guggenheimer's decision, we will uniquely associate all lines $l$ with their reflections, just as we did with point reflections. We now discuss the forms that our two types of line reflections must take. 
 
 \begin{theorem}The equation of a line not passing through the end $\specialend$ must be of the form \begin{equation}
 	x - 2l_2y + l_1  = 0.
@@ -392,8 +395,6 @@ Triangle $T_1$ over point $Z$ & Triangle $T_2$ over point $Z$  \\
 Although Guggenheimer would claim that it is invalid to reflect points over $Z$ since $Z \notin D$, these reflections function similarly to those given by points within $D$. Thus, his restriction that points defining reflections must be contained in $D$ is entirely unnecessary. 
 
 In summary, we find three problems with Guggenheimer's geometry. For one, his algebraic distinction between line reflections and point reflections appears to be largely unimportant from a geometric perspective. Similarly, his imposition of the domain $D$ has neither algebraic motivation nor geometric justification. Finally, these two crucial elements to Guggenheimer's geometry are not even applicable to fields that are unordered. It is therefore impossible to substantiate his claim that this geometry can be developed in complexified fields.
-
-MOVE THIS SOMEWHERE Further, in order to distinguish line reflections given by lines through the end $\specialend$ and those not through $\specialend$, Guggenheimer takes the field in question and defines $F_*$ to be the extension of $F$ by $\infty$ as usual. While we can certainly do this in $\R$, it is unclear how to do this in an arbitrary field. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
