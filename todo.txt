@@ -13,3 +13,4 @@ make clearer end v infinity^2, infinity [AB]
 Cite quick result for not being able to order C [LG]
 Ask Karen for style preference on p. 17
 Do a line map, not just a point map [LG]
+annotate figures within Geogebra or attach text to the graphics somehow

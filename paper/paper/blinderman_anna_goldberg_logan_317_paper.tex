@@ -365,14 +365,21 @@ With this in hand, we now develop and visualize examples of these transformation
 \hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles\footnote{To define a triangle, we take three points in the disk and connect them with hyperbolic lines.} and two points about which each of them will be reflected\footnote{To reflect a triangle over a point $P$, we apply $f_P$ to each of its three vertices and then ``redraw" the edges. See Appendix D for the code used.}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 0.2 - 2i$. The points about which we will perform our reflections are $X = (2, -1)$ and $Y = (2, 1)$.
 
 \iffalse
-\begin{tabular}{cc}
- \includegraphics[width=65mm]{../images/t1_over_x.png} & \includegraphics[width=65mm]{../images/t1_over_y.png} \\
-Triangle $T_1$ over point $X$ & Triangle $T_1$ over point $Y$  \\
-& \\
-\includegraphics[width=65mm]{../images/t2_over_x.png} & \includegraphics[width=65mm]{../images/t2_over_y.png}\\
-Triangle $T_2$ over point $X$ & Triangle $T_2$ over point $Y$  \\
-\end{tabular}
+\begin{center}
+\includegraphics[width=165mm]{../images/t1_over_x.png} \\
+Triangle $T_1$ reflected over point $X$ 
+\[\]
+\includegraphics[width=165mm]{../images/t1_over_y.png} \\
+Triangle $T_1$ reflected over point $Y$  
+\[\]
+\includegraphics[width=165mm]{../images/t2_over_x.png} \\
+Triangle $T_2$ reflected over point $X$
+\[\]
+\includegraphics[width=165mm]{../images/t2_over_y.png} \\
+Triangle $T_2$ reflected over point $Y$ 
+\end{center}
 \fi
+
 
 From these diagrams we notice two oddities. For one, these point reflections look more like line reflections than they do point reflections. That is, the triangles seem to be ``reflected" and ``stretched" rather than simply ``rotated." Also, it is unclear from these diagrams why we restricted our choice of points to those from the convex domain defined by the parabola $x = y^2$. We now discuss these issues and their implications in turn.
 fx
@@ -399,11 +406,13 @@ Another crucial element of Guggenheimer's geometry is rendered nonsensical once 
 However, there is no clear geometric motivation behind this choice anyway. To investigate this, we reflect triangles $T_1$ and $T_2$ as defined above over a new point $Z = (-2, 1)$, which does not satisfy the condition $x > y^2$. 
 
 \iffalse
-\begin{tabular}{cc}
- \includegraphics[width=65mm]{../images/t1_over_z.png} & \includegraphics[width=65mm]{../images/t2_over_z.png} \\
-Triangle $T_1$ over point $Z$ & Triangle $T_2$ over point $Z$  \\
-& \\
-\end{tabular}
+\begin{center}
+\includegraphics[width=165mm]{../images/t1_over_z.png} \\
+Triangle $T_1$ reflected over point $Z$
+\[\]
+\includegraphics[width=165mm]{../images/t2_over_z.png} \\
+Triangle $T_2$ reflected over point $Z$  
+\end{center}
 \fi
 
 Although Guggenheimer would claim that it is invalid to reflect points over $Z$ since $Z \notin D$, these reflections function similarly to those given by points within $D$. Thus, his restriction that points defining reflections must be contained in $D$ is entirely unnecessary. 
