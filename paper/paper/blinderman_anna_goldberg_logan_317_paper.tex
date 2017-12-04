@@ -217,7 +217,9 @@ It should be explicitly noted that these matrices are used only to encode our tr
 
 Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Furthermore, we will may refer to linear fractional transformations as LFTs for convenience. 
 
-Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$. We also denote the matrix encoding a reflection about a point $P$ by $M_P$ and a matrix encoding a reflection over a line $l$ by $M_l$. Finally, if $f$ is any linear fractional transformation, then we will write $M_f$ to denote the matrix that encodes $f$. TODO: I THINK WE SHOULD MODIFY OUR NOTATION SO THAT SUBSCRIPTS ARE ALWAYS FUNCTIONS
+Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$.
+
+To reinforce the fact that matrices encode functions, if $f$ is any linear fractional transformation then we will write $M_f$ to denote the matrix that encodes $f$. Further, we denote the matrix encoding a reflection about a point $P$ by $M_{f_P}$ and a matrix encoding a reflection over a line $l$ by $M_{f_l}$. 
 
 Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$\footnote{To be defined on pg.~7.} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
 
@@ -337,7 +339,7 @@ where $l_1$ and $l_2$ are in $F_*$; $x \in F_*$; and $y \in F_*$.
 \end{theorem}
 
 \begin{proof}
-Notice that if a point $P$ is on a line $l$, then BY GEOMETRIC INTUITION?? the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_l M_P M_l\inv = M_P$, whence $M_l M_P = M_P M_l$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_l M_P$ is a representative of $M_P M_l$, hence the $\lambda$.}:
+Notice that if a point $P$ is on a line $l$, then BY GEOMETRIC INTUITION?? the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_{f_l} M_{f_P} M_{f_l}\inv = M_{f_P}$, whence $M_{f_l} M_{f_P} = M_{f_P} M_{f_l}$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_{f_l} M_{f_P}$ is a representative of $M_{f_P} M_{f_l}$, hence the $\lambda$.}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -355,7 +357,7 @@ Looking at the lower-left corner of our matrices, we see that we must have $\lam
 where $l_1$ and $y$ are elements of $F_*$.
 \end{theorem}
 
-\begin{proof} If $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_l M_P = M_P M_l$. Again realizing this in terms of matrices, we have that 
+\begin{proof} If $l$ is a line passing through the end $\specialend$ and $P$ is some point on $l$, we again have that $M_{f_l} M_{f_P} = M_{f_P} M_{f_l}$. Again realizing this in terms of matrices, we have that 
 \begin{equation} 
 	\stanlineendmat\stanpointmat \spceq \lambda \stanpointmat\stanlineendmat
 \end{equation}	
@@ -404,7 +406,7 @@ By Guggenheimer's definitions, all line reflections can be encoded as point refl
 
 \begin{proof}
 Suppose that we have a line reflection $f_l$ given by $l = (l_1, l_2)$. We then encode the corresponding reflection in the matrix 
-\[ M_l := \stanlinenoendmat. \]
+\[ M_{f_l} := \stanlinenoendmat. \]
 To show that $f_l$ can be encoded as a point reflection, notice that 
 \[ -1 \cdot \stanlinenoendmat = \lftmat{l_2}{l_1}{-1}{-l_2}.\]
 Notice further that this matrix takes the form of a point reflection about $l = (l_1, l_2)$ if we set $\lambda = -1$. It follows that all line reflections can indeed be encoded as point reflections.
