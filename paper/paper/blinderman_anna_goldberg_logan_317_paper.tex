@@ -15,11 +15,9 @@
 \usepackage{listings}
 \allowdisplaybreaks %% TODO: IS IT THAT BAD TO SPLIT EQUATION STRINGS BETWEEN PAGES?
 
-
 %\usepackage{showkeys} %so you can see your labels; take out when working with final draft
 \usepackage[v2]{xy}
 \usepackage{amscd}  
-
 
 %\linespread{2}
 \setlength{\parindent}{3em}   
@@ -129,7 +127,7 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \hspace{10mm} For centuries, mathematicians tried tirelessly to prove that Euclid's fifth postulate -- an equivalent formulation of the parallel postulate -- followed from the first four. It was not until the 19$^{\text{th}}$ century that Carl Friedrich Gauss and J\'{a}nos Bolyai showed that the the fifth postulate was independent from the others. This shocking result opened doors to the exploration of non-Euclidean geometric models, particularly those of hyperbolic geometry \cite{hartshorne}.
 
-To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows \cite{hartshorne} \todo{[AB][LG] is this the right place for the citation?}:
+To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows \footnote{[\cite{hartshorne}, p.~481]}:
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -139,9 +137,11 @@ To understand hyperbolic geometry we must first consider the five postulates tha
 These all hold in hyperbolic geometry. However, the fifth postulate
 \begin{enumerate}[leftmargin = 4em, itemsep=-1em]
 	\setcounter{enumi}{4}
-	\item Given a line and a point on that line, at most one line parallel to the given line can be drawn through that line.
+	\item Given a line and a point not on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-is replaced with its logical negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line." \cite{euclids_fifth} \todo{[LG] deal with the whole infinitely many thing}. As demonstrated below, line $m$ is the unique line through $P$ parallel to $l$ in Euclidean geometry while lines $n_1$ and $n_2$ through $P$ are parallel to $l$ in hyperbolic geometry.
+is replaced with a stronger negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. We will mainly be working with infinite fields, so it is more helpful to us to appeal to this stronger negation than its weaker negation ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' 
+
+As demonstrated below, line $m$ is the unique line through $P$ parallel to $l$ in Euclidean geometry while lines $n_1$ and $n_2$ through $P$ are parallel to $l$ in hyperbolic geometry.
 
 \begin{center}
 \begin{tabular}{cc}
@@ -163,9 +163,8 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 & \\
 \end{tabular}
 \end{center}
-In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. Further, there are infinitely many distinct lines with these two properties. \todo{[LG] deal with the whole infinitely many thing}
+In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. 
 
-\todo{[LG] use Karen's whole $\Gamma_{F^2}$ notation thing?}
 Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: 
 
 \begin{center}
@@ -176,28 +175,30 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\draw[fill=black] (-1.85,1.85) circle (0.05) node[left] {$C$};
 	\draw[fill=black] (-2.15,.48) circle (0.05) node[below right] {$A$};
 	\draw[fill=black] (-.48,2.15) circle (0.05) node[above right] {$B$};
-	\draw[fill=black] (-1.95,-1) circle (0.05) node[below left] {$E$};
-	\draw[fill=black] (1.95,1) circle (0.05) node[above right] {$F$};
+	\draw[fill=black] (-1.95,-1) circle (0.05) node[below left] {$L$};
+	\draw[fill=black] (1.95,1) circle (0.05) node[above right] {$K$};
+	\draw[fill=black] (-0.975,-.5) circle (0.05) node[below right] {$E$};
+	\draw[fill=black] (0.975,.5) circle (0.05) node[above left] {$F$};
+	\draw[fill=black] (-1,.72) circle (0.05) node[below right] {$G$};
+	\draw[fill=black] (-.5,1.42) circle (0.05) node[above right] {$H$};
 	(-2.15,.48)
-	\draw (-1.95, -1) -- (1.95, 1) node[below left] {$l$};
+	\draw (-1.95, -1) -- (1.95, 1) node[below left=.2cm] {$l$};
 	\draw (-2.3,.35)  -- (-2.26,.5);
 	\draw (-2.3,.35)  -- (-2.18,.32);
 	% TODO: add actual right angles and make the arc part bold?
 	\end{tikzpicture}
 \end{center}
 
-The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured above is a hyperbolic line in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $E$ and $F$ is also a hyperbolic line in the \poincare disk model realized by $O$.
+The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$ also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$.
 
 Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior \todo{[LG] put new points in the figure above} \todo{[LG] discuss lines vs. line segments vs. ends} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior \todo{[LG] discuss lines vs. line segments vs. ends} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
 
-The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. The group \todo{[AB][LG] cite class notes about this being a group} of hyperbolic \todo{[LG] why ``hyperbolic?"} transformations over $F$ are those linear fractional transformations given by
+The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. We define a hyperbolic motion to be HYPERBOLIC MOTION The group of hyperbolic transformations over $F$ is the group of linear fractional transformations\footnote{[\cite{shuman_lfts}]} given by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
@@ -239,6 +240,8 @@ Returning to our linear fractional transformations, we begin with a notion inspi
 \end{lemma}
 
 \begin{proof} 
+	MIGHT BE EASIER TO JUST REFER TO LEMMAS IN APPENDIX C (STILL NEED TO ASK HER ABOUT GROUP OF LFTS)
+	
 	Suppose that we have two linear fractional transformations $f_1$ and $f_2$ given by $f(z) = \frac{a_1z+b_1}{c_1z+d_2}$ and $f_2(z) = \frac{a_2z+b_2}{c_2z+d_2}$ for each $z \in \C$. We then have \todo{[LG] BY CONVENTION??} that their respective matrix encodings are 
 \[ M_{f_1} = \lftmat{a_1}{b_1}{c_1}{d_1} \text{ and } M_{f_2} =  \lftmat{a_2}{b_2}{c_2}{d_2}. \] 
 Now, let $z \in \C$. We have that 
@@ -253,7 +256,7 @@ On the other hand, we have that
 M_{f_1}M_{f_2} & = \lftmat{a_1}{b_1}{c_1}{d_1}\lftmat{a_2}{b_2}{c_2}{d_2}  \\[1em]
 & = \lftmat{a_1a_2+b_1c_2}{a_1b_2+b_1d_2}{c_1a_2+d_1c_2}{c_1b_2+d_1d_2}
 \end{align*}
-Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional transformation given by $f_1 \circ f_2$, the composition of $f_1$ upon $f_2$ \todo{[LG] it is $f_1$ upon $f_2$, right..?}. 
+Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional transformation given by $f_1 \circ f_2$, the composition of $f_1$ upon $f_2$ \todo{[LG] it is $f_1$ upon $f_2$, right..? $f_1$ acts on $f_2$ so yeah}. 
 \end{proof} 
 
 \begin{lemma}
@@ -265,7 +268,7 @@ Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional
 \end{proof}
 
 \begin{lemma}
-	If $f$ is a linear fractional transformation and $M_f$ is the matrix encoding $f$, then we must have that $\det M_f \neq 0$.
+	If $f$ is a linear fractional transformation and $M_f$ is the matrix encoding $f$, then we must have that $\det(M_f) \neq 0$.
 \end{lemma}
 
 \begin{proof}
@@ -379,7 +382,7 @@ With this in hand, we now develop and visualize examples of these transformation
 
 More concretely, we take our points $X$ and $Y$ and encode $f_X$ and $f_Y$ (the reflection functions over $X$ and $Y$ respectively) in matrices $M_{f_X}$ and $M_{f_Y}$. In particular, by (1) we have that 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1} \text{ and } M_{f_Y} = \pointmat{2}{1}.\]
-Notice that for simplicity, in both of these cases we chose $\lambda = 1$ \todo{[LG] do we have to address this any further?} Now, we know by (2) that for all $z \in \C$, $f_X$ and $f_Y$ are given by $f_X(z) = \frac{-x+2}{-x+1}$ and $f_Y(z) = \frac{x+2}{-x-1}$ respectively. Thus, to apply these transformations to a point \todo{[LG] WAIT, SO DO WE PUT THE POINT IN THE DISK FIRST AND THEN TRANSFORM OR TRANSFORM AND THEN PUT IT IN THE DISK? CAN YOU FINISH THIS PART? WE'RE REALLY JUST MISSING A SENTENCE OR TWO}
+Notice that for simplicity, in both of these cases we chose $\lambda = 1$ \todo{[LG] do we have to address this any further? I don't think so but it's worth asking.} Now, we know by (2) that for all $z \in \C$, $f_X$ and $f_Y$ are given by $f_X(z) = \frac{-x+2}{-x+1}$ and $f_Y(z) = \frac{x+2}{-x-1}$ respectively. Thus, to apply these transformations to a point \todo{[LG] WAIT, SO DO WE PUT THE POINT IN THE DISK FIRST AND THEN TRANSFORM OR TRANSFORM AND THEN PUT IT IN THE DISK? CAN YOU FINISH THIS PART? WE'RE REALLY JUST MISSING A SENTENCE OR TWO}
 
 As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- those mapped from points lying on the parabola $x=y^2$ -- are called the ``ends" of our geometry.
 
@@ -424,7 +427,7 @@ Notice further that this matrix takes the form of a point reflection about $l = 
 
 Therefore the ``distinction" between line reflections and point reflections as put forth by Guggenheimer is indeed as arbitrary as it originally seemed. 
 
-A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered \todo{[LG] cite the thing}. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary and best and entirely non-applicable at worst.
+A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered\footnote{[\cite{marsden_complex_book}, p.~6]}. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary and best and entirely non-applicable at worst.
 
 Another crucial element of Guggenheimer's geometry is rendered nonsensical once we begin to work with complexified fields. In particular, his insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to as $D$) has no meaning in fields that are not ordered.
 
@@ -506,7 +509,7 @@ This point $A'$, the intersection between the line segment $\overline{OA}$ and $
 \newpage 
 \section{The Closure of Fields under Complexification} \label{appendixB}
 
-	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$.
+	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$. Following \cite{complexification}'s derivation, we will prove here that $F^\C$ is a field.
 
 \begin{theorem} 
 $\fc$ (as described above) is a field.
@@ -710,7 +713,7 @@ Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field 
 
 \noindent Define the set
 	\[
-		A = \left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a,b,c,d\in F\text{ with } ad - bc \neq 0\right\rbrace
+		A = \left\lbrace z\mapsto \frac{az + b}{cz + d}\colon z\in\C\ttc a,b,c,d\in F\text{ with } ad - bc \neq 0\right\rbrace
 	\]
 of linear fractional transformations under function composition and let $GL_2(F)$ denote the group of invertible $2\times 2$ matrices with entries in $F$. Also define the subset
 	\[
@@ -735,25 +738,142 @@ of linear fractional transformations under function composition and let $GL_2(F)
 	\]
 	Therefore $F^*$ is normal as desired.
 \end{proof}
+
+The quotient group formed here is known as $PGL(2,F)$, the projective general linear group of $2\times 2$ matrices with coefficients in $F$.
+
+	To begin discussing a group homomorphisms, we need to know that $A$ under function composition forms a group. 
 	
-With this in mind, we now define the map $\varphi\colon A\rightarrow GL_2(F)/F^*$ by
+\begin{theorem}
+	The set of linear fractional transformations given by $A$ forms a group under function composition.
+\end{theorem}
+	
+\begin{proof}
+	We already know function composition is associative. Therefore, we need only show that $A$ is closed under function composition, the existence of an identity, and closure under inverses.
+	First we prove closure. Let $f(z) = \frac{a_fz + b_f}{c_fz + d_f}$ and $g(z) = \frac{a_g z + b_g}{c_g z + d_g}$ be two maps in $A$. For $z\in\C$, compose $g$ with $f$ to find that
+	\begin{align*}
+		(g\circ f)(z) & = g\left(\frac{a_fz + b_f}{c_fz + d}\right)\\
+		& = \frac{a_g\frac{a_fz + b_f}{c_fz + d_f} + b_g}{c_g\frac{a_fz + b_f}{c_fz + d_f} + d_g}\\
+		& = \frac{\frac{a_g(a_fz+b_f)+b_g(c_fz+d_f)}{c_fz+d_f}}{\frac{c_g(a_fz+b_f)+d_g(c_fz+d_f)}{c_fz+d_f}}\\
+		& = \frac{a_ga_fz + a_gb_f + b_gc_fz + b_gd_f}{c_ga_fz + c_gb_f + d_gc_fz + d_gd_f} & \text{(simplifying common denominators)}\\
+		& = \frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)} & \text{(grouping terms)}\\
+	\end{align*}
+	Since $F$ is closed under addition and multiplication, we conclude that $g\circ f$ is a lft. Moreover, notice that
+	\begin{align*}
+	(a_ga_f + b_gc_f)(c_gb_f + d_gd_f) & - (a_gb_f + b_gd_f)(c_ga_f + d_gc_f) =\\	 a_ga_fc_gb_f + a_ga_fd_gd_f + b_gc_fc_gb_f + b_gc_fd_gd_f & - a_gb_fc_ga_f - a_gb_fd_gc_f -b_gd_fc_ga_f - b_gd_fd_gc_f =
+	\end{align*}
+	LEAVE THIS FOR TOMORROW AFTER WE KNOW WHETHER TO PROVE THIS THEOREM
+\end{proof}	
+	
+With this in mind, we now define the map $\varphi\colon A\rightarrow PGL(2,F)$ by
 
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
 	We claim that $\varphi$ is a surjective homomorphism.
 \begin{theorem}
-		The map $\varphi\colon A\rightarrow GL_2(F)/F^*$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
+		The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
 		\[
 			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d; d \neq 0\text{ and } b = c = 0\right\rbrace.
 		\]
 \end{theorem}
 
-Effectively, we lose injectivity because we may have linear fractional transformations that differ by the same constant multiple in the numerator and denominator. More concretely, if $\lambda \neq 0$ with $a + b = a\lambda + b\lambda$ and $c + d = c\lambda + d\lambda$, then the maps
+Before we proceed to prove that this map is a surjective homomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $a + b = a\lambda + b\lambda$ and $c + d = c\lambda + d\lambda$, then the maps
 \[
 	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{a\lambda z + b\lambda}{c\lambda z + d\lambda}
 \]  
-are the same.
+are the same. Therefore under $\varphi$, they should represent the same element. Of course, this criterion for equal transformations might not be exhaustive. Therefore we have the following lemma.
+
+\begin{lemma}
+	The map $\varphi$ is well-defined.
+\end{lemma}
+
+\begin{proof}
+	First we argue that two maps $f_1(z) = \frac{a_1z + b_1}{c_1z + d_1}$ and $f_2(z) = \frac{a_2 z + b_2}{c_2 z + d_2}$ in $A$ are equal if and only if $s_1 = \lambda s_2$ for some $\lambda\neq 0$ and for all $s\in\{a,b,c,d\}$. Stated another way, all the coefficients of $f_1$ differ by the same nonzero multiple from $f_2$.
+	
+	Supposing that $f_1 = f_2$, we then have that
+	\[
+		\frac{a_1z + b_1}{c_1z + d_1} = \frac{a_2 z + b_2}{c_2 z + d_2}.
+	\]
+	Moreover we have
+	\[
+		(a_1z + b_1)(c_2z + d_2) = (a_2z + b_2)(c_1z + d_1)
+	\]
+	or more verbosely 
+	\[
+		 a_1c_2z^2 + (a_1d_2 + b_1c_2)z + b_1d_2 = a_2c_1z^2 + (a_2d_1 + b_2c_1)z + b_2d_1.
+	\]
+	Subtracting the right hand side from the left hand side, we then have that
+	\begin{equation}
+		(a_1c_2 - a_2c_1)z^2 + (a_1d_2 + b_1c_2 - a_2d_1 - b_2c_1)z + (b_1d_2 - b_2d_1) = 0.	
+	\end{equation}
+	Now if equation (8) is to be equal to zero, linear independence tells us that each coefficient must separately be zero. Therefore we arrive at the system of equations
+	\begin{align*}
+		a_1c_2 - a_2c_1 & = 0\\
+		a_1d_2 + b_1c_2 - a_2d_1 - b_2c_1 & = 0\\
+		b_1d_2 - b_2d_1 & = 0
+	\end{align*}
+	At a first glance, the first equation and third equation tell us that 
+	\begin{align}
+		\frac{a_1}{a_2} & = \frac{c_1}{c_2}\\
+		\frac{b_1}{b_2} & = \frac{d_1}{d_2}.
+	\end{align} 
+	However, we need to be careful as some of these cofficients might be zero. If any of these of these cofficients are zero, we have the following argument. 
+	
+	Without loss of generality, suppose only $a_1 = 0$. Then by the first equation, $a_2c_1 = 0$. Assuming $a_2 = 0$, we now realize the second equation as 
+	\[
+		b_1c_2 = b_2c_1 \text{ or that } \frac{b_1}{b_2} = \frac{c_1}{c_2}.
+	\]
+	Since $\frac{b_1}{b_2} = \frac{d_1}{d_2}$ from the third equation, we've found that all the ratios are equal and so all the coefficients of $f_1$ differ by the same constant multiple from the corresponding coefficients of $f_2$. Now assuming $c_1 = 0$, the second equation becomes
+	\[
+		b_1c_2 = a_2d_1 \text{ or that } \frac{a_2}{c_2} = \frac{b_1}{d_1}.
+	\]
+	Reflecting on (10), we conclude that 
+	\[
+		\frac{b_1}{d_1} = \frac{a_2}{c_2} = \frac{b_2}{d_2}.
+	\]
+	However this last result mandates $a_2d_2 - b_2c_2 = 0$, which contradictions our assumptions that $f_2\in A$.
+	
+	Now assume all the cofficients are nonzero. Ideally we would like for 
+	\[
+		\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2} = \frac{d_1}{d_2}.
+	\] 
+	From (9) and (10), we need only show that, for example, $\frac{c_1}{c_2} = \frac{b_1}{b_2}$.	Exploring the middle equation, we find that
+	\[
+		\frac{c_1}{c_2}a_2d_2 + \frac{d_1}{d_2}b_2c_2 - \frac{b_1}{b_2}a_2d_2 - \frac{a_1}{a_2}b_2c_2 = 0.
+	\]
+	Exploting (9) and (10), we conclude that
+	\[
+		\frac{c_1}{c_2}(a_2d_2 - b_2c_2) - \frac{b_1}{b_2}(a_2d_2 - b_2c_2) = 0
+	\]
+	Since $f_2\in A$, we then conclude that $\frac{b_1}{b_2} = \frac{c_1}{c_2}$ as desired.
+	
+	Now suppose that $s_1 = \lambda s_2$ for some $\lambda\neq 0$ and for all $s\in\{a,b,c,d\}$. Then following these algebraic manipulations, we conclude that
+	\begin{align*}
+		\frac{a_1z + b_1}{c_1z + d_1} & = \frac{\lambda a_2z + \lambda b_2}{\lambda c_2z + \lambda d}\\
+		& = \frac{\lambda(a_2z + b_2)}{\lambda(c_2z + d_2)}\\
+		& = \frac{a_2z + b_2}{c_2z + d_2} & (\lambda \neq 0).
+	\end{align*}
+	Hence $f_1 = f_2$ if and only if all the coefficients of $f_1$ differ by the same nonzero multiple from $f_2$.
+	
+	Now that we've characterized the equal functions of $A$, we go forth to prove that $\varphi$ is well-defined. Suppose $f_1,f_2\in A$ are equal. Then
+	\[
+		\varphi(f_1) = \lftmat{a_1}{b_1}{c_1}{d_1} F^*
+	\]
+	and 
+	\[
+		\varphi(f_2) = \lftmat{a_2}{b_2}{c_2}{d_2} F^*
+	\]
+	Since $f_1 = f_2$, choose $\lambda\neq 0$ for which $s_1 = \lambda s_2$ for all $s\in\{a,b,c,d\}$. In particular, we note that
+	\begin{align*}
+		\varphi(f_1) & = \lftmat{a_1}{b_1}{c_1}{d_1} F^*\\
+		& = \lftmat{\lambda a_2}{\lambda b_2}{\lambda c_2}{\lambda d_2} F^*\\
+		& = \lftmat{\lambda}{0}{0}{\lambda}\lftmat{a_2}{b_2}{c_2}{d_2} F^*\\
+		& = \lftmat{a_2}{b_2}{c_2}{d_2} F^*.
+	\end{align*}
+	Therefore $\varphi$ is well-defined.
+\end{proof}
+	
+Now we proceed with the proof of Theorem C.3.	
 	
 \begin{proof}
 	First, we argue that $\varphi$ is a homomorphism. Let $f,g\in A$ be two distinct maps. Notice that
@@ -775,7 +895,7 @@ are the same.
 	
 
 \begin{corollary}
-	The groups $A/\ker(\varphi)$ and $GL_2(F)/F^*$ are isomorphic.
+	The groups $A/\ker(\varphi)$ and $PGL(2,F)$ are isomorphic.
 \end{corollary}
 \begin{proof}
 	Apply the First Isomorphism Theorem for groups to $A$ using the fact that $\Range(\varphi) = GL_2(F)/F^*$.
