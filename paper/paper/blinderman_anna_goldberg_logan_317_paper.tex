@@ -115,10 +115,8 @@
 \maketitle
 
 \begin{abstract}
-In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and line reflections. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of such linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
+In his paper \textit{The Hilbert Model of Hyperbolic Geometry}\footnote{[\cite{guggen_paper}]}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and line reflections. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of such linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
 \end{abstract}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -168,6 +166,7 @@ In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. 
 
 Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: \todo{[LG] karen's $\Gamma_{F^2}$ thing?}
 
+\begin{figure}[h]
 \begin{center}
 	\begin{tikzpicture}
 	\draw (0,0) circle (2.2cm) node[below right=2.1cm] {$\Gamma$};
@@ -189,6 +188,9 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	% TODO: add actual right angles and make the arc part bold?
 	\end{tikzpicture}
 \end{center}
+	\label{fig:construction_hyperbolic_lines}
+	\caption{Construction of hyperbolic lines.}
+\end{figure}
 
 The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ \todo{[LG] say why} pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$  \todo{[LG] say why}  also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
 
@@ -198,13 +200,18 @@ Extending our machinery for discussing lines, we define a line segment $\overlin
 
 Using the basic geometric fact that lines can be partitioned by a point\footnote{[\cite{hartshorne}, p.~76, Theorem 7.2]} into two sides, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$. 
 
-\iffalse
+%\iffalse
 \begin{center}
 \includegraphics[width=160mm]{../images/ends_example_1.png} \\
+	\todo{this is off center!}
 \end{center} 
-\fi
+%\fi
+
 
 Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{i'm really confused. probably need the picture.}
+
+	From Figure \ref{fig:construction_hyperbolic_lines}, we note that every hyperbolic line has exactly two distinct ends, and every two distinct ends are the ends of a unique hyperbolic line.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
