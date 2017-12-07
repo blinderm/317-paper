@@ -13,7 +13,7 @@
 \usepackage{tkz-euclide}
 \usepackage[toc,page]{appendix} 
 \usepackage{listings}
-\allowdisplaybreaks %% TODO: IS IT THAT BAD TO SPLIT EQUATION STRINGS BETWEEN PAGES?
+\allowdisplaybreaks %% TODO: decide whether ro not to split pages here
 
 \usepackage[v2]{xy}
 \usepackage{amscd}  
@@ -135,12 +135,7 @@ These all hold in hyperbolic geometry. However, the fifth postulate
 	\setcounter{enumi}{4}
 	\item Given a line and a point not on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-\color{blue}
-is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. In many contexts, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. However, since we primarily work with infinite fields, we find it more helpful to appeal to the former than the latter. [do we? i mean, do we even use this? also what does this have to do with infinite fields?]
-\color{black}
-is replaced with a stronger negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. We will mainly be working with infinite fields, so it is more helpful to us to appeal to this stronger negation than its weaker negation ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' 
-
-As demonstrated below, line $m$ is the unique line through $P$ parallel to $l$ in Euclidean geometry while lines $n_1$ and $n_2$ through $P$ are parallel to $l$ in hyperbolic geometry.
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. In many contexts, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. However, since we primarily work with infinite fields, we find it more helpful to appeal to the former than the latter. \todo{[AB] fix}
 
 \begin{center}
 \begin{tabular}{cc}
@@ -164,7 +159,7 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 \end{center}
 In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. 
 
-Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: \todo{[LG] karen's $\Gamma_{F^2}$ thing?}
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure:
 
 \begin{figure}[h]
 \begin{center}
@@ -192,11 +187,11 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\caption{Construction of hyperbolic lines.}
 \end{figure}
 
-The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ \todo{[LG] say why} pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$  \todo{[LG] say why}  also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
+The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ \todo{[AB] say why later} pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$  \todo{[AB] say why}  also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
 
-Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
+Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
 
-Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie ``between," consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. Note that we may still refer to a line defined by two points $A$ and $B$ as $AB$ while the line segment is referred to as $\overline{AB}$. \todo{why isn't this before the picture?}\todo{also just not sure what this paragraph is saying} 
+Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie ``between," consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. Note that we may still refer to a line defined by two points $A$ and $B$ as $AB$ while the line segment is referred to as $\overline{AB}$. \todo{[AB] get rid of diamter partition whatever thing} 
 
 Using the basic geometric fact that lines can be partitioned by a point\footnote{[\cite{hartshorne}, p.~76, Theorem 7.2]} into two sides, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$. 
 
@@ -208,20 +203,20 @@ Using the basic geometric fact that lines can be partitioned by a point\footnote
 %\fi
 
 
-Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{generally just extremely confused about this paragraph and its wording.} \todo{also rehash stuff about the special end}
+Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$ \todo{why is this parallel}. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray \todo{more importantly, of the geomtery} to be the equivalence class of all rays that meet at seem to `limit' \todo{rephrase} to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes \todo{why}. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{this will be important speial end} \todo{also rehash stuff about the special end}
 
 	Further, as demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
 
-The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer define's a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{\cite{shuman_lfts} \todo{why are some citations footnotes?}} given by
+The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer defines a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{\cite{shuman_lfts} \todo{why are some citations footnotes?}} given by \todo{[AB] fix}
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
-under function composition. Remarkably, Guggenheimer does not say anything about the case when $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later in \todo{ont sure where yet} when we discuss such line reflections further. 
+under function composition. Remarkably, Guggenheimer does not say anything about the case when $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later in \todo{[AB] ont sure where yet} when we discuss such line reflections further. 
 
 For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
@@ -245,7 +240,7 @@ Finally, we will discuss two types of line reflections: ones passing through the
 
 However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to those outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process, while valid in certain fields like $\R$, is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
-\todo{shouldn't this be in the intro?}
+\todo{[AB] shouldn't this be in the intro?}
 Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to geometric intuitions in $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflections over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
 
 \begin{center}
@@ -291,14 +286,28 @@ Line reflection about line $l$. & Point reflection about point $O'$. \\
 
 Notice that the point $L$, which lies line $l$, stays fixed under the line reflection over $l$. Also, we can see intuitively that the act of applying a line reflection or a point reflection twice to the plane is equivalent to simply applying the identity transformation to the plane..
 
-Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two\todo{ (as demonstrated above by the Euclidean reflections) awkward. will rephraase when decide where it goes} . That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
+Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two\todo{ ([AB] as demonstrated above by the Euclidean reflections) awkward. will rephraase when decide where it goes} . That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
 
 \begin{lemma} 
 	The composition of linear fractional transformations corresponds to the multiplication of their respective matrix encodings.
 \end{lemma}
 
 \begin{proof} 
-	Appeal to Theorem \ref{thm:function_correspondence} and Corollary \ref{thm:isomorphism}. \todo{possibly want to flesh this out or make it less lemmay)?}
+	\todo{[LG] blend with appendix C}Suppose that we have two linear fractional transformations $f_1$ and $f_2$ given by $f(z) = \frac{a_1z+b_1}{c_1z+d_2}$ and $f_2(z) = \frac{a_2z+b_2}{c_2z+d_2}$ for each $z \in \C$. We then have by (2) that their respective matrix encodings are 
+\[ M_{f_1} = \lftmat{a_1}{b_1}{c_1}{d_1} \text{ and } M_{f_2} =  \lftmat{a_2}{b_2}{c_2}{d_2}. \] 
+Now, let $z \in \C$. We have that 
+\begin{align*}
+f_1(f_2(z)) & = \frac{a_1(\frac{a_2z+b_2}{c_2z+d_2})+b_1}{c_1(\frac{a_2z+b_2}{c_2z+d_2})+d_1} \\[1em]
+& = \frac{\frac{a_1(a_2z+b_2)+b_1(c_2z+d_2)}{c_2z+d_2}}{\frac{c_1(a_2z+b_2)+d_1(c_2z+d_2)}{c_2z+d_2}} \\[1em]
+& = \frac{a_1(a_2z+b_2)+b_1(c_2z+d_2)}{c_1(a_2z+b_2)+d_1(c_2z+d_2)} \\[1em]
+& = \frac{(a_1a_2+b_1c_2)z + (a_1b_2+b_1d_2)}{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}
+\end{align*}
+On the other hand, we have that 
+\begin{align*}
+M_{f_1}M_{f_2} & = \lftmat{a_1}{b_1}{c_1}{d_1}\lftmat{a_2}{b_2}{c_2}{d_2}  \\[1em]
+& = \lftmat{a_1a_2+b_1c_2}{a_1b_2+b_1d_2}{c_1a_2+d_1c_2}{c_1b_2+d_1d_2}
+\end{align*}
+Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional transformation given by $f_1 \circ f_2$, the composition of $f_1$ upon $f_2$.
 \end{proof}	
 	
 \begin{lemma}
@@ -425,18 +434,14 @@ We first work through a concrete example -- reflecting the point $A_2 = 3+5i$ ov
 \begin{example}
 We first take our point $X$ and encode $f_X$, the reflection function over $X$, in the matrix $M_{f_X}$. In particular, by (1) we have that 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
-Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-x+2}{-x+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. \todo{now what?}
+Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-x+2}{-x+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. \todo{[LG] now what?}
 \end{example}
-
-More concretely, we take our points $X$ and $Y$ and encode $f_X$ and $f_Y$ (the reflection functions over $X$ and $Y$ respectively) in matrices $M_{f_X}$ and $M_{f_Y}$. In particular, by (1) we have that 
-\[M_{f_X} = \lftmat{-1}{2}{-1}{1} \text{ and } M_{f_Y} = \pointmat{2}{1}.\]
-Notice that for simplicity, in both of these cases we chose $\lambda = 1$ \todo{[LG] do we have to address this any further? I don't think so but it's worth asking.} Now, we know by (2) that for all $z \in \C$, $f_X$ and $f_Y$ are given by $f_X(z) = \frac{-x+2}{-x+1}$ and $f_Y(z) = \frac{x+2}{-x-1}$ respectively. Thus, to apply these transformations to a point \todo{[LG] WAIT, SO DO WE PUT THE POINT IN THE DISK FIRST AND THEN TRANSFORM OR TRANSFORM AND THEN PUT IT IN THE DISK? CAN YOU FINISH THIS PART? WE'RE REALLY JUST MISSING A SENTENCE OR TWO}
 
 As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- which we call the ``ends" of our geometry -- are mapped from points lying on the parabola $x=y^2$.
 
 Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. Thus we are left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
-Now, below are our diagrams. We made these diagrams using the Geogebra\footnote{\cite{geogebra_software}} visual algebra tool and the corresponding user-made hyperbolic geometry worksheet\footnote{\cite{hyperbolic_worksheet}}.
+Now, below are our diagrams, generated using the Geogebra\footnote{\cite{geogebra_software}} visual algebra tool and the corresponding user-made hyperbolic geometry worksheet\footnote{\cite{hyperbolic_worksheet}}.
 
 \iffalse
 \begin{center}
@@ -521,7 +526,7 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \todo{Theorem 9.1???????}, we obtain the hyperbolic metric
+To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \todo{[LG] 9.1}, we obtain the hyperbolic metric
 \[
 	d_H(O,A') = \ln\frac{1 + r}{1 - r}
 \]
@@ -548,8 +553,6 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 \end{center}
 
 This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare disk-equivalent of our original point $A$.
-
-\todo{? this paragraph} Now, if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{OA}$ \todo{?}, our construction then maps $B$ to the corresponding $B'$
 
 We next consider a new point $B$ on the ray $\overrightarrow{OA}$ and its corresponding point $B'$ in the \poincare disk. 
 
