@@ -190,6 +190,7 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\begin{enumerate}
 		\item I found it very awkward to effectively talk about ends for multiple paragraphs without defining them, especially when the motivation behind them (the stuff with the rays and the points they approached) was otherwise irrelevant to our paper. It just seemed vague and then the rays seemed out of place/unnecessarily complicated
 		\item Honestly, I was sorta confused about lines vs. line segments before. In particular, both seemed to be described as ``the points between $A$ and $B$ but excluding both $A$ and $B$. I wanted it to be clear where we were excluding actual points in our disk and also when we were talking about Euclidean arcs vs. hyperbolic lines etc. etc etc. It may read a bit clunkily as a result, but I think it's at least now clear what things are and where they came from. 
+		\item I agree with these changes. My first suggestion is to also include the fact that lines in our model are collections of points of in the interior. To be fair, this is only useful in the case we want to talk about model points on these lines. This fact could be unnecessary however. My other suggestion has to do with the fact that we are defining lines with points not in the model. This feels weird initially, especially with respect to my first suggestion. Perhaps we should note that we can do this because of the observation after Figure 1 rather than just stating it outright without an explanation.
 	\end{enumerate}
 	\color{black}
 	
@@ -199,7 +200,7 @@ We now go forth to define hyperbolic lines and line segments in the context of t
 
 \todo{clunky as shit. will come back}Notice that we denote hyperbolic lines by the two (hyperbolic) ends that appear to be their endpoints in the Euclidean plane. For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $AB$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
 
-We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are line segments lying on the lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and $Z$ and $W$ are points lying on $XY$ in the \poincare disk, the $\overline{ZW}$ is defined to be the set of all points on line $XY$ between $Z$ and $W$ \todo{[LG] including $Z$ and $W$?}.
+We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are line segments lying on the lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and $Z$ and $W$ are points lying on $XY$ in the \poincare disk, the $\overline{ZW}$ is defined to be the set of all points on line $XY$ between and including $Z$ and $W$.
 
 	As demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
