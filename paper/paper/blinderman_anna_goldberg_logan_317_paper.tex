@@ -222,8 +222,9 @@ For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
+We note that this encoding is well-defined and invertible\footnote{See Appendix \ref{appendixC}}.
 
-It should be explicitly noted that these matrices are used only to encode our transformations\footnote{See Appendix \ref{appendixC}.}. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. 
+It should be explicitly noted that these matrices are used only to encode our transformations. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. 
 
 Because all linear fractional transformations we will use are of the form given in (2), whenever we say ``matrix" we are referring to a $2 \times 2$ matrix. Furthermore, we will may refer to linear fractional transformations as LFTs for convenience. 
 
@@ -293,21 +294,13 @@ Now, let $F$ be some real, ordered field. The coefficients of our linear fractio
 \end{lemma}
 
 \begin{proof} 
-	\todo{[LG] blend with appendix C}Suppose that we have two linear fractional transformations $f_1$ and $f_2$ given by $f(z) = \frac{a_1z+b_1}{c_1z+d_2}$ and $f_2(z) = \frac{a_2z+b_2}{c_2z+d_2}$ for each $z \in \C$. We then have by (2) that their respective matrix encodings are 
-\[ M_{f_1} = \lftmat{a_1}{b_1}{c_1}{d_1} \text{ and } M_{f_2} =  \lftmat{a_2}{b_2}{c_2}{d_2}. \] 
-Now, let $z \in \C$. We have that 
-\begin{align*}
-f_1(f_2(z)) & = \frac{a_1(\frac{a_2z+b_2}{c_2z+d_2})+b_1}{c_1(\frac{a_2z+b_2}{c_2z+d_2})+d_1} \\[1em]
-& = \frac{\frac{a_1(a_2z+b_2)+b_1(c_2z+d_2)}{c_2z+d_2}}{\frac{c_1(a_2z+b_2)+d_1(c_2z+d_2)}{c_2z+d_2}} \\[1em]
-& = \frac{a_1(a_2z+b_2)+b_1(c_2z+d_2)}{c_1(a_2z+b_2)+d_1(c_2z+d_2)} \\[1em]
-& = \frac{(a_1a_2+b_1c_2)z + (a_1b_2+b_1d_2)}{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}
-\end{align*}
-On the other hand, we have that 
-\begin{align*}
-M_{f_1}M_{f_2} & = \lftmat{a_1}{b_1}{c_1}{d_1}\lftmat{a_2}{b_2}{c_2}{d_2}  \\[1em]
-& = \lftmat{a_1a_2+b_1c_2}{a_1b_2+b_1d_2}{c_1a_2+d_1c_2}{c_1b_2+d_1d_2}
-\end{align*}
-Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional transformation given by $f_1 \circ f_2$, the composition of $f_1$ upon $f_2$.
+	Suppose that we have two linear fractional transformations $f_1$ and $f_2$ given by $f_1(z) = \frac{a_1z+b_1}{c_1z+d_2}$ and $f_2(z) = \frac{a_2z+b_2}{c_2z+d_2}$ for each $z \in \C$. We then have by (2) that their respective matrix encodings are 
+\[ 
+	M_{f_1} = \lftmat{a_1}{b_1}{c_1}{d_1} 
+	\text{ and } 
+	M_{f_2} =  \lftmat{a_2}{b_2}{c_2}{d_2}. 
+\] 
+	By Theorem \ref{thm:function_correspondence}, we may compute $f_1\circ f_2$ by multiplying the corresponding matrices above and then mapping the resulting matrix $M_{f_1}M_{f_2}$ back into a linear fractional transformation. The resulting linear fractional transformation will be $f_1\circ f_2$.
 \end{proof}	
 	
 \begin{lemma}
@@ -503,12 +496,11 @@ In summary, we find three problems with Guggenheimer's geometry. For one, his al
 \begin{appendices}
 \section{From $\R^2$ to the \poincare Disk} \label{appendixA}
 
-\todo{[LG] karen's $\Gamma_{F^2}$ thing?}
-Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
+Let $\Gamma_{F^2}$ be a \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
 \begin{center}
-\begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\begin{tikzpicture}[scale=1]
+\draw (0,0) circle (2.2cm) node[above left=2cm] {$\Gamma_{\R^2}$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
 \end{tikzpicture}
 \end{center}
@@ -516,8 +508,8 @@ Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclid
 We begin by constructing a line segment between $A$ and the origin $O$ and in order to find the Euclidean distance, $d_E$, between points $A$ and $O$.
 
 \begin{center}
-\begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\begin{tikzpicture}[scale=1]
+\draw (0,0) circle (2.2cm) node[above left=2cm] {$\Gamma_{\R^2}$};
 \draw (0,0) -- (2.2,2.2);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -526,7 +518,7 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \todo{[LG] 9.1}, we obtain the hyperbolic metric
+To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. The hyperbolic distance metric\footnote{[\cite{hyperbolic_metric}, p.~103]} is
 \[
 	d_H(O,A') = \ln\frac{1 + r}{1 - r}
 \]
@@ -535,12 +527,12 @@ where $r\in\R$ is the radius of the circle we wish to draw. We will call this ne
 	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
 \]
 
-Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta$.
+Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta_{F^2}$.
 
 \begin{center}
-\begin{tikzpicture}[scale=.7]
-\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
-\draw (0,0) circle (1.41cm) node[below right=.85cm] {$\Delta$};
+\begin{tikzpicture}[scale=1]
+\draw (0,0) circle (2.2cm) node[above left=2cm] {$\Gamma_{\R^2}$};
+\draw (0,0) circle (1.41cm) node[below right=1.3cm] {$\Delta_{\R^2}$};
 \draw (0,0) -- (2.2,2.2);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -552,13 +544,13 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 \end{tikzpicture}
 \end{center}
 
-This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare disk-equivalent of our original point $A$.
+This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta_{\R^2}$, is the \poincare disk-equivalent of our original point $A$.
 
 We next consider a new point $B$ on the ray $\overrightarrow{OA}$ and its corresponding point $B'$ in the \poincare disk. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
-\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\draw (0,0) circle (2.2cm) node[above left=2cm] {$\Gamma_{\R^2}$};
 \draw (0,0) -- (3,3);
 \draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
 \draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
@@ -573,13 +565,13 @@ In particular, notice that $A$ and $B$ -- points in $\R^2$ on the ray $\overrigh
 %\vfill
 %\pagebreak
 
-Similarly, if $C$ is a point somewhere inside $\Gamma$, this construction will map $C$ further into the interior.
+Similarly, if $C$ is a point somewhere inside $\Gamma_{\R^2}$, this construction will map $C$ further into the interior.
 
-Similarly, if $C$ is a point in $\R^2$ that appear to lie within $\Gamma$ (that is, the distance between $C$ and the center $O$ of $\Gamma$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
+Similarly, if $C$ is a point in $\R^2$ that appear to lie within $\Gamma_{\R^2}$ (that is, the distance between $C$ and the center $O$ of $\Gamma_{\R^2}$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
-\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\draw (0,0) circle (2.2cm) node[above left=2cm] {$\Gamma_{\R^2}$};
 \draw (0,0) -- (0,-1);
 \draw[fill=black] (0,0) circle (0.05) node[above left] {$O$};
 \draw[fill=black] (0,-1) circle (0.05) node[left] {$C$};
@@ -822,7 +814,7 @@ of linear fractional transformations under function composition and let $GL_2(F)
 	Therefore $F^*$ is normal as desired.
 \end{proof}
 
-The quotient group formed here is known as $PGL(2,F)$, the projective general linear group of $2\times 2$ matrices with coefficients in $F$.
+The quotient group formed by constructing $GL_2(F)/F^*$ is known as $PGL(2,F)$, the projective general linear group of $2\times 2$ matrices with coefficients in $F$.
 
 	To begin discussing a group homomorphisms, we need to know that $A$ under function composition forms a group. 
 	
@@ -839,21 +831,18 @@ With this in mind, we now define the map $\varphi\colon A\rightarrow PGL(2,F)$ b
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
-	We claim that $\varphi$ is a surjective homomorphism.
+	We claim that $\varphi$ is an isomorphism.
 \begin{theorem}\label{thm:function_correspondence}
-	The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
-		\[
-			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d; d \neq 0\text{ and } b = c = 0\right\rbrace.
-		\]
+	The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is an isomorphism.
 \end{theorem}
 
-Before we proceed to prove that this map is a surjective homomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $az + b = ez\lambda + f\lambda$ and $cz + d = gz\lambda + h\lambda$, then the maps
+Before we proceed to prove that this map is an isomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $az + b = ez\lambda + f\lambda$ and $cz + d = gz\lambda + h\lambda$, then the maps
 \[
 	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{ez\lambda + f\lambda}{gz\lambda + h\lambda}
 \]  
 are the same despite having two different representations. Therefore under $\varphi$, they should represent the same element. Of course, this criterion for equal transformations might not be exhaustive. Therefore we have the following lemma.
 
-\begin{lemma}
+\begin{lemma}\label{thm:well-defined}
 	The map $\varphi$ is well-defined.
 \end{lemma}
 
@@ -956,20 +945,24 @@ Now we proceed with the proof of Theorem C.3.
 		& = \lftmat{a_g}{b_g}{c_g}{d_g}\lftmat{a_f}{b_f}{c_f}{d_f}F^*\\
 		& = \varphi(g)\varphi(f)F^*
 	\end{align*}
-	Hence $\varphi$ is a homomorphism. Now we argue that $\varphi$ is surjective. Suppose $M F^*\in GL_2(F)/F^*$ is some matrix with entries $a,b,c,d$. Then the linear fractional transformation given by 
+	Hence $\varphi$ is a homomorphism. Now we argue that $\varphi$ is surjective. Suppose $M F^*\in PGL(2,F)$ is some matrix with entries $a,b,c,d$. Then the linear fractional transformation given by 
 	\[
 		f(z) = \frac{az + b}{cz + d}
 	\]
-	is mapped to $M F^*$ by $\varphi$. Hence $\varphi$ is a surjective homomorphism. Now, notice that if a map $f$ is in $\ker(\varphi)$, then 
+	is mapped to $M F^*$ by $\varphi$. Hence $\varphi$ is a surjective homomorphism. Finally, suppose $f$ and $g$ are two linear fractional transformations in $A$. If $\varphi(f) = \varphi(g)$, then we have that
+	\begin{align*}
+		\varphi(f) = \varphi(g) & \text{ which implies that } \lftmat{a_f}{b_f}{c_f}{d_f} F^* = \lftmat{a_g}{b_g}{c_g}{d_g} F^*.
+	\end{align*}
+	This means that $\varphi(f)$ and $\varphi(g)$ are the same coset in $PGL(2,F)$. In particular, we can fix $\lambda\neq 0$ such that
+	\[
+		\lftmat{a_f}{b_f}{c_f}{d_f} = \lftmat{\lambda}{0}{0}{\lambda}\lftmat{a_g}{b_g}{c_g}{d_g}.
+	\]
+	However, this equality just means that
+	\[
+		\lftmat{a_f}{b_f}{c_f}{d_f} = \lftmat{a_g\lambda}{b_g\lambda}{c_g\lambda}{d_g\lambda},
+	\]
+	which reduces the problem to matrix equality. Without loss of generality then, $a_f = a_g\lambda$. From our previous argument in Lemma \ref{thm:well-defined}, we therefore conclude that $f_1$ and $f_2$ are the same transformation. Moreover, $f_1 = f_2$. Hence $\varphi$ is injective and thus an isomorphism. 
 \end{proof}		
-	
-
-\begin{corollary}\label{thm:isomorphism}
-	The groups $A/\ker(\varphi)$ and $PGL(2,F)$ are isomorphic.
-\end{corollary}
-\begin{proof}
-	Apply the First Isomorphism Theorem for groups to $A$ using the fact that $\Range(\varphi) = GL_2(F)/F^*$.
-\end{proof}
 
 \newpage
 \section{Code Simulating LFTs} \label{appendixD}
