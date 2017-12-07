@@ -135,7 +135,7 @@ These all hold in hyperbolic geometry \cite{hartshorne}. However, the fifth post
 	\setcounter{enumi}{4}
 	\item Given a line and a point not on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. Somestimes, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. 
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line'' \cite{euclids_fifth}. Somestimes, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. 
 \begin{center}
 \begin{tabular}{cc}
 	\begin{tikzpicture}
@@ -186,25 +186,25 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\caption{Construction of hyperbolic lines.}
 \end{figure}
 
-The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ \todo{[AB] say why later} pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$  \todo{[AB] say why}  also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
+	\color{blue} why i switched this around so much:
+	\begin{enumerate}
+		\item I found it very awkward to effectively talk about ends for multiple paragraphs 
+		\item The motivation (the stuff with the rays and the points they approached) was otherwise irrelevant to our paper and just seemed out of place/unnecessarily complicated
+		\item Honestly, I was sorta confused about lines vs. line segements before. In particular, both seemed to be descriebd as ``the points between $A$ and $B$ but excluding both $A$ and $B$. I wanted it to be clear where we were excluding actual points in our disk and also when we were talking about Euclidean arcs vs. hyperbolic lines etc. etc etc. It may read a bit clunkily as a result, but I think it's at least now clear what things are and where they came from. 
+	\end{enumerate}
+	\color{black}
+	
+Recall that points lying on the \poincare disk (eg.~$A\ttc B \ttc L$, and $K$) are currently excluded from our model. However, it will be important to discuss these points lying on $\Gamma$ later, whence we define them to be the \textit{ends} of our geometry. 
 
-Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
+We now go forth to define hyperbolic lines and line segments in the context of the \poincare disk above. If we take the minor arc $AB$ of the Euclidean circle $\Delta$ and exclude its endpoints $A$ and $B$ (notice that $A$ and $B$ are ends in the \poincare disk), then $AB$ is a hyperbolic line in our disk. Similarly, if we exclude points $L$ and $K$ (which are also ends in the \poincare model) from the Euclidean line $l$, then we have another hyperbolic line $LK$ in our disk. 
 
-Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie ``between," consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. Note that we may still refer to a line defined by two points $A$ and $B$ as $AB$ while the line segment is referred to as $\overline{AB}$. \todo{[AB] get rid of diamter partition whatever thing} 
+\todo{clunky as shit. will come back}Notice that we denote hyperbolic lines by the two (hyperbolic) ends that appear to be their endpoints in the Euclidean plane. For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $AB$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
 
-Using the basic geometric fact that lines can be partitioned by a point into two sides \cite{hartshorne}, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$. 
+We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are line segments lying on the lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and $Z$ and $W$ are points lying on $XY$ in the \poincare disk, the $\overline{ZW}$ is defined to be the set of all points on line $XY$ between $Z$ and $W$ \todo{[LG] including $Z$ and $W$?}.
 
-%\iffalse
-\begin{center}
-\includegraphics[width=160mm]{../images/ends_example_1.png} \\
-	\todo{this is off center!}
-\end{center} 
-%\fi
+	As demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
-
-Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$ \todo{why is this parallel}. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray \todo{more importantly, of the geomtery} to be the equivalence class of all rays that meet at seem to `limit' \todo{rephrase} to the same point end of the circle $\Gamma$ \cite{hartshorne}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes \todo{why}. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{this will be important speial end} \todo{also rehash stuff about the special end}
-
-	Further, as demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
+	Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
@@ -986,8 +986,8 @@ Below is the code we used to apply point reflections and line reflections to var
 \bibliographystyle{alpha}
 \bibliography{bibliography}
 
-\nocite{guggen_paper}
+\nocite{guggen_book}
 
-\noindent\todo{[AB][LG] cite the rest of our sources, i guess}
+\noindent\todo{[AB][LG] cite the rest of our sources}
 
 \end{document}
