@@ -127,7 +127,7 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenh
 
 \hspace{10mm} For centuries, mathematicians tried tirelessly to prove that Euclid's fifth postulate -- an equivalent formulation of the parallel postulate -- followed from the first four. It was not until the 19$^{\text{th}}$ century that Carl Friedrich Gauss and J\'{a}nos Bolyai showed that the the fifth postulate was independent from the others. This shocking result opened doors to the exploration of non-Euclidean geometric models, particularly those of hyperbolic geometry \cite{hartshorne}.
 
-To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows \footnote{[\cite{hartshorne}, p.~481]}:
+To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows\footnote{[\cite{hartshorne}, p.~481]}:
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
@@ -193,12 +193,14 @@ The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured 
 
 Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
 
-In addition to defining points and lines in the model, Guggeinheimer 
+Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie `between', consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. 
+
+Using the basic geometric fact that lines can be partitioned by a point\footnote{[\cite{hartshorne}, p.~76, Theorem 7.2]} into two sides, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior \todo{[LG] discuss lines vs. line segments vs. ends} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior \todo{[LG] discuss lines vs. line segments vs. ends, I am confused about what we had discussed earlier, so I am leaving this comment here} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
 
 The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer define's a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{[\cite{shuman_lfts}]} given by
 \begin{equation} 
@@ -219,16 +221,14 @@ Later we associate points with point reflections and lines with line reflections
 
 To reinforce the fact that matrices encode functions, if $f$ is any linear fractional transformation then we will write $M_f$ to denote the matrix that encodes $f$. Further, we denote the matrix encoding a reflection about a point $P$ by $M_{f_P}$ and a matrix encoding a reflection over a line $l$ by $M_{f_l}$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ \todo{[AB][LG] i think we can actually get rid of this ``citation" since it's in the intro now?} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
+Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ \todo{[AB][LG] i think we can actually get rid of this ``citation" since it's in the intro now? Relates to comment earlier in section} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guggenheimer's Classifications of LFTs}
 
 \hspace{10mm} We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
-Let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$.
-
-\noindent\todo{[LG] draw on stuff you put in the intro to make this clearer}
+\noindent\todo{[LG] draw on stuff you put in the intro to make this clearer, I don't follow what needs to be done here, it looks fine.}
 However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $\R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
 Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to our geometric intuitions to understand these actions. Moreover, a line reflection flips the plane about a given line, fixing each point on the line, while a point reflection rotates the plane by $\pi$ radians about a given point. Exploring the diagrams below, the line reflection about line $l$ maps triangle $\triangle ABC$ to $\triangle PQR$ (sending $A$ to $P$, $B$ to $Q$, and $C$ to $R$) and fixes point $O$; the point reflection about $O'$ maps $\triangle ABC$ to $\triangle PSR$ (sending $A$ to $P$, $B$ to $S$, and $C$ to $R$). We can see intuitively that the act of applying the line reflection or point reflection twice to the plane results in applying the identity transformation.
@@ -274,16 +274,14 @@ Line reflection about line $l$. & Point reflection about point $O'$. \\
 \end{tabular}
 \end{center}
 
-Returning to our linear fractional transformations, we begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
-
-\noindent \todo{[LG] i put these things as lemmas, but feel free to move them to appendix c}
+Let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two (as demonstrated above by the Euclidean reflections). That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
 
 \begin{lemma} 
-	The composition of linear fractional transformation corresponds to the multiplication of their respective matrix encodings.
+	The composition of linear fractional transformations corresponds to the multiplication of their respective matrix encodings.
 \end{lemma}
 
 \begin{proof} 
-	Appeal to Theorem \ref{thm:function_correspondence}.		
+	Appeal to Theorem \ref{thm:function_correspondence} and Corollary \ref{thm:isomorphism}. (possibly want to flesh this out or make it less lemmay)
 \end{proof}	
 	
 \begin{lemma}
@@ -291,7 +289,7 @@ Returning to our linear fractional transformations, we begin with a notion inspi
 \end{lemma}
 
 \begin{proof}
-	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
+	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{See \ref{thm:PGL2F} in Appendix \ref{appendixC} for the definition of $PGL(2\ttc F)$}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
 \end{proof}
 
 \begin{lemma}
@@ -303,7 +301,7 @@ Returning to our linear fractional transformations, we begin with a notion inspi
 \end{proof}
 
 \begin{theorem}
-If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some representative of a of coset $PGL(2\ttc F)$ containing the identity. See Appendix \ref{appendixC}.}
+If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some representative of the identity coset of $PGL(2\ttc F)$.}
 \end{theorem}
 
 \begin{proof}
@@ -319,7 +317,7 @@ Looking at the upper-right and lower-left entries in the two above matrices, we 
 
 If $a + d = 0$, then by definition we have that $\Tr(M) = 0$.
 
-\todo{[LG] i hate the visuals of it, but should we do this as matrices rather than straight algebra?} On the other hand, if $b = c = 0$, then it remains to ensure that $a^2 + bc = \lambda$ (the upper-left entries of the above matrices) and that $bc + d^2 = \lambda$ (the lower-right entries). Because we know that $b = c = 0$, we can simplify to see that $a^2 = \lambda$ and that $d^2 = \lambda$. Thus we know that $a = -d$ or that $a = d$. In the first case, $a = -d$ implies that $a + d = 0$, whence $\Tr(M) = 0$. If $a = d$, then $M$ is of the form 
+\todo{[LG] i hate the visuals of it, but should we do this as matrices rather than straight algebra? I think it's fine. This is only one paragraph.} On the other hand, if $b = c = 0$, then it remains to ensure that $a^2 + bc = \lambda$ (the upper-left entries of the above matrices) and that $bc + d^2 = \lambda$ (the lower-right entries). Because we know that $b = c = 0$, we can simplify to see that $a^2 = \lambda$ and that $d^2 = \lambda$. Thus we know that $a = -d$ or that $a = d$. In the first case, $a = -d$ implies that $a + d = 0$, whence $\Tr(M) = 0$. If $a = d$, then $M$ is of the form 
 \[\lftmat{a}{0}{0}{a}\]
 for some $a \in F$. That is, $M$ is of the form $\lambda I$ if we take $\lambda = a$. 
 
@@ -369,7 +367,7 @@ where $l_1$ and $l_2$ are in $F_*$; $x \in F_*$; and $y \in F_*$.
 \end{theorem}
 
 \begin{proof}
-Notice that if a point $P$ is on a line $l$, then \todo{[LG] ``by geometric intuition"...?} the reflection of $P$ over $l$ will have no effect. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_{f_l} M_{f_P} M_{f_l}\inv = M_{f_P}$, whence $M_{f_l} M_{f_P} = M_{f_P} M_{f_l}$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_{f_l} M_{f_P}$ is a representative of $M_{f_P} M_{f_l}$, hence the $\lambda$.}:
+Notice that if a point $P$ is on a line $l$, then by our geometric intuition, the $f_l$ fixes $P$. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_{f_l} M_{f_P} M_{f_l}\inv = M_{f_P}$, whence $M_{f_l} M_{f_P} = M_{f_P} M_{f_l}$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_{f_l} M_{f_P}$ is a representative of $M_{f_P} M_{f_l}$, hence the $\lambda$.}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -417,9 +415,9 @@ Recall further that Guggenheimer distinguishes between line reflections defined 
 
 As a final point of clarification, in our diagrams it will always appear that our hyperbolic lines can be extended to pass through two ends (i.e. touch the edge of the \poincare disk in two places). However, these are the general ends of the \poincare disk -- those mapped from the parabola $x = y^2$ in $\R^2$ -- not the particular end $\specialend$. \todo{[AB][LG] make sure this makes sense with LG new info from intro}
 
-Now, below are our diagrams.
+Now, below are our diagrams. We made these diagrams using the Geogebra\footnote{\cite{geogebra_software}} visual algebra tool and the corresponding user-made hyperbolic geometry worksheet\footnote{\cite{hyperbolic_worksheet}}.
 
-%\iffalse
+\iffalse
 \begin{center}
 \includegraphics[width=160mm]{../images/t1_over_x.png} \\
 Triangle $T_1$ reflected over point $X$ 
@@ -433,7 +431,7 @@ Triangle $T_2$ reflected over point $X$
 \includegraphics[width=160mm]{../images/t2_over_y.png} \\
 Triangle $T_2$ reflected over point $Y$ 
 \end{center}
-%\fi
+\fi
 
 
 From these diagrams we notice two oddities. For one, these point reflections look more like line reflections than they do point reflections. That is, the triangles seem to be ``reflected" and ``stretched" rather than simply ``rotated." Also, it is unclear from these diagrams why we restricted our choice of points to those from the convex domain defined by the parabola $x = y^2$. We now discuss these issues and their implications in turn.
@@ -511,7 +509,7 @@ where $r\in\R$ is the radius of the circle we wish to draw. Let's call this new 
 	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
 \]
 
-Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta$. \todo{[LG] add point $B$ (from Karen's comments)}
+Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
@@ -544,7 +542,20 @@ Now if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{O
 \end{tikzpicture}
 \end{center}
 
+\vfill
+\pagebreak
 
+Similarly, if $C$ is a point somewhere inside $\Gamma$, this construction will map $C$ further into the interior.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\draw (0,0) -- (0,-1);
+\draw[fill=black] (0,0) circle (0.05) node[above left] {$O$};
+\draw[fill=black] (0,-1) circle (0.05) node[left] {$C$};
+\draw[fill=black] (0,-.4) circle (0.05) node[right] {$C'$};
+\end{tikzpicture}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -762,7 +773,7 @@ of linear fractional transformations under function composition and let $GL_2(F)
 		F^* = \left\lbrace\lftmat{\lambda}{0}{0}{\lambda}\colon \lambda\in F\text{ with } \lambda\neq 0 \right\rbrace.
 	\]
 	We argue that $F^*$ is a normal subgroup of $GL_2(F)$.
-\begin{lemma}
+\begin{lemma}\label{thm:PGL2F}
 	The subset $F^*$ defined above forms a normal subgroup of $GL_2(F)$.
 \end{lemma}
 \begin{proof}
@@ -806,11 +817,11 @@ With this in mind, we now define the map $\varphi\colon A\rightarrow PGL(2,F)$ b
 		\]
 \end{theorem}
 
-Before we proceed to prove that this map is a surjective homomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $a + b = a\lambda + b\lambda$ and $c + d = c\lambda + d\lambda$, then the maps
+Before we proceed to prove that this map is a surjective homomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $az + b = ez\lambda + f\lambda$ and $cz + d = gz\lambda + h\lambda$, then the maps
 \[
-	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{a\lambda z + b\lambda}{c\lambda z + d\lambda}
+	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{ez\lambda + f\lambda}{gz\lambda + h\lambda}
 \]  
-are the same. Therefore under $\varphi$, they should represent the same element. Of course, this criterion for equal transformations might not be exhaustive. Therefore we have the following lemma.
+are the same despite having two different representations. Therefore under $\varphi$, they should represent the same element. Of course, this criterion for equal transformations might not be exhaustive. Therefore we have the following lemma.
 
 \begin{lemma}
 	The map $\varphi$ is well-defined.
@@ -848,7 +859,7 @@ are the same. Therefore under $\varphi$, they should represent the same element.
 	\end{align} 
 	However, we need to be careful as some of these cofficients might be zero. If any of these of these cofficients are zero, we have the following argument. 
 	
-	Without loss of generality, suppose only $a_1 = 0$. Then by the first equation, $a_2c_1 = 0$. Assuming $a_2 = 0$, we now realize the second equation as 
+	Without loss of generality, suppose	 $a_1 = 0$. Then by the first equation, $a_2c_1 = 0$. Assuming $a_2 = 0$, we now realize the second equation as 
 	\[
 		b_1c_2 = b_2c_1 \text{ or that } \frac{b_1}{b_2} = \frac{c_1}{c_2}.
 	\]
@@ -923,7 +934,7 @@ Now we proceed with the proof of Theorem C.3.
 \end{proof}		
 	
 
-\begin{corollary}
+\begin{corollary}\label{thm:isomorphism}
 	The groups $A/\ker(\varphi)$ and $PGL(2,F)$ are isomorphic.
 \end{corollary}
 \begin{proof}
