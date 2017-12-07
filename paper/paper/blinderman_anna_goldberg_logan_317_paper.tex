@@ -115,7 +115,7 @@
 \maketitle
 
 \begin{abstract}
-In his paper \textit{The Hilbert Model of Hyperbolic Geometry}\footnote{[\cite{guggen_paper}]}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and line reflections. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of such linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
+In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and line reflections \cite{guggen_paper}. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of such linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,20 +123,19 @@ In his paper \textit{The Hilbert Model of Hyperbolic Geometry}\footnote{[\cite{g
 
 \hspace{10mm} For centuries, mathematicians tried tirelessly to prove that Euclid's fifth postulate -- an equivalent formulation of the parallel postulate -- followed from the first four. It was not until the 19$^{\text{th}}$ century that Carl Friedrich Gauss and J\'{a}nos Bolyai showed that the the fifth postulate was independent from the others. This shocking result opened doors to the exploration of non-Euclidean geometric models, particularly those of hyperbolic geometry \cite{hartshorne}.
 
-To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows\footnote{[\cite{hartshorne}, p.~481]}:
+To understand hyperbolic geometry we must first consider the five postulates that axiomatize Euclidean geometry. The first four are as follows:
 \begin{enumerate}[leftmargin = 4em, itemsep=-.8em]
 	\item A straight line segment can be drawn joining any two points.
 	\item Any straight line segment can be extended indefinitely in a straight line.
 	\item Given any straight line segment, a circle can be drawn having the segment as radius and one endpoint as center.
 	\item All right angles are congruent.
 \end{enumerate}
-These all hold in hyperbolic geometry. However, the fifth postulate
+These all hold in hyperbolic geometry \cite{hartshorne}. However, the fifth postulate
 \begin{enumerate}[leftmargin = 4em, itemsep=-1em]
 	\setcounter{enumi}{4}
 	\item Given a line and a point not on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. In many contexts, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. However, since we primarily work with infinite fields, we find it more helpful to appeal to the former than the latter. \todo{[AB] fix}
-
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. Somestimes, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. 
 \begin{center}
 \begin{tabular}{cc}
 	\begin{tikzpicture}
@@ -193,7 +192,7 @@ Appendix \ref{appendixA} contains further information on the \poincare disk mode
 
 Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie ``between," consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. Note that we may still refer to a line defined by two points $A$ and $B$ as $AB$ while the line segment is referred to as $\overline{AB}$. \todo{[AB] get rid of diamter partition whatever thing} 
 
-Using the basic geometric fact that lines can be partitioned by a point\footnote{[\cite{hartshorne}, p.~76, Theorem 7.2]} into two sides, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$. 
+Using the basic geometric fact that lines can be partitioned by a point into two sides \cite{hartshorne}, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$. 
 
 %\iffalse
 \begin{center}
@@ -203,7 +202,7 @@ Using the basic geometric fact that lines can be partitioned by a point\footnote
 %\fi
 
 
-Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$ \todo{why is this parallel}. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray \todo{more importantly, of the geomtery} to be the equivalence class of all rays that meet at seem to `limit' \todo{rephrase} to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes \todo{why}. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{this will be important speial end} \todo{also rehash stuff about the special end}
+Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$ \todo{why is this parallel}. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray \todo{more importantly, of the geomtery} to be the equivalence class of all rays that meet at seem to `limit' \todo{rephrase} to the same point end of the circle $\Gamma$ \cite{hartshorne}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes \todo{why}. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{this will be important speial end} \todo{also rehash stuff about the special end}
 
 	Further, as demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
@@ -212,7 +211,7 @@ Now consider the following diagram above \todo{following above?}. Notice that th
 	
 \hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
 
-The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer defines a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{\cite{shuman_lfts} \todo{why are some citations footnotes?}} given by \todo{[AB] fix}
+The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer defines a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations \cite{shuman_lfts} give by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
@@ -308,7 +307,7 @@ Now, let $F$ be some real, ordered field. The coefficients of our linear fractio
 \end{lemma}
 
 \begin{proof}
-	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{See \ref{thm:PGL2F} in Appendix \ref{appendixC} for the definition of $PGL(2\ttc F)$ \todo{wordy?}}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
+	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{As defined in Lemma \ref{thm:PGL2F} of Appendix \ref{appendixC}}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
 \end{proof}
 
 \begin{lemma}
@@ -434,7 +433,7 @@ As we consider these visualizations, recall the three types of points in the \po
 
 Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. Thus we are left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
-Now, below are our diagrams, generated using the Geogebra\footnote{\cite{geogebra_software}} visual algebra tool and the corresponding user-made hyperbolic geometry worksheet\footnote{\cite{hyperbolic_worksheet}}.
+Now, below are our diagrams, generated using the Geogebra visual algebra tool \cite{geogebra_software} and the corresponding user-made hyperbolic geometry worksheet \cite{hyperbolic_worksheet}.
 
 \iffalse
 \begin{center}
@@ -471,7 +470,7 @@ Notice further that this matrix takes the form of a point reflection about $l = 
 
 Therefore the ``distinction" between line reflections and point reflections as put forth by Guggenheimer is indeed as arbitrary as it originally seemed. 
 
-A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered\footnote{[\cite{marsden_complex_book}, p.~6]}. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary at best and entirely non-applicable at worst.
+A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered\cite{marsden_complex_book}. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary at best and entirely non-applicable at worst.
 
 Another crucial element of Guggenheimer's geometry is rendered nonsensical once we begin to work with complexified fields. In particular, his insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to as $D$) has no meaning in fields that are not ordered.
 
