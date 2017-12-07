@@ -86,7 +86,7 @@
 % Theorem counters
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}[theorem]{Definition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -101,7 +101,7 @@
 % Problem environments
 \theoremstyle{definition}
 \newtheorem{problem}[theorem]{Problem}
-\newtheorem{example}[definition]{Example}
+\newtheorem{example}[theorem]{Example}
 
 
 \newcommand{\todo}[1]{\color{magenta} \text{{#1}} \color{black}}
@@ -422,17 +422,21 @@ With this in hand, we now develop and visualize examples of these transformation
 
 We first work through a concrete example -- reflecting the point $A_2 = 3+5i$ over the point $X = (2, -1)$ -- to demonstrate the process and calculations behind our reflections.
 
+To visualize the transformation $f_X$ applied to $A_2$, we used the Geogebra visual algebra tool\cite{geogebra_software} and a corresponding user-made hyperbolic geometry worksheet\cite{hyperbolic_worksheet}. In this worksheet, the \poincare disk is the unit circle with center $(0,0)$ embedded in the plane $\R^2$. 
+
 \begin{example}
 We first take our point $X$ and encode $f_X$, the reflection function over $X$, in the matrix $M_{f_X}$. In particular, by (1) we have that 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
-Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-x+2}{-x+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. \todo{[LG] now what?}
+Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-x+2}{-x+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
+
+After we have computed $f_X(A_2)$, we start the visualization process. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding points in $\R^2$. In particular, let $A_{2_\R} = (3,5)$ and $f_X(A_2)_\R = (27/29, 5/29)$. Now, given the point $A_{2_\R}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_\R}'$ in the \poincare disk. The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. We apply this same process to $f_X(A_2)_\R$.
 \end{example}
 
 As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- which we call the ``ends" of our geometry -- are mapped from points lying on the parabola $x=y^2$.
 
 Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. Thus we are left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
-Now, below are our diagrams, generated using the Geogebra visual algebra tool \cite{geogebra_software} and the corresponding user-made hyperbolic geometry worksheet \cite{hyperbolic_worksheet}.
+Now, below are our diagrams, also generated in Geogebra.
 
 \iffalse
 \begin{center}
@@ -784,6 +788,8 @@ Combining these seven lemmas, we conclude that $(F^\C,\oplus,\odot)$ is a field 
 \newpage 
 \section{Encoding LFTs as Matrices} \label{appendixC}
 
+Throughout this section, we define the notation $f\in A$ to mean the linear fractional transformation in $A$ with coefficients $f(z) = \frac{a_fz + b_f}{c_fz + d_f}$.
+
 \noindent Define the set
 	\[
 		A = \left\lbrace z\mapsto \frac{az + b}{cz + d}\colon z\in\C\ttc a,b,c,d\in F\text{ with } ad - bc \neq 0\right\rbrace
@@ -793,7 +799,7 @@ of linear fractional transformations under function composition and let $GL_2(F)
 		F^* = \left\lbrace\lftmat{\lambda}{0}{0}{\lambda}\colon \lambda\in F\text{ with } \lambda\neq 0 \right\rbrace.
 	\]
 	We argue that $F^*$ is a normal subgroup of $GL_2(F)$.
-\begin{lemma}\label{thm:PGL2F}
+\begin{lemma}\label{thm:normalF^*}
 	The subset $F^*$ defined above forms a normal subgroup of $GL_2(F)$.
 \end{lemma}
 \begin{proof}
@@ -812,7 +818,10 @@ of linear fractional transformations under function composition and let $GL_2(F)
 	Therefore $F^*$ is normal as desired.
 \end{proof}
 
-The quotient group formed by constructing $GL_2(F)/F^*$ is known as $PGL(2,F)$, the projective general linear group of $2\times 2$ matrices with coefficients in $F$.
+This result leads us to the following definition.
+\begin{definition}\label{def:PGL2F}
+	The quotient group formed by $GL_2(F)/F^*$ is known as $PGL(2,F)$, the projective general linear group of $2\times 2$ matrices with coefficients in $F$.
+\end{definition}
 
 	To begin discussing a group homomorphisms, we need to know that $A$ under function composition forms a group. 
 	
@@ -829,23 +838,18 @@ With this in mind, we now define the map $\varphi\colon A\rightarrow PGL(2,F)$ b
 	\[
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
-	We claim that $\varphi$ is an isomorphism.
-\begin{theorem}\label{thm:function_correspondence}
-	The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is an isomorphism.
-\end{theorem}
-
-Before we proceed to prove that this map is an isomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $az + b = ez\lambda + f\lambda$ and $cz + d = gz\lambda + h\lambda$, then the maps
+	We claim that $\varphi$ is an isomorphism. However, before we proceed to prove that this map is an isomorphism, it is questionable as to whether $\varphi$ is well-defined. For example, if $\lambda \neq 0$ with $az + b = ez\lambda + f\lambda$ and $cz + d = gz\lambda + h\lambda$, then the maps
 \[
 	z\mapsto\frac{az + b}{cz + d}\quad\text{ and }\quad z\mapsto\frac{ez\lambda + f\lambda}{gz\lambda + h\lambda}
 \]  
-are the same despite having two different representations. Therefore under $\varphi$, they should represent the same element. Of course, this criterion for equal transformations might not be exhaustive. Therefore we have the following lemma.
+are the same despite having two different representations. Therefore under $\varphi$, they should represent the same element. Of course, this criterion for equal transformations might not be exhaustive. Therefore we have the following two lemmas.
 
-\begin{lemma}\label{thm:well-defined}
-	The map $\varphi$ is well-defined.
+\begin{lemma}\label{thm:lft_equality}
+	Let $f_1$ and $f_2$ be two linear fractional transformations in $A$. Then $f_1 = f_2$ if and only if there exists $\lambda\in F$ with $\lambda\neq 0$ such that $a_1 = a_2\lambda$, $b_1 = b_2\lambda$, $c_1 = c_2\lambda$, and $d_1 = d_2\lambda$.
 \end{lemma}
 
 \begin{proof}
-	First we argue that two maps $f_1(z) = \frac{a_1z + b_1}{c_1z + d_1}$ and $f_2(z) = \frac{a_2 z + b_2}{c_2 z + d_2}$ in $A$ are equal if and only if $s_1 = \lambda s_2$ for some $\lambda\neq 0$ and for all $s\in\{a,b,c,d\}$. Stated another way, all the coefficients of $f_1$ differ by the same nonzero multiple from $f_2$.
+	We argue that two maps $f_1(z) = \frac{a_1z + b_1}{c_1z + d_1}$ and $f_2(z) = \frac{a_2 z + b_2}{c_2 z + d_2}$ in $A$ are equal if and only if $s_1 = \lambda s_2$ for some $\lambda\neq 0$ and for all $s\in\{a,b,c,d\}$. Stated another way, all the coefficients of $f_1$ differ by the same nonzero multiple from $f_2$.
 	
 	Supposing that $f_1 = f_2$, we then have that
 	\[
@@ -911,8 +915,14 @@ are the same despite having two different representations. Therefore under $\var
 		& = \frac{a_2z + b_2}{c_2z + d_2} & (\lambda \neq 0).
 	\end{align*}
 	Hence $f_1 = f_2$ if and only if all the coefficients of $f_1$ differ by the same nonzero multiple from $f_2$.
-	
-	Now that we've characterized the equal functions of $A$, we go forth to prove that $\varphi$ is well-defined. Suppose $f_1,f_2\in A$ are equal. Then
+\end{proof}
+
+\begin{lemma}\label{thm:well_defined}
+	The map $\varphi$ is well-defined.
+\end{lemma}
+
+\begin{proof}
+	Suppose $f_1,f_2\in A$ are equal. Then
 	\[
 		\varphi(f_1) = \lftmat{a_1}{b_1}{c_1}{d_1} F^*
 	\]
@@ -920,7 +930,7 @@ are the same despite having two different representations. Therefore under $\var
 	\[
 		\varphi(f_2) = \lftmat{a_2}{b_2}{c_2}{d_2} F^*
 	\]
-	Since $f_1 = f_2$, choose $\lambda\neq 0$ for which $s_1 = \lambda s_2$ for all $s\in\{a,b,c,d\}$. In particular, we note that
+	Since $f_1 = f_2$, apply Lemma \ref{thm:lft_equality} to choose $\lambda\neq 0$ for which $s_1 = \lambda s_2$ for all $s\in\{a,b,c,d\}$. In particular, we note that
 	\begin{align*}
 		\varphi(f_1) & = \lftmat{a_1}{b_1}{c_1}{d_1} F^*\\
 		& = \lftmat{\lambda a_2}{\lambda b_2}{\lambda c_2}{\lambda d_2} F^*\\
@@ -929,8 +939,12 @@ are the same despite having two different representations. Therefore under $\var
 	\end{align*}
 	Therefore $\varphi$ is well-defined.
 \end{proof}
+
+Now we proceed with the proof of Theorem \ref{thm:function_correspondence}.		
 	
-Now we proceed with the proof of Theorem C.3.	
+\begin{theorem}\label{thm:function_correspondence}
+	The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is an isomorphism.
+\end{theorem}
 	
 \begin{proof}
 	First, we argue that $\varphi$ is a homomorphism. Let $f,g\in A$ be two distinct maps. Notice that
@@ -940,8 +954,7 @@ Now we proceed with the proof of Theorem C.3.
 		& = \varphi\left(\frac{a_ga_fz + a_gb_f + b_gc_fz + b_gd_f}{c_ga_fz + c_gb_f + d_gc_fz + d_gd_f}\right) & \text{(simplifying common denominators)}\\
 		& = \varphi\left(\frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)}\right) & \text{(grouping terms for $\varphi$)}\\
 		& = \lftmat{a_ga_f + b_gc_f}{a_gb_f + b_gd_f}{c_ga_f + d_gc_f}{c_gb_f + d_gd_f} F^*\\
-		& = \lftmat{a_g}{b_g}{c_g}{d_g}\lftmat{a_f}{b_f}{c_f}{d_f}F^*\\
-		& = \varphi(g)\varphi(f)F^*
+		& = \lftmat{a_g}{b_g}{c_g}{d_g}\lftmat{a_f}{b_f}{c_f}{d_f}F^* = \varphi(g)\varphi(f)
 	\end{align*}
 	Hence $\varphi$ is a homomorphism. Now we argue that $\varphi$ is surjective. Suppose $M F^*\in PGL(2,F)$ is some matrix with entries $a,b,c,d$. Then the linear fractional transformation given by 
 	\[
@@ -959,7 +972,7 @@ Now we proceed with the proof of Theorem C.3.
 	\[
 		\lftmat{a_f}{b_f}{c_f}{d_f} = \lftmat{a_g\lambda}{b_g\lambda}{c_g\lambda}{d_g\lambda},
 	\]
-	which reduces the problem to matrix equality. Without loss of generality then, $a_f = a_g\lambda$. From our previous argument in Lemma \ref{thm:well-defined}, we therefore conclude that $f_1$ and $f_2$ are the same transformation. Moreover, $f_1 = f_2$. Hence $\varphi$ is injective and thus an isomorphism. 
+	which reduces the problem to matrix equality. Without loss of generality then, $a_f = a_g\lambda$. From our previous argument in Lemma \ref{thm:lft_equality}, we therefore conclude that $f_1$ and $f_2$ are the same transformation. Moreover, $f_1 = f_2$. Hence $\varphi$ is injective and thus an isomorphism. 
 \end{proof}		
 
 \newpage
