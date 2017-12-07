@@ -208,7 +208,7 @@ Using the basic geometric fact that lines can be partitioned by a point\footnote
 %\fi
 
 
-Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{generally just extremely confused about this paragraph and its wording.}
+Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{generally just extremely confused about this paragraph and its wording.} \todo{also rehash stuff about the special end}
 
 	Further, as demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
@@ -358,8 +358,7 @@ It follows that $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 
 Now, recall by Lemma 3.3 that no linear fractional transformation can be encoded in a matrix with determinant 0. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer encodes point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
-\noindent\todo{[AB][LG] make sure this all makes sense after LGdefines hyperbolic actions and clarifies where the disk lies}
-Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the hyperbolic point reflection over $(x \ttc y)$ to satisfy $\Tr(M) = 0$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
+Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the point reflection over $(x \ttc y)$ to satisfy $\Tr(M) = 0$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
 \begin{equation} 
 	\lambda \stanpointmat \text{ where } \lambda \in F \text{ and } x > y^2. 
 \end{equation}	
@@ -429,8 +428,6 @@ As we consider these visualizations, recall the three types of points in the \po
 
 Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. Thus we are left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
-As a final point of clarification, in our diagrams it will always appear that our hyperbolic lines can be extended to pass through two ends (i.e. touch the edge of the \poincare disk in two places). However, these are the general ends of the \poincare disk -- those mapped from the parabola $x = y^2$ in $\R^2$ -- not the particular end $\specialend$. \todo{[AB][LG] make sure this makes sense with LG new info from intro}
-
 Now, below are our diagrams. We made these diagrams using the Geogebra\footnote{\cite{geogebra_software}} visual algebra tool and the corresponding user-made hyperbolic geometry worksheet\footnote{\cite{hyperbolic_worksheet}}.
 
 \iffalse
@@ -493,6 +490,7 @@ In summary, we find three problems with Guggenheimer's geometry. For one, his al
 \begin{appendices}
 \section{From $\R^2$ to the \poincare Disk} \label{appendixA}
 
+\todo{[LG] karen's $\Gamma_{F^2}$ thing?}
 Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
 \begin{center}
@@ -543,7 +541,9 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 
 This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare disk-equivalent of our original point $A$.
 
-Now, if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{OA}$ \todo{?}, our construction then maps $B$ to the corresponding $B'$
+\todo{? this paragraph} Now, if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{OA}$ \todo{?}, our construction then maps $B$ to the corresponding $B'$
+
+We next consider a new point $B$ on the ray $\overrightarrow{OA}$ and its corresponding point $B'$ in the \poincare disk. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -557,10 +557,14 @@ Now, if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{
 \end{tikzpicture}
 \end{center}
 
-\vfill
-\pagebreak
+In particular, notice that $A$ and $B$ -- points in $\R^2$ on the ray $\overrightarrow{OA}$ -- remain on the ray $\overrightarrow{OA}$ after their translation to the \poincare disk. Further, in $\R^2$ we have that $A$ is closer to the point $O$ than $B$. This relationship is preserved: in the \poincare disk we have that $A'$ is closer to the center of the disk $O$ than $B'$. 
+
+%\vfill
+%\pagebreak
 
 Similarly, if $C$ is a point somewhere inside $\Gamma$, this construction will map $C$ further into the interior.
+
+Similarly, if $C$ is a point in $\R^2$ that appear to lie within $\Gamma$ (that is, the distance between $C$ and the center $O$ of $\Gamma$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
