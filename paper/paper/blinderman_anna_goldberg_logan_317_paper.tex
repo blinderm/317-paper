@@ -15,14 +15,12 @@
 \usepackage{listings}
 \allowdisplaybreaks %% TODO: IS IT THAT BAD TO SPLIT EQUATION STRINGS BETWEEN PAGES?
 
-%\usepackage{showkeys} %so you can see your labels; take out when working with final draft
 \usepackage[v2]{xy}
 \usepackage{amscd}  
 
 %\linespread{2}
 \setlength{\parindent}{3em}   
 \setlength{\parskip}{1em}   
-%\setlength{\droptitle}{-5em}
 
 % Sets
 \newcommand{\N}{\mathbb{N}}
@@ -117,7 +115,7 @@
 \maketitle
 
 \begin{abstract}
-In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and line reflections. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of such linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$. \todo{[AB][LG] do we have to cite the paper somewhere in there?}
+In his paper \textit{The Hilbert Model of Hyperbolic Geometry}, Heinrich Guggenheimer classifies linear fractional transformations with coefficients in a real, ordered field $F$ as point reflections and line reflections. In this paper we first introduce a clear notation for such transformations and motivate the algebra behind Guggenheimer's classifications wherever possible. We then illustrate the effects of such linear fractional transformations with coefficients in $F = \R$ using the \poincare disk model for hyperbolic geometry. Motivated by Guggenheimer's claim that this geometry can be developed similarly for transformations with coefficients in $\fc$ (the complexified\footnote{See Appendix \ref{appendixB}.} version of $F$), we attempt to do so for $\R^{\C}$ (i.e. $\C$). Finally, we point out issues with Guggenheimer's development of this geometry in $\R$ and raise questions about his claim that these conventions can be applied in complexified fields, particularly $\C$.
 \end{abstract}
 
 
@@ -139,6 +137,9 @@ These all hold in hyperbolic geometry. However, the fifth postulate
 	\setcounter{enumi}{4}
 	\item Given a line and a point not on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
+\color{blue}
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. In many contexts, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. However, since we primarily work with infinite fields, we find it more helpful to appeal to the former than the latter. [do we? i mean, do we even use this? also what does this have to do with infinite fields?]
+\color{black}
 is replaced with a stronger negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line.'' \cite{euclids_fifth}. We will mainly be working with infinite fields, so it is more helpful to us to appeal to this stronger negation than its weaker negation ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' 
 
 As demonstrated below, line $m$ is the unique line through $P$ parallel to $l$ in Euclidean geometry while lines $n_1$ and $n_2$ through $P$ are parallel to $l$ in hyperbolic geometry.
@@ -165,7 +166,7 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 \end{center}
 In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. 
 
-Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: 
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure: \todo{[LG] karen's $\Gamma_{F^2}$ thing?}
 
 \begin{center}
 	\begin{tikzpicture}
@@ -189,21 +190,21 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\end{tikzpicture}
 \end{center}
 
-The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$ also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
+The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ \todo{[LG] say why} pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$  \todo{[LG] say why}  also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
 
-Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
+Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
 
-Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie `between', consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. Note that we may still refer to a line defined by two points $A$ and $B$ as $AB$ while the line segment is referred to as $\overline{AB}$.
+Extending our machinery for discussing lines, we define a line segment $\overline{AB}$ to be the set of all points on the line defined by points $A$ and $B$ that are between $A$ and $B$. Since this definition permits two separate choices of what points lie ``between," \todo{what?} consider the line $l$ defined above. In particular, we define the line segment $\overline{EF}$ of line $l$ to be the set of all points between $E$ and $F$ that contains $O$. Note that we may still refer to a line defined by two points $A$ and $B$ as $AB$ while the line segment is referred to as $\overline{AB}$. \todo{why isn't this before the picture?}
 
-Using the basic geometric fact that lines can be partitioned by a point\footnote{[\cite{hartshorne}, p.~76, Theorem 7.2]} into two sides, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$.
+Using the basic geometric fact that lines can be partitioned by a point\footnote{[\cite{hartshorne}, p.~76, Theorem 7.2]} into two sides, we then define the ray $\overrightarrow{AB}$ to be the point $A$ together with the collection of all points on the line defined by $A$ and $B$ that is on the same side of $A$ as $B$. 
 
-%\iffalse
+\iffalse
 \begin{center}
 \includegraphics[width=160mm]{../images/ends_example_1.png} \\
 \end{center} 
-%\fi
+\fi
 
-Now consider the following diagram above. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$.
+Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{i'm really confused. probably need the picture.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
@@ -229,7 +230,7 @@ Later we associate points with point reflections and lines with line reflections
 
 To reinforce the fact that matrices encode functions, if $f$ is any linear fractional transformation then we will write $M_f$ to denote the matrix that encodes $f$. Further, we denote the matrix encoding a reflection about a point $P$ by $M_{f_P}$ and a matrix encoding a reflection over a line $l$ by $M_{f_l}$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ \todo{[AB][LG] i think we can actually get rid of this ``citation" since it's in the intro now? Relates to comment earlier in section} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
+Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guggenheimer's Classifications of LFTs}
@@ -325,7 +326,7 @@ Looking at the upper-right and lower-left entries in the two above matrices, we 
 
 If $a + d = 0$, then by definition we have that $\Tr(M) = 0$.
 
-\todo{[LG] i hate the visuals of it, but should we do this as matrices rather than straight algebra? I think it's fine. This is only one paragraph.} On the other hand, if $b = c = 0$, then it remains to ensure that $a^2 + bc = \lambda$ (the upper-left entries of the above matrices) and that $bc + d^2 = \lambda$ (the lower-right entries). Because we know that $b = c = 0$, we can simplify to see that $a^2 = \lambda$ and that $d^2 = \lambda$. Thus we know that $a = -d$ or that $a = d$. In the first case, $a = -d$ implies that $a + d = 0$, whence $\Tr(M) = 0$. If $a = d$, then $M$ is of the form 
+On the other hand, if $b = c = 0$, then it remains to ensure that $a^2 + bc = \lambda$ (the upper-left entries of the above matrices) and that $bc + d^2 = \lambda$ (the lower-right entries). Because we know that $b = c = 0$, we can simplify to see that $a^2 = \lambda$ and that $d^2 = \lambda$. Thus we know that $a = -d$ or that $a = d$. In the first case, $a = -d$ implies that $a + d = 0$, whence $\Tr(M) = 0$. If $a = d$, then $M$ is of the form 
 \[\lftmat{a}{0}{0}{a}\]
 for some $a \in F$. That is, $M$ is of the form $\lambda I$ if we take $\lambda = a$. 
 
@@ -365,8 +366,7 @@ If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$
 	\stanlineendmat
 \]
 
-Following Guggenheimer's decision, we will uniquely associate all lines $l$ with their reflections, just as we did with point reflections. We now discuss the forms that our two types of line reflections must take. \\
-\todo{[AB] make Karen's comments from bottom of pg.~10 more explicit?}
+Following Guggenheimer's decision, we will uniquely associate all lines $l$ with their reflections, just as we did with point reflections. We now discuss the forms that our two types of line reflections must take.
 
 \begin{theorem}The equation of a line in $F_*^2$ not passing through the end $\specialend$ must be of the form \begin{equation}
 	x - 2l_2y + l_1  = 0.
@@ -484,7 +484,6 @@ In summary, we find three problems with Guggenheimer's geometry. For one, his al
 \newpage
 \begin{appendices}
 \section{From $\R^2$ to the \poincare Disk} \label{appendixA}
-\noindent\todo{[AB][LG] ``You are mapping $\R^2$"}
 
 Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
@@ -508,11 +507,11 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \href{}{[source]} Theorem 9.1, we obtain the hyperbolic metric
+To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. From \todo{Theorem 9.1???????}, we obtain the hyperbolic metric
 \[
 	d_H(O,A') = \ln\frac{1 + r}{1 - r}
 \]
-where $r\in\R$ is the radius of the circle we wish to draw. Let's call this new circle $\Delta$. Computing $r$, we find that
+where $r\in\R$ is the radius of the circle we wish to draw. We will call this new circle $\Delta$. Computing $r$, we find that
 \[
 	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
 \]
@@ -534,9 +533,9 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 \end{tikzpicture}
 \end{center}
 
-This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare Disk-equivalent of our original point $A$.
+This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare disk-equivalent of our original point $A$.
 
-Now if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{OA}$, our construction then maps $B$ to the corresponding $B'$
+Now, if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{OA}$ \todo{?}, our construction then maps $B$ to the corresponding $B'$
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -964,6 +963,8 @@ Below is the code we used to apply point reflections and line reflections to var
 \newpage
 \bibliographystyle{alpha}
 \bibliography{bibliography}
+
+\nocite{guggen_paper}
 
 \noindent\todo{[AB][LG] cite the rest of our sources, i guess}
 
