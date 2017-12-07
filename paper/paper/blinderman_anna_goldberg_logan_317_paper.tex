@@ -208,17 +208,16 @@ Using the basic geometric fact that lines can be partitioned by a point\footnote
 %\fi
 
 
-Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{i'm really confused. probably need the picture.}
+Now consider the following diagram above \todo{following above?}. Notice that the line $AB$ is parallel to the line $CD$. However, the rays $\overrightarrow{BA}$ and $\overrightarrow{DC}$ seem to meet at $\beta$ (note that $\beta$ is not defined within the model). We therefore define an end of the ray to be the equivalence class of all rays that meet at seem to `limit' to the same point end of the circle $\Gamma$\footnote{[\cite{hartshorne}, Section 40]}. Furthermore, $\alpha$ and $\beta$ refer to different equivalence classes. An end therefore, is a way of discussing points on $\Gamma$ within the model without specifically including $\Gamma$. \todo{generally just extremely confused about this paragraph and its wording.}
 
-	From Figure \ref{fig:construction_hyperbolic_lines}, we note that every hyperbolic line has exactly two distinct ends, and every two distinct ends are the ends of a unique hyperbolic line.
-
+	Further, as demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior \todo{[LG] discuss lines vs. line segments vs. ends, I am confused about what we had discussed earlier, so I am leaving this comment here} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
 
-The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer define's a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{[\cite{shuman_lfts}]} given by
+The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer define's a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{\cite{shuman_lfts} \todo{why are some citations footnotes?}} given by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
@@ -235,19 +234,19 @@ Because all linear fractional transformations we will use are of the form given 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$.
 
-To reinforce the fact that matrices encode functions, if $f$ is any linear fractional transformation then we will write $M_f$ to denote the matrix that encodes $f$. Further, we denote the matrix encoding a reflection about a point $P$ by $M_{f_P}$ and a matrix encoding a reflection over a line $l$ by $M_{f_l}$. 
+To reinforce the fact that matrices simply encode functions, if $f$ is any linear fractional transformation then we will write $M_f$ to denote the matrix that encodes $f$. Thus we denote the matrix encoding a reflection about a point $P$ by $M_{f_P}$ and a matrix encoding a reflection over a line $l$ by $M_{f_l}$. 
 
-Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
+Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ and ones not passing through this particular end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guggenheimer's Classifications of LFTs}
 
 \hspace{10mm} We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
-\noindent\todo{[LG] draw on stuff you put in the intro to make this clearer, I don't follow what needs to be done here, it looks fine.}
 However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $\R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
-Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to our geometric intuitions to understand these actions. Moreover, a line reflection flips the plane about a given line, fixing each point on the line, while a point reflection rotates the plane by $\pi$ radians about a given point. Exploring the diagrams below, the line reflection about line $l$ maps triangle $\triangle ABC$ to $\triangle PQR$ (sending $A$ to $P$, $B$ to $Q$, and $C$ to $R$) and fixes point $O$; the point reflection about $O'$ maps $\triangle ABC$ to $\triangle PSR$ (sending $A$ to $P$, $B$ to $S$, and $C$ to $R$). We can see intuitively that the act of applying the line reflection or point reflection twice to the plane results in applying the identity transformation.
+\todo{shouldn't this be in the intro?}
+Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to geometric intuitions in $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflections over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
 
 \begin{center}
 \begin{tabular}{cc}
@@ -262,10 +261,10 @@ Although Guggeheimer does not provide a geometric definition of point or line re
 		\draw[fill=black] (-1,1) circle (0.05) node[above] {$A$};
 		\draw[fill=black] (-1.5,.5) circle (0.05) node[left] {$B$};
 		\draw[fill=black] (-.5,.5) circle (0.05) node[right] {$C$};
-		\draw[fill=black] (1,-1) circle (0.05) node[right] {$P$};
-		\draw[fill=black] (.5,-1.5) circle (0.05) node[left] {$Q$};
-		\draw[fill=black] (.5,-.5) circle (0.05) node[left] {$R$};
-		\draw[fill=black] (1,1) circle (0.05) node[above] {$O$};
+		\draw[fill=black] (1,-1) circle (0.05) node[right] {$A'$};
+		\draw[fill=black] (.5,-1.5) circle (0.05) node[left] {$B'$};
+		\draw[fill=black] (.5,-.5) circle (0.05) node[left] {$C'$};
+		\draw[fill=black] (1,1) circle (0.05) node[above] {$L$};
 	% line reflection
 	\end{tikzpicture} 
 	& 	
@@ -276,13 +275,13 @@ Although Guggeheimer does not provide a geometric definition of point or line re
 		\draw (1,-1) -- (1.5,-.5);
 		\draw (1.5,-.5) -- (.5,-.5);
 		\draw (.5,-.5) -- (1,-1);
-		\draw[fill=black] (0,0) circle (0.05) node[above right] {$O'$};
+		\draw[fill=black] (0,0) circle (0.05) node[above right] {$P$};
 		\draw[fill=black] (-1,1) circle (0.05) node[above] {$A$};
 		\draw[fill=black] (-1.5,.5) circle (0.05) node[left] {$B$};
 		\draw[fill=black] (-.5,.5) circle (0.05) node[above right] {$C$};
-		\draw[fill=black] (1,-1) circle (0.05) node[right] {$P$};
-		\draw[fill=black] (1.5,-.5) circle (0.05) node[right] {$S$};
-		\draw[fill=black] (.5,-.5) circle (0.05) node[below left] {$R$};
+		\draw[fill=black] (1,-1) circle (0.05) node[right] {$A'$};
+		\draw[fill=black] (1.5,-.5) circle (0.05) node[right] {$B'$};
+		\draw[fill=black] (.5,-.5) circle (0.05) node[below left] {$C'$};
 	% point reflection
 	\end{tikzpicture}   \\
 Line reflection about line $l$. & Point reflection about point $O'$. \\
@@ -290,7 +289,9 @@ Line reflection about line $l$. & Point reflection about point $O'$. \\
 \end{tabular}
 \end{center}
 
-Let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two (as demonstrated above by the Euclidean reflections). That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
+Notice that the point $L$, which lies line $l$, stays fixed under the line reflection over $l$. Also, we can see intuitively that the act of applying a line reflection or a point reflection twice to the plane is equivalent to simply applying the identity transformation to the plane..
+
+Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two (as demonstrated above by the Euclidean reflections). That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
 
 \begin{lemma} 
 	The composition of linear fractional transformations corresponds to the multiplication of their respective matrix encodings.
@@ -305,7 +306,7 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 \end{lemma}
 
 \begin{proof}
-	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{See \ref{thm:PGL2F} in Appendix \ref{appendixC} for the definition of $PGL(2\ttc F)$}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
+	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{See \ref{thm:PGL2F} in Appendix \ref{appendixC} for the definition of $PGL(2\ttc F)$ \todo{wordy?}}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
 \end{proof}
 
 \begin{lemma}
