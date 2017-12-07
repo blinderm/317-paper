@@ -189,16 +189,18 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\end{tikzpicture}
 \end{center}
 
-The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$ also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$.
+The minor arc $AB$ of circle $\Delta$ that excludes points $A$ and $B$ pictured above defines the hyperbolic line through the pair of model points $(G,H)$ in the \poincare disk realized by circle $O$. Additionally the segment of the Euclidean line $l$ through $O$ that excludes $L$ and $K$ also defines hyperbolic line through the pair of model points $(E,F)$ in the \poincare disk model realized by $O$. 
 
 Appendix A contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk.
+
+In addition to defining points and lines in the model, Guggeinheimer 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed later, such points will be in the interior \todo{[LG] discuss lines vs. line segments vs. ends} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
+\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior \todo{[LG] discuss lines vs. line segments vs. ends} of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. Furthermore, 
 
-The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. We define a hyperbolic motion to be HYPERBOLIC MOTION The group of hyperbolic transformations over $F$ is the group of linear fractional transformations\footnote{[\cite{shuman_lfts}]} given by
+The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer define's a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations\footnote{[\cite{shuman_lfts}]} given by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
@@ -219,8 +221,6 @@ To reinforce the fact that matrices encode functions, if $f$ is any linear fract
 
 Finally, we will discuss two types of line reflections: ones passing through the end $\specialend$ \todo{[AB][LG] i think we can actually get rid of this ``citation" since it's in the intro now?} and ones not passing through this end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guggenheimer's Classifications of LFTs}
 
@@ -230,6 +230,49 @@ Let $F$ be some real, ordered field. The coefficients of our linear fractional t
 
 \noindent\todo{[LG] draw on stuff you put in the intro to make this clearer}
 However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process -- while valid in certain fields like $\R$ -- is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
+
+Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to our geometric intuitions to understand these actions. Moreover, a line reflection flips the plane about a given line, fixing each point on the line, while a point reflection rotates the plane by $\pi$ radians about a given point. Exploring the diagrams below, the line reflection about line $l$ maps triangle $\triangle ABC$ to $\triangle PQR$ (sending $A$ to $P$, $B$ to $Q$, and $C$ to $R$) and fixes point $O$; the point reflection about $O'$ maps $\triangle ABC$ to $\triangle PSR$ (sending $A$ to $P$, $B$ to $S$, and $C$ to $R$). We can see intuitively that the act of applying the line reflection or point reflection twice to the plane results in applying the identity transformation.
+
+\begin{center}
+\begin{tabular}{cc}
+	\begin{tikzpicture}
+		\draw (-2,-2) -- (2,2) node[right] {$l$};
+		\draw (-1,1) -- (-1.5,.5);
+		\draw (-1.5,.5) -- (-.5,.5);
+		\draw (-.5,.5) -- (-1,1);
+		\draw (1,-1) -- (.5,-1.5);
+		\draw (.5,-1.5) -- (.5,-.5);
+		\draw (.5,-.5) -- (1,-1);
+		\draw[fill=black] (-1,1) circle (0.05) node[above] {$A$};
+		\draw[fill=black] (-1.5,.5) circle (0.05) node[left] {$B$};
+		\draw[fill=black] (-.5,.5) circle (0.05) node[right] {$C$};
+		\draw[fill=black] (1,-1) circle (0.05) node[right] {$P$};
+		\draw[fill=black] (.5,-1.5) circle (0.05) node[left] {$Q$};
+		\draw[fill=black] (.5,-.5) circle (0.05) node[left] {$R$};
+		\draw[fill=black] (1,1) circle (0.05) node[above] {$O$};
+	% line reflection
+	\end{tikzpicture} 
+	& 	
+	\begin{tikzpicture}
+		\draw (-1,1) -- (-1.5,.5);
+		\draw (-1.5,.5) -- (-.5,.5);
+		\draw (-.5,.5) -- (-1,1);
+		\draw (1,-1) -- (1.5,-.5);
+		\draw (1.5,-.5) -- (.5,-.5);
+		\draw (.5,-.5) -- (1,-1);
+		\draw[fill=black] (0,0) circle (0.05) node[above right] {$O'$};
+		\draw[fill=black] (-1,1) circle (0.05) node[above] {$A$};
+		\draw[fill=black] (-1.5,.5) circle (0.05) node[left] {$B$};
+		\draw[fill=black] (-.5,.5) circle (0.05) node[above right] {$C$};
+		\draw[fill=black] (1,-1) circle (0.05) node[right] {$P$};
+		\draw[fill=black] (1.5,-.5) circle (0.05) node[right] {$S$};
+		\draw[fill=black] (.5,-.5) circle (0.05) node[below left] {$R$};
+	% point reflection
+	\end{tikzpicture}   \\
+Line reflection about line $l$. & Point reflection about point $O'$. \\
+& \\
+\end{tabular}
+\end{center}
 
 Returning to our linear fractional transformations, we begin with a notion inspired by Euclidean geometry: that both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish two lemmas. 
 
@@ -451,6 +494,7 @@ In summary, we find three problems with Guggenheimer's geometry. For one, his al
 \newpage
 \begin{appendices}
 \section{From $\R^2$ to the \poincare Disk} \label{appendixA}
+\noindent\todo{[AB][LG] ``You are mapping $\R^2$"}
 
 Let $\Gamma$ be the \poincare disk. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
@@ -745,23 +789,10 @@ The quotient group formed here is known as $PGL(2,F)$, the projective general li
 \begin{theorem}
 	The set of linear fractional transformations given by $A$ forms a group under function composition.
 \end{theorem}
-	
+
 \begin{proof}
-	We already know function composition is associative. Therefore, we need only show that $A$ is closed under function composition, the existence of an identity, and closure under inverses.
-	First we prove closure. Let $f(z) = \frac{a_fz + b_f}{c_fz + d_f}$ and $g(z) = \frac{a_g z + b_g}{c_g z + d_g}$ be two maps in $A$. For $z\in\C$, compose $g$ with $f$ to find that
-	\begin{align*}
-		(g\circ f)(z) & = g\left(\frac{a_fz + b_f}{c_fz + d}\right)\\
-		& = \frac{a_g\frac{a_fz + b_f}{c_fz + d_f} + b_g}{c_g\frac{a_fz + b_f}{c_fz + d_f} + d_g}\\
-		& = \frac{\frac{a_g(a_fz+b_f)+b_g(c_fz+d_f)}{c_fz+d_f}}{\frac{c_g(a_fz+b_f)+d_g(c_fz+d_f)}{c_fz+d_f}}\\
-		& = \frac{a_ga_fz + a_gb_f + b_gc_fz + b_gd_f}{c_ga_fz + c_gb_f + d_gc_fz + d_gd_f} & \text{(simplifying common denominators)}\\
-		& = \frac{(a_ga_f + b_gc_f)z + (a_gb_f + b_gd_f)}{(c_ga_f + d_gc_f)z + (c_gb_f + d_gd_f)} & \text{(grouping terms)}\\
-	\end{align*}
-	Since $F$ is closed under addition and multiplication, we conclude that $g\circ f$ is a lft. Moreover, notice that
-	\begin{align*}
-	(a_ga_f + b_gc_f)(c_gb_f + d_gd_f) & - (a_gb_f + b_gd_f)(c_ga_f + d_gc_f) =\\	 a_ga_fc_gb_f + a_ga_fd_gd_f + b_gc_fc_gb_f + b_gc_fd_gd_f & - a_gb_fc_ga_f - a_gb_fd_gc_f -b_gd_fc_ga_f - b_gd_fd_gc_f =
-	\end{align*}
-	LEAVE THIS FOR TOMORROW AFTER WE KNOW WHETHER TO PROVE THIS THEOREM
-\end{proof}	
+	See \cite{shuman_lfts}.
+\end{proof}
 	
 With this in mind, we now define the map $\varphi\colon A\rightarrow PGL(2,F)$ by
 
