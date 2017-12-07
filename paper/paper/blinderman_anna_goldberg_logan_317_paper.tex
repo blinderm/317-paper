@@ -135,7 +135,7 @@ These all hold in hyperbolic geometry \cite{hartshorne}. However, the fifth post
 	\setcounter{enumi}{4}
 	\item Given a line and a point not on that line, at most one line parallel to the given line can be drawn through that line.
 \end{enumerate}
-is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line'' \cite{euclids_fifth}. Somestimes, a weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is used instead. 
+is replaced with its negation: ``Through an exterior point to a straight line we can construct an infinite number of parallels to that straight line'' \cite{euclids_fifth}. A weaker (but equivalent) negation -- ``Through an exterior point to a straight line, we can construct at least two lines parallel to it.'' -- is often used instead. In either case, we can visualize the difference between these postulates as follows:
 \begin{center}
 \begin{tabular}{cc}
 	\begin{tikzpicture}
@@ -156,6 +156,7 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 & \\
 \end{tabular}
 \end{center}
+
 In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. 
 
 Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. Consider the following figure:
@@ -196,28 +197,28 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	
 Recall that points lying on the \poincare disk (eg.~$A\ttc B \ttc L$, and $K$) are currently excluded from our model. However, it will be important to discuss these points lying on $\Gamma$ later, whence we define them to be the \textit{ends} of our geometry. 
 
-We now go forth to define hyperbolic lines and line segments in the context of the \poincare disk above. If we take the minor arc $AB$ of the Euclidean circle $\Delta$ and exclude its endpoints $A$ and $B$ (notice that $A$ and $B$ are ends in the \poincare disk), then $AB$ is a hyperbolic line in our disk. Similarly, if we exclude points $L$ and $K$ (which are also ends in the \poincare model) from the Euclidean line $l$, then we have another hyperbolic line $LK$ in our disk. 
+We now consider the hyperbolic lines and line segments in our \poincare disk above. If we take the minor arc $AB$ of the Euclidean circle $\Delta$ and exclude its endpoints $A$ and $B$ (notice that $A$ and $B$ are ends in the \poincare disk), then $AB$ is a hyperbolic line in our disk. Similarly, if we exclude points $L$ and $K$ (which are also ends in the \poincare model) from the Euclidean line $l$, then we have another hyperbolic line $LK$ in our disk. 
 
-\todo{clunky as shit. will come back}Notice that we denote hyperbolic lines by the two (hyperbolic) ends that appear to be their endpoints in the Euclidean plane. For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $AB$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
+Notice that hyperbolic lines $l$ are denoted by the two (hyperbolic) ends that appear to be the endpoints of $l$ if $l$ is viewed in a Euclidean context (that is, if we view the hyperbolic line $l$ as a Euclidean line or the arc of a Euclidean circle). For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $AB$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the hyperbolic line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
 
-We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are line segments lying on the lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and $Z$ and $W$ are points lying on $XY$ in the \poincare disk, the $\overline{ZW}$ is defined to be the set of all points on line $XY$ between and including $Z$ and $W$.
+We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are line segments lying on the lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and two points $Z$ and $W$ lying on line $XY$ in the \poincare disk, then $\overline{ZW}$ is defined to be the set of all points on line $XY$ between (and including) $Z$ and $W$.
 
-	As demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
+As demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
-	Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
+Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
 	
-\hspace{10mm} We first set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
+\hspace{10mm} We now set forth the notation we will use throughout our paper. In general, we will denote the coordinates of points in the plane as $(x \ttc y) \ttc (x' \ttc y')$, etc. As discussed earlier, such points will be in the interior of our \poincare disk. On the other hand, points defining lines (which should lie outside of the \poincare disk) will be denoted $(l_1 \ttc l_2) \ttc (l_1' \ttc l_2')$, etc. 
 
-The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. Guggenheimer defines a hyperbolic motion to be a linear fractional transformation. The group of hyperbolic motions over $F$ is the group of linear fractional transformations \cite{shuman_lfts} give by
+The general linear fractional transformations, point reflections, and line reflections we discuss will begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. The group of linear fractional transformations over $F$ is the set of linear fractional transformations given by
 \begin{equation} 
 	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
 \end{equation}
-under function composition. Remarkably, Guggenheimer does not say anything about the case when $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later when we discuss such line reflections further. 
+under function composition \cite{shuman_lfts}. Remarkably, Guggenheimer does not address the case in which $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later when we discuss such line reflections further. 
 
-Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to geometric intuitions in $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflections over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
+Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to geometric intuition in $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflection over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
 
 \begin{center}
 \begin{tabular}{cc}
@@ -255,18 +256,18 @@ Although Guggeheimer does not provide a geometric definition of point or line re
 		\draw[fill=black] (.5,-.5) circle (0.05) node[below left] {$C'$};
 	% point reflection
 	\end{tikzpicture}   \\
-Line reflection about line $l$. & Point reflection about point $O'$. \\
+Line reflection about line $l$. & Point reflection about point $P$. \\
 & \\
 \end{tabular}
 \end{center}
 
-Notice that the point $L$, which lies line $l$, stays fixed under the line reflection over $l$. Also, we can see intuitively that the act of applying a line reflection or a point reflection twice to the plane is equivalent to simply applying the identity transformation to the plane..
+Notice that the point $L$, which lies on line $l$, stays fixed under the line reflection over $l$. Also, we can see intuitively that the act of applying a line reflection or a point reflection twice to the plane is equivalent to simply applying the identity transformation to the plane.
 
 For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
-We note that this encoding is well-defined and invertible\footnote{See Appendix \ref{appendixC}}.
+In Appendix \ref{appendixC}, we demonstrate that this encoding is well-defined and invertible. 
 
 It should be explicitly noted that these matrices are used only to encode our transformations. That is, to ``apply" a transformation encoded the matrix in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply a corresponding linear fractional transformation $f$ defined by (1) to the point $z_0$. 
 
@@ -285,7 +286,7 @@ Finally, we will discuss two types of line reflections: ones passing through the
 
 However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to those outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process, while valid in certain fields like $\R$, is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
-Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry: both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. We first establish three lemmas. 
+Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry and discussed in the previous section: both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. With this in mind, we establish two lemmas.
 
 \begin{lemma} 
 	The composition of linear fractional transformations corresponds to the multiplication of their respective matrix encodings.
@@ -309,6 +310,8 @@ Now, let $F$ be some real, ordered field. The coefficients of our linear fractio
 	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{As defined in Lemma \ref{thm:PGL2F} of Appendix \ref{appendixC}}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
 \end{proof}
 
+Because we often interchange linear fractional transformations with their matrix encodings, we wish to have the following at our disposal:
+
 \begin{lemma}
 	If $f$ is a linear fractional transformation and $M_f$ is the matrix encoding $f$, then we must have that $\det(M_f) \neq 0$.
 \end{lemma}
@@ -316,6 +319,8 @@ Now, let $F$ be some real, ordered field. The coefficients of our linear fractio
 \begin{proof}
 	Suppose that for each $z \in \C$, $f$ is given by $f(z) = \frac{az+b}{cz+d}$ for some $a\ttc b\ttc c\ttc d \in F$. We have by (1) that $ad-bc \neq 0$. Thus, since $\det M_f = ad-bc$, we must have that $\det M_f \neq 0$ as well.
 \end{proof}
+
+With these lemmas in hand, we derive the general form of the matrix encodings of linear fractional transformations of order two. 
 
 \begin{theorem}
 If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some representative of the identity coset of $PGL(2\ttc F)$.}
@@ -366,7 +371,7 @@ As mentioned, we choose to associate each point reflection with a unique point i
 
 It is important to remember that we are not mapping this parabola to the unit disk; we are instead using this parabola to define three disjoint subsets of $F^2$. In particular, the points in $F^2$ contained in the convex domain defined by the parabola $x=y^2$ correspond to the interior of the \poincare disk, those in $F^2$ that lie on the parabola $x=y^2$ correspond to the \poincare disk itself, and those neither inside nor on the parabola $x=y^2$ correspond to points outside the \poincare disk.
 
-Next, we define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{If we take $F = \R$, then we follow the convention set forth in \cite{shuman_infinity}. However, it is unclear how to do this in an arbitrary field. Guggenheimer does not address this complication.}. We define an end of our geometry to be the points on our parabola, namely those pairs $(x \ttc y) \in F_*^2$ where $y = x^2$. We follow Guggenheimer in simply claiming that the end $\specialend$ is of particular interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
+Notice that the points mapped from the parabola $x = y^2$, pairs $(x \ttc y) \in F_*^2$ where $y = x^2$, are the ends of our geometry. We next define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{If we take $F = \R$, then we follow the convention set forth in \cite{shuman_infinity}. However, it is unclear how to do this in an arbitrary field. Guggenheimer does not address this complication.}. We follow Guggenheimer in simply claiming that the end $\specialend$ is of special interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[
@@ -382,7 +387,7 @@ where $l_1$ and $l_2$ are in $F_*$; $x \in F_*$; and $y \in F_*$.
 \end{theorem}
 
 \begin{proof}
-Notice that if a point $P$ is on a line $l$, then by our geometric intuition, the $f_l$ fixes $P$. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_{f_l} M_{f_P} M_{f_l}\inv = M_{f_P}$, whence $M_{f_l} M_{f_P} = M_{f_P} M_{f_l}$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_{f_l} M_{f_P}$ is a representative of $M_{f_P} M_{f_l}$, hence the $\lambda$.}:
+Notice that if a point $P$ is on a line $l$, then by our geometric intuition we have that the transformation $f_l$ fixes $P$. Regarding our point $P$ and line $l$ as their respective reflections, we then have that $f_l(P) = P$ if point $P$ is on line $l$. For the same reason, we have that $M_{f_l} M_{f_P} M_{f_l}\inv = M_{f_P}$, whence $M_{f_l} M_{f_P} = M_{f_P} M_{f_l}$. We will first consider this in terms of matrices for lines not passing through the end $\specialend$. We have the following\footnote{$M_{f_l} M_{f_P}$ is a representative of $M_{f_P} M_{f_l}$, hence the $\lambda$.}:
 \begin{equation} 
 \stanlinenoendmat\stanpointmat \spceq \lambda \stanpointmat\stanlinenoendmat
 \end{equation}	
@@ -418,7 +423,7 @@ With this in hand, we now develop and visualize examples of these transformation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Examples in $F = \R$}
 
-\hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles\footnote{To define a triangle, we take three points in the disk and connect them with hyperbolic lines.} and two points about which each of them will be reflected\footnote{To reflect a triangle over a point $P$, we apply $f_P$ to each of its three vertices and then ``redraw" the edges. See Appendix D for the code used. \todo{probably change}}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 0.2 - 2i$. The points about which we will perform our reflections are $X = (2, -1)$ and $Y = (2, 1)$.
+\hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles\footnote{To define a triangle, we take three points in the disk and connect them with hyperbolic lines.} and two points about which each of them will be reflected\footnote{To reflect a triangle over a point $P$, we apply $f_P$ to each of its three vertices as in Example 4.1 and then ``redraw" the edges. See Appendix \ref{appendixD} for the code used to compute these transformations.}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 0.2 - 2i$. The points about which we will perform our reflections are $X = (2, -1)$ and $Y = (2, 1)$.
 
 We first work through a concrete example -- reflecting the point $A_2 = 3+5i$ over the point $X = (2, -1)$ -- to demonstrate the process and calculations behind our reflections.
 
@@ -432,9 +437,9 @@ Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for
 After we have computed $f_X(A_2)$, we start the visualization process. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding points in $\R^2$. In particular, let $A_{2_\R} = (3,5)$ and $f_X(A_2)_\R = (27/29, 5/29)$. Now, given the point $A_{2_\R}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_\R}'$ in the \poincare disk. The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. We apply this same process to $f_X(A_2)_\R$.
 \end{example}
 
-As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- which we call the ``ends" of our geometry -- are mapped from points lying on the parabola $x=y^2$.
+As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- the ends of our geometry -- are mapped from points lying on the parabola $x=y^2$.
 
-Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. Thus we are left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
+Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. We are therefore left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
 Now, below are our diagrams, also generated in Geogebra.
 
@@ -566,8 +571,6 @@ In particular, notice that $A$ and $B$ -- points in $\R^2$ on the ray $\overrigh
 
 %\vfill
 %\pagebreak
-
-Similarly, if $C$ is a point somewhere inside $\Gamma_{\R^2}$, this construction will map $C$ further into the interior.
 
 Similarly, if $C$ is a point in $\R^2$ that appear to lie within $\Gamma_{\R^2}$ (that is, the distance between $C$ and the center $O$ of $\Gamma_{\R^2}$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
 
