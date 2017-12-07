@@ -279,35 +279,19 @@ Returning to our linear fractional transformations, we begin with a notion inspi
 \noindent \todo{[LG] i put these things as lemmas, but feel free to move them to appendix c}
 
 \begin{lemma} 
-	\todo{[LG][AB] phrasing?} The composition of linear fractional transformation corresponds to the multiplication of their respective matrix encodings.
+	The composition of linear fractional transformation corresponds to the multiplication of their respective matrix encodings.
 \end{lemma}
 
 \begin{proof} 
-	MIGHT BE EASIER TO JUST REFER TO LEMMAS IN APPENDIX C (STILL NEED TO ASK HER ABOUT GROUP OF LFTS)
+	Appeal to Theorem \ref{thm:function_correspondence}.		
+\end{proof}	
 	
-	Suppose that we have two linear fractional transformations $f_1$ and $f_2$ given by $f(z) = \frac{a_1z+b_1}{c_1z+d_2}$ and $f_2(z) = \frac{a_2z+b_2}{c_2z+d_2}$ for each $z \in \C$. We then have \todo{[LG] BY CONVENTION??} that their respective matrix encodings are 
-\[ M_{f_1} = \lftmat{a_1}{b_1}{c_1}{d_1} \text{ and } M_{f_2} =  \lftmat{a_2}{b_2}{c_2}{d_2}. \] 
-Now, let $z \in \C$. We have that 
-\begin{align*}
-f_1(f_2(z)) & = \frac{a_1(\frac{a_2z+b_2}{c_2z+d_2})+b_1}{c_1(\frac{a_2z+b_2}{c_2z+d_2})+d_1} \\[1em]
-& = \frac{\frac{a_1(a_2z+b_2)+b_1(c_2z+d_2)}{c_2z+d_2}}{\frac{c_1(a_2z+b_2)+d_1(c_2z+d_2)}{c_2z+d_2}} \\[1em]
-& = \frac{a_1(a_2z+b_2)+b_1(c_2z+d_2)}{c_1(a_2z+b_2)+d_1(c_2z+d_2)} \\[1em]
-& = \frac{(a_1a_2+b_1c_2)z + (a_1b_2+b_1d_2)}{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}
-\end{align*}
-On the other hand, we have that 
-\begin{align*}
-M_{f_1}M_{f_2} & = \lftmat{a_1}{b_1}{c_1}{d_1}\lftmat{a_2}{b_2}{c_2}{d_2}  \\[1em]
-& = \lftmat{a_1a_2+b_1c_2}{a_1b_2+b_1d_2}{c_1a_2+d_1c_2}{c_1b_2+d_1d_2}
-\end{align*}
-Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional transformation given by $f_1 \circ f_2$, the composition of $f_1$ upon $f_2$ \todo{[LG] it is $f_1$ upon $f_2$, right..? $f_1$ acts on $f_2$ so yeah}. 
-\end{proof} 
-
 \begin{lemma}
 	If $M_f$ is a matrix that encodes some linear fractional transformation $f$ of order two with coefficients in a field $F$, then we must have that $M_f^2 = \lambda I$ for some constant $\lambda \in F$, where $I$ is the usual $2 \times 2$ identity matrix. 
 \end{lemma}
 
 \begin{proof}
-	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields a member of the coset \todo{[LG] do we need to cit something about cosets here again?} containing the identity matrix $I$. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$ .
+	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
 \end{proof}
 
 \begin{lemma}
@@ -319,7 +303,7 @@ Notice that this resultant matrix $M_{f_1}M_{f_2}$ encodes the linear fractional
 \end{proof}
 
 \begin{theorem}
-If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some member of the coset \todo{[LG] $PGL(2\ttc F)$, cite appendix c?}containing the identity.}
+If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some representative of a of coset $PGL(2\ttc F)$ containing the identity. See Appendix \ref{appendixC}.}
 \end{theorem}
 
 \begin{proof}
@@ -435,21 +419,21 @@ As a final point of clarification, in our diagrams it will always appear that ou
 
 Now, below are our diagrams.
 
-\iffalse
+%\iffalse
 \begin{center}
-\includegraphics[width=165mm]{../images/t1_over_x.png} \\
+\includegraphics[width=160mm]{../images/t1_over_x.png} \\
 Triangle $T_1$ reflected over point $X$ 
 \[\]
-\includegraphics[width=165mm]{../images/t1_over_y.png} \\
+\includegraphics[width=160mm]{../images/t1_over_y.png} \\
 Triangle $T_1$ reflected over point $Y$  
 \[\]
-\includegraphics[width=165mm]{../images/t2_over_x.png} \\
+\includegraphics[width=160mm]{../images/t2_over_x.png} \\
 Triangle $T_2$ reflected over point $X$
 \[\]
-\includegraphics[width=165mm]{../images/t2_over_y.png} \\
+\includegraphics[width=160mm]{../images/t2_over_y.png} \\
 Triangle $T_2$ reflected over point $Y$ 
 \end{center}
-\fi
+%\fi
 
 
 From these diagrams we notice two oddities. For one, these point reflections look more like line reflections than they do point reflections. That is, the triangles seem to be ``reflected" and ``stretched" rather than simply ``rotated." Also, it is unclear from these diagrams why we restricted our choice of points to those from the convex domain defined by the parabola $x = y^2$. We now discuss these issues and their implications in turn.
@@ -470,7 +454,7 @@ Notice further that this matrix takes the form of a point reflection about $l = 
 
 Therefore the ``distinction" between line reflections and point reflections as put forth by Guggenheimer is indeed as arbitrary as it originally seemed. 
 
-A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered\footnote{[\cite{marsden_complex_book}, p.~6]}. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary and best and entirely non-applicable at worst.
+A further issue with this distinction arises once we complexify $\R$ as suggested by Guggenheimer. Because $\R^{\C} = \C$ is not ordered, there is no way to compare the determinant of a matrix $M$ with entries in $\C$ to 0. This issue will occur in all complexified fields, as no complexified field can be ordered\footnote{[\cite{marsden_complex_book}, p.~6]}. Thus, Guggenheimer's distinction between line reflections and point reflections by the determinant of their corresponding matrices is arbitrary at best and entirely non-applicable at worst.
 
 Another crucial element of Guggenheimer's geometry is rendered nonsensical once we begin to work with complexified fields. In particular, his insistence that points be taken from the convex domain defined by the parabola $x = y^2$ (hereafter referred to as $D$) has no meaning in fields that are not ordered.
 
@@ -545,6 +529,21 @@ Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having comput
 \end{center}
 
 This point $A'$, the intersection between the line segment $\overline{OA}$ and $\Delta$, is the \poincare Disk-equivalent of our original point $A$.
+
+Now if $B$ is a point on the line given by $OA$ along the ray $\overrightarrow{OA}$, our construction then maps $B$ to the corresponding $B'$
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw (0,0) circle (2.2cm) node[above left=1.5cm] {$\Gamma$};
+\draw (0,0) -- (3,3);
+\draw[fill=black] (0,0) circle (0.05) node[left] {$O$};
+\draw[fill=black] (2.2,2.2) circle (0.05) node[right] {$A$};
+\draw[fill=black] (1,1) circle (0.05) node[below] {$A'$};
+\draw[fill=black] (3,3) circle (0.05) node[right] {$B$};
+\draw[fill=black] (1.3,1.3) circle (0.05) node[above left] {$B'$};
+\end{tikzpicture}
+\end{center}
+
 
 
 
@@ -800,8 +799,8 @@ With this in mind, we now define the map $\varphi\colon A\rightarrow PGL(2,F)$ b
 		\varphi\left(z\mapsto \frac{az + b}{cz + d}\right) = \stanlftmat F^*
 	\]
 	We claim that $\varphi$ is a surjective homomorphism.
-\begin{theorem}
-		The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
+\begin{theorem}\label{thm:function_correspondence}
+	The map $\varphi\colon A\rightarrow PGL(2,F)$ given above is a surjective homomorphism with $\ker(\varphi)$ given by the set
 		\[
 			\left\lbrace z\mapsto \frac{az + b}{cz + d}\colon a = d; d \neq 0\text{ and } b = c = 0\right\rbrace.
 		\]
