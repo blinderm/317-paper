@@ -260,7 +260,7 @@ For convenience, we will encode our transformations of form (1) into matrices
 \begin{equation}
 	\lambda \stanlftmat \text{ where } \lambda \ttc a \ttc b \ttc c \ttc d \in F \text{ and } \lambda \neq 0. 
 \end{equation}
-In Appendix \ref{appendixC}, we demonstrate that this encoding is well-defined and invertible. 
+In Appendix \ref{appendixC}, we demonstrate that this encoding is well-defined. Moreover, we show that the group of linear fractional transformations under composition given in (1) and the group of invertible matrices under matrix multiplication are isomorphic.
 
 It should be explicitly noted that these matrices are used only to encode our transformations. That is, to ``apply" a transformation encoded in a matrix of the form in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply the corresponding linear fractional transformation $f$ of the form in (1) to the point $z_0$. 
 
@@ -418,16 +418,31 @@ With this in hand, we now develop and visualize examples of these transformation
 
 \hspace{10mm} We choose $\R$ to be our real, ordered field as called for in Guggenheimer's paper and go forth to visualize some examples of transformations in the \poincare disk. We work with two triangles\footnote{To define a triangle, we take three points in the disk and connect them with hyperbolic lines.} and two points about which each of them will be reflected\footnote{To reflect a triangle over a point $P$, we apply $f_P$ to each of its three vertices as in Example 4.1 and then ``redraw" the edges. See Appendix \ref{appendixD} for the code used to compute these transformations.}. Triangle $T_1$ is given by the points $A_1 = 0 + 0i$, $B_1 = 1 + 0i$, and $C_1 = 0 + 1i$. Triangle $T_2$ is given by the points $A_2 = 3 + 5i$, $B_2 = -4 + 4i$, and $C_2 = 0.2 - 2i$. The points about which we will perform our reflections are $X = (2, -1)$ and $Y = (2, 1)$.
 
-We first work through a concrete example -- reflecting the point $A_2 = 3+5i$ over the point $X = (2, -1)$ -- to demonstrate the process and calculations behind our reflections.
+We first work through a concrete example -- reflecting the point $B_1 = 1+0i$ over the point $X = (2, -1)$ -- to demonstrate the process and calculations behind our reflections.
 
 To visualize the transformation $f_X$ applied to $A_2$, we used the Geogebra visual algebra tool\cite{geogebra_software} and a corresponding user-made hyperbolic geometry worksheet\cite{hyperbolic_worksheet}. In this worksheet, the \poincare disk is the unit circle with center $(0,0)$ embedded in the plane $\R^2$. 
 
 \begin{example}
 We first take our point $X$ and encode $f_X$, the reflection function over $X$, in the matrix $M_{f_X}$. In particular, by (1) we have that 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
-Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-x+2}{-x+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
+Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-z+2}{-z+1}$. Therefore we have that $f_X(B_1) = \frac{27+5i}{29}$. 
 
-After we have computed $f_X(A_2)$, we start the visualization process. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding points in $\R^2$. In particular, let $A_{2_\R} = (3,5)$ and $f_X(A_2)_\R = (27/29, 5/29)$. Now, given the point $A_{2_\R}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_\R}'$ in the \poincare disk. The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. We apply this same process to $f_X(A_2)_\R$.
+After we have computed $f_X(B_1)$, we start the visualization process. First, we take $B_1$ and $f_X(B_1)$ and map them to their corresponding points in $\R^2$. In particular, let $B_{1_\R} = (1,0)$ and $f_X(B_1)_\R = (27/29, 5/29)$. Now, given the point $A_{2_\R}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_\R}'$ in the \poincare disk. 
+
+\begin{enumerate}
+	\item In Geogebra, open the hyperbolic worksheet.
+	\item In the input bar at the bottom of the screen, type $O = (0,0)$ and press enter to construct the center of the \poincare disk.
+	\item Again in the input bar, type the point $A_2 = (3,5)$ and press enter. This will construct the Euclidean point $A_2$, so it will be placed at the coordinates $(3,5)$. 
+	\item Navigating to the toolbars at the top of the window, click on the distance tool and select points $O$ and $A$ with the mouse to compute the distance between $O$ and $A$. The result should return $distanceOA2 = 5.83095$.
+	\item Once computed, navigate to the tool called `Hyperbolic Circle w Given Radius'. Select the point $O$ and type into the popup window `distanceOA2'. This step should construct a hyperbolic circle with radius distanceOA2 and center $O$.
+	\item Navigate to the 
+\end{enumerate}
+Using the hyperbolic worksheet in Geogebra, we begin by constructing the point $O = (0,0)$ to establish the origin of the \poincare disk. Then constructing the point $A_2 = (
+
+
+
+
+The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. We apply this same process to $f_X(A_2)_\R$.
 \end{example}
 
 As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- the ends of our geometry -- are mapped from points lying on the parabola $x=y^2$.
