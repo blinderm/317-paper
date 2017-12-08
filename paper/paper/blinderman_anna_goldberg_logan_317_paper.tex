@@ -208,11 +208,13 @@ Appendix \ref{appendixA} contains further information on the \poincare disk mode
 
 The general linear fractional transformations, point reflections, and line reflections we discuss begin with coefficients in a real, ordered field $F$ with the property that every positive $x \in F$ has a square root. The group of linear fractional transformations over $F$ is the set of linear fractional transformations given by
 \begin{equation} 
-	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0. 
+	z \mapsto \frac{az+b}{cz+d} \text{ where } z \in \C, \hspace{2mm} a \ttc b \ttc c \ttc d \in F \text{ and } ad-bc \neq 0 
 \end{equation}
-under function composition \cite{shuman_lfts}. Remarkably, Guggenheimer does not address the case in which $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later when we discuss such line reflections further. 
+along with the binary operation of function composition \cite{shuman_lfts}.
 
-Although Guggeheimer does not provide a geometric definition of point or line reflections, we appeal to geometric intuition in $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflection over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
+Remarkably, Guggenheimer does address the behavior of linear fractional transformations of the form in (1) when $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later when we discuss such line reflections further. 
+
+Although Guggeheimer does not provide geometric definitions of point or line reflections, we appeal to geometric intuition from $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflection over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
 
 \begin{center}
 \begin{tabular}{cc}
@@ -265,7 +267,7 @@ In Appendix \ref{appendixC}, we demonstrate that this encoding is well-defined. 
 
 It should be explicitly noted that these matrices are used only to encode our transformations. That is, to ``apply" a transformation encoded in a matrix of the form in (2) to a point $z_0$ in the Poincare disk, we mean that we will apply the corresponding linear fractional transformation $f$ of the form in (1) to the point $z_0$. 
 
-Because all linear fractional transformations we use are of the form given in (2), whenever we say ``matrix" we mean a $2 \times 2$ matrix. Furthermore, we may refer to linear fractional transformations as LFTs for convenience. 
+Because all linear fractional transformations we use are of the form given in (2), whenever we say ``matrix" we mean a $2 \times 2$ matrix. Further, we sometimes refer to linear fractional transformations as LFTs for convenience. 
 
 Later we associate points with point reflections and lines with line reflections. In order to distinguish these geometric objects from their corresponding reflections, we write $f_P$ to be the point reflection function over the point $P$ and $f_l$ to be the line reflection function over the line $l$. Thus, $f_P(P_0)$ is the point reflection of the point $P_0$ over the point $P$ via the point reflection $f_P$. Similarly, we denote the line reflection of point $P_0$ over the line $l$ via the line reflection $f_l$ by $f_l(P_0)$.
 
