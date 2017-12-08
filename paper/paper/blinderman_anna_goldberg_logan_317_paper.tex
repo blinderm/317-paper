@@ -420,21 +420,19 @@ With this in hand, we now develop and visualize examples of these transformation
 
 We first work through a concrete example -- reflecting the point $A_2 = 3+5i$ over the point $X = (2, -1)$ -- to demonstrate the process and calculations behind our reflections.
 
-To visualize the transformation $f_X$ applied to $A_2$, we used the Geogebra visual algebra tool\cite{geogebra_software} and a corresponding user-made hyperbolic geometry worksheet\cite{hyperbolic_worksheet}. In this worksheet, the \poincare disk is the unit circle with center $(0,0)$ embedded in the plane $\R^2$. 
-
 \begin{example}
 We first take our point $X$ and encode $f_X$, the reflection function over $X$, in the matrix $M_{f_X}$. In particular, by (1) we have that 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
 Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-x+2}{-x+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
 
-After we have computed $f_X(A_2)$, we start the visualization process. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding points in $\R^2$. In particular, let $A_{2_\R} = (3,5)$ and $f_X(A_2)_\R = (27/29, 5/29)$. Now, given the point $A_{2_\R}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_\R}'$ in the \poincare disk. The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. We apply this same process to $f_X(A_2)_\R$.
+We now begin the process of visualizing $f_X(A_2)$. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding \todo{[LG] comment on this ``correspondance"} points in $\R^2$. In particular, $A_{2_\R} = (3,5)$ and $f_X(A_2)_\R = (27/29, 5/29)$. Now, given the point $A_{2_\R}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_\R}'$ in the \poincare disk. \todo{The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. [LG] not sure what this sentence adds}We apply this same process to $f_X(A_2)_\R$.
 \end{example}
 
 As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- the ends of our geometry -- are mapped from points lying on the parabola $x=y^2$.
 
 Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. We are therefore left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
-Now, below are our diagrams, also generated in Geogebra.
+Now, below are our diagrams, generated with the Geogebra visual algebra tool\cite{geogebra_software} and a corresponding user-made hyperbolic geometry worksheet\cite{hyperbolic_worksheet}. In this worksheet, the \poincare disk is the unit circle with center $(0,0)$ embedded in the plane $\R^2$. 
 
 \iffalse
 \begin{center}
