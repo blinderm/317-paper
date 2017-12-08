@@ -160,7 +160,7 @@ Fifth postulate in Euclidean geometry & Fifth postulate in hyperbolic geometry \
 
 In the Euclidean model, $m$ is the unique line through $P$ and parallel to $l$. On the other hand, in the hyperbolic model we have that $n_1$ and $n_2$ are distinct lines passing through $P$ and parallel to $l$. 
 
-Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. For example, consider the following figure:
+Henri \poincare put forth two models for visualizing hyperbolic geometry: the \poincare half-plane and the \poincare disk. We focus here on the disk model. Let $\Gamma$ be any circle in the Cartesian plane and call its center $O$. The set of points in this model is the interior of $\Gamma$ \cite{hartshorne}. A line in this model is the collection of all model points that lie on a Euclidean circle that is orthogonal to $\Gamma$ or that lie on a Euclidean line through $O$. For example, consider the following figure:
 
 \begin{figure}[h]
 \begin{center}
@@ -181,7 +181,8 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\draw (-1.95, -1) -- (1.95, 1) node[below left=.2cm] {};
 	\draw (-2.3,.35)  -- (-2.26,.5);
 	\draw (-2.3,.35)  -- (-2.18,.32);
-	% TODO: add actual right angles and make the arc part bold?
+	\draw (-.51,2.3)  -- (-.38,2.32);
+	\draw (-.38,2.32)  -- (-.36,2.18);
 	\end{tikzpicture}
 \end{center}
 	\label{fig:construction_hyperbolic_lines}
@@ -190,15 +191,15 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	
 Recall that points lying on the \poincare disk (eg.~$A\ttc B \ttc L$, and $K$) are currently excluded from our model since they are not in the interior of $\Gamma$. However, it will be important to discuss these points later, whence we define them to be the \textit{ends} of our geometry. 
 
-We now consider the hyperbolic lines in our \poincare disk above. When we refer to hyperbolic lines, we mean the lines of the \poincare disk model. If we take the minor arc $\wideparen{AB}$ of the Euclidean circle $\Delta$, then the points in the interior of $\Gamma$ that lie on $\wideparen{AB}$ define a hyperbolic line $AB$. Notice that $A$ and $B$ are not a part of the hyperbolic line $AB$ since they are not in the interior of $\Gamma$. Similarly, the points in the interior of $\Gamma$ that lie on the line segment $\overline{LK}$ define a hyperbolic line $LK$. Again notice that $L$ and $K$ are not a part of the hyperbolic line $LK$ since they are not in the interior of $\Gamma$. 
+We now consider the hyperbolic lines in our \poincare disk above. When we refer to hyperbolic lines, we mean the lines of the \poincare disk model. If we take the minor arc $\wideparen{AB}$ of the Euclidean circle $\Delta$, then the points in the interior of $\Gamma$ that lie on $\wideparen{AB}$ define a hyperbolic line $AB$. Notice that $A$ and $B$ are not a part of the hyperbolic line $AB$ since they are not in the interior of $\Gamma$. Similarly, the points in the interior of $\Gamma$ that lie on the line segment $\overline{LK}$ define a hyperbolic line $LK$. Again note that $L$ and $K$ are not a part of the hyperbolic line $LK$ since they are not in the interior of $\Gamma$. 
 
-Notice that hyperbolic lines $l$ are denoted by the two (hyperbolic) ends that appear to be the endpoints of $l$ if $l$ is viewed in a Euclidean context (that is, if we view the hyperbolic line $l$ as a Euclidean line or the arc of a Euclidean circle). For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $\wideparen{AB}$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the hyperbolic line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
+Notice that hyperbolic lines $l$ are denoted by the two (hyperbolic) ends that appear to be the endpoints of $l$ if $l$ is viewed in a Euclidean context (that is, if we view the hyperbolic line $l$ as a Euclidean line segment or the arc of a Euclidean circle). For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $\wideparen{AB}$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the hyperbolic line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
 
-We now discuss hyperbolic line segments. When we refer to hyperbolic line segments, we mean line segments of hyperbolic lines. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are hyperbolic line segments lying on the hyperbolic lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and two points $Z$ and $W$ lying on $XY$ in the \poincare disk, then $\overline{ZW}$ is defined to be the set of all points on $XY$ between (and including) $Z$ and $W$.
+We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are hyperbolic line segments lying on the hyperbolic lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and two points $Z$ and $W$ lying on $XY$ in the \poincare disk, then the hyperbolic line segment $\overline{ZW}$ is defined to be the set of all points on $XY$ between (and including) $Z$ and $W$.
 
 As demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
-Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the transformation we use to transfer points from $\R^2$ into the \poincare disk. 
+Appendix \ref{appendixA} contains further information on the \poincare disk model, particularly concerning its distance metric and the method we use to transfer points from $\R^2$ to the \poincare disk. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notation}
@@ -425,7 +426,7 @@ We first take our point $X$ and encode $f_X$, the reflection function over $X$, 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
 Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-z+2}{-z+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
 
-We now go forth to visualize $A_2$ and $f_X(A_2)$. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding\footnote{We have that $a + ib \in \C$ corresponds to the point $(a\ttc b)$ in $\R^2$. Conversely, we say that $(a\ttc b)$ in $\R^2$ corresponds to $a+ib$ in $\C$.} points in $\R^2$. Let's call this map from $\C$ to $\R^2$ $g$. In particular, $g(A_2) = (3,5)$ and $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the point $g(A_2)$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $g(A_2')$ in the \poincare disk. 
+We now go forth to visualize $A_2$ and $f_X(A_2)$. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding\footnote{We have that $a + ib \in \C$ corresponds to the point $(a\ttc b)$ in $\R^2$. Conversely, we say that $(a\ttc b)$ in $\R^2$ corresponds to $a+ib$ in $\C$.} points in $\R^2$. Let's call this map from $\C$ to $\R^2$ $g$. In particular, $g(A_2) = (3,5)$ and $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the point $g(A_2)$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point of $g(A_2')$ in the \poincare disk. The visual intuition behind each of these steps is presented in Appendix \ref{appendixA}; here we simply wish to make clear the calculations we employ. 
 
 \begin{enumerate}
 	\item Compute the Euclidean distance from the origin to point $A_2$. In this case, we have $d_E((0,0),g(A_2)) = \sqrt{34}$.
@@ -463,7 +464,7 @@ This example then gives us with the two visual points $g(A_2') = (0.85, .51)$ an
 
 \end{example}
 
-As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- the ends of our geometry -- are mapped from points lying on the parabola $x=y^2$.
+As we consider our diagrams, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- the ends of our geometry -- are mapped from points lying on the parabola $x=y^2$.
 
 Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. We are therefore left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
