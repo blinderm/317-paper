@@ -423,9 +423,9 @@ We first work through a concrete example in order to demonstrate the process and
 \begin{example}
 We first take our point $X$ and encode $f_X$, the reflection function over $X$, in the matrix $M_{f_X}$. In particular, by (1) we have that 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
-Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-z+2}{-z+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
+Notice that for simplicity, we choose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-z+2}{-z+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
 
-We now go forth to visualize $A_2$ and $f_X(A_2)$. We first define a map $g: \C \rightarrow \R^2$ by $g(a + ib) = (a, b)$ for all $a+ib \in \C$. Using this map, we see that $g(A_2) = (3,5)$ and $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the points $g(A_2)$ and $g(f_X(A_2))$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct their realizations in the \poincare disk, which we denote by $g(A_2)'$ and  $g(f_X(A_2))'$ respectively. The visual intuition behind each of these steps is presented in Appendix \ref{appendixA}; here we simply wish to make clear the calculations we employ. 
+We now go forth to visualize $A_2$ and $f_X(A_2)$. We first define a map $g: \C \rightarrow \R^2$ by $g(a + ib) = (a, b)$ for all $a+ib \in \C$. Using this map, we see that $g(A_2) = (3,5)$ and that $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the points $g(A_2)$ and $g(f_X(A_2))$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct their realizations in the \poincare disk, which we denote by $g(A_2)'$ and  $g(f_X(A_2))'$ respectively. The visual intuition behind each of these steps is presented in Appendix \ref{appendixA}; here we simply wish to make clear the calculations we employ. 
 
 \begin{enumerate}
 	\item Compute the Euclidean distance from the origin to point $g(A_2)$. In this case, we have $d_E((0,0),g(A_2)) = \sqrt{34}$.
@@ -439,10 +439,10 @@ We now go forth to visualize $A_2$ and $f_X(A_2)$. We first define a map $g: \C 
 	\]
 	\item With this radius in hand, construct the circle $x^2 + y^2 = (0.99417)^2$.
 	\item We then construct a line passing through $(0,0)$ and $(5,3)$. In particular, this line is given by $-3/5x + y = 0$. 
-	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.85,-.51),(0.85,.51)\}$. Following the construction from Appendix \ref{appendixA}, we want the point of intersection that is on the Euclidean ray from $O$ in the direction of $A$. Therefore $g(A_2)' = (0.85, .51)$. 
+	\item Finally, we find the points of intersection between this circle and this line: $(-0.85,-.51)$ and $(0.85,.51)$. Following the construction from Appendix \ref{appendixA}, we use the point of intersection that lies on the Euclidean ray $\overrightarrow{OA_2}$. Therefore we have that $g(A_2)' = (0.85, .51)$. 
 \end{enumerate}
 
-We now apply this same process to $g(f_X(A_2))$.
+\noindent We now apply this same process to $g(f_X(A_2))$.
 
 \begin{enumerate}
 	\item Compute the Euclidean distance from the origin to point $g(f_X(A_2))$. In this case, we have $d_E((0,0),g(f_X(A_2))) = 0.946$.
@@ -456,7 +456,7 @@ We now apply this same process to $g(f_X(A_2))$.
 	\]
 	\item With this radius in hand, construct the circle $x^2 + y^2 = (0.441)^2$.
 	\item We then construct a line passing through $(0,0)$ and $(27/29,5/29)$. In particular, this line is given by $-5x + 27y = 0$. 
-	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.434,-0.08),(0.434,0.08)\}$. Following the construction from Appendix \ref{appendixA}, we want the point of intersection that is on the Euclidean ray from $O$ in the direction of $A$. Therefore $g(f_X(A_2))' = (0.434, 0.08)$. 
+	\item Finally, we find the points of intersection between this circle and this line: $(-0.434,-0.08)$ and $(0.434,0.08)$. Following the construction from Appendix \ref{appendixA}, we use the point of intersection that lies on the Euclidean ray $\overrightarrow{Of_X(A_2)}$. Therefore we have that $g(f_X(A_2))' = (0.434, 0.08)$. 
 \end{enumerate}
 
 We use these points $g(A_2)' = (0.85, .51)$ and $g(f_X(A_2))' = (0.434, 0.08)$ to view our original points $A_2$ and $f_X(A_2)$ in the context of the \poincare disk.
@@ -465,7 +465,7 @@ We use these points $g(A_2)' = (0.85, .51)$ and $g(f_X(A_2))' = (0.434, 0.08)$ t
 
 As we consider our diagrams, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk (the ends of our geometry) are mapped from points lying on the parabola $x=y^2$.
 
-Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(\frac{-d}{c})$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. We are therefore left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
+Recall further that Guggenheimer distinguishes between line reflections defined by two different types of lines: those passing through the end $\specialend$ and those not passing through the end $\specialend$. Although we suspect that for a linear fractional transformation $f$ given by $z \mapsto \frac{az+b}{cz+d}$, the end $\specialend$ corresponds to the expression $f(-d/c)$ (that is, division by zero), this is not addressed by Guggenheimer and thus we avoid lines of this type. We are therefore left to assume that the end $\specialend$ does not correspond to any of the points on the boundary of the \poincare disk. 
 
 Now, below are our diagrams\footnote{To generate our diagrams, we used the Geogebra visual algebra tool \cite{geogebra_software} and a corresponding user-made hyperbolic geometry worksheet \cite{hyperbolic_worksheet}. In this worksheet, the \poincare disk is the unit circle with center $(0,0)$ embedded in the plane $\R^2$.}.
 
@@ -546,7 +546,7 @@ We begin by constructing a line segment between $A$ and the origin $O$ and in or
 \end{tikzpicture}
 \end{center}
 
-To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle, with radius $r\in\R$ centered at $O$, that contains $A'$. The hyperbolic distance metric is
+To construct the point $A'$, we want to find the radius $r$ in Euclidean distance of the circle whose hyperbolic distance from $O$ is $d_E$; $A'$ lies on this circle of radius $r$. In other words, if $d_H$ is the hyperbolic metric and $d_H(O,A') = d_E(O,A)$, then we want to find the circle with radius $r\in\R$ and center $O$ that contains $A'$. The hyperbolic distance metric is
 \[
 	d_H(O,A') = \ln\frac{1 + r}{1 - r}
 \]
@@ -588,9 +588,9 @@ We next consider a new point $B$ on the ray $\overrightarrow{OA}$ and its corres
 \end{tikzpicture}
 \end{center}
 
-In particular, notice that $A$ and $B$, points in $\R^2$ on the ray $\overrightarrow{OA}$, remain on the ray $\overrightarrow{OA}$ after their translation to the \poincare disk. Further, in $\R^2$ we have the distance between points $A$ and $O$ is less than the distance between points $B$ and $O$. This relationship is preserved: in the \poincare disk we have that $A'$ is closer to the center $O$ than $B'$ is.
+Notice that $A$ and $B$, points in $\R^2$ on the ray $\overrightarrow{OA}$, remain on the ray $\overrightarrow{OA}$ after their translation to the \poincare disk. Further, in $\R^2$ we have the distance between points $A$ and $O$ is less than the distance between points $B$ and $O$. This relationship is preserved: in the \poincare disk we have that $A'$ is closer to the center $O$ than $B'$ is.
 
-Similarly, if $C$ is a point in $\R^2$ that appears to lie within $\Gamma_{\R^2}$ (that is, the distance between $C$ and the center $O$ of $\Gamma_{\R^2}$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
+Similarly, if $C$ is a point in $\R^2$ that appears to lie within $\Gamma_{\R^2}$ (that is, the distance between $C$ and the center $O$ of $\Gamma_{\R^2}$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line segment $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
