@@ -13,6 +13,7 @@
 \usepackage{tkz-euclide}
 \usepackage[toc,page]{appendix} 
 \usepackage{listings}
+\usepackage{yhmath}
 \allowdisplaybreaks %% TODO: decide whether ro not to split pages here
 
 \usepackage[v2]{xy}
@@ -177,7 +178,7 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\draw[fill=black] (-1,.72) circle (0.05) node[below right] {$G$};
 	\draw[fill=black] (-.5,1.42) circle (0.05) node[above right] {$H$};
 	(-2.15,.48)
-	\draw (-1.95, -1) -- (1.95, 1) node[below left=.2cm] {$l$};
+	\draw (-1.95, -1) -- (1.95, 1) node[below left=.2cm] {};
 	\draw (-2.3,.35)  -- (-2.26,.5);
 	\draw (-2.3,.35)  -- (-2.18,.32);
 	% TODO: add actual right angles and make the arc part bold?
@@ -189,11 +190,11 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	
 Recall that points lying on the \poincare disk (eg.~$A\ttc B \ttc L$, and $K$) are currently excluded from our model. However, it will be important to discuss these points later, whence we define them to be the \textit{ends} of our geometry. 
 
-We now consider the hyperbolic lines in our \poincare disk above. If we take the minor arc $AB$ of the Euclidean circle $\Delta$, then the points in the interior of $\Gamma$ that lie on $AB$ define a hyperbolic line. Notice that $A$ and $B$ are not apart of the hyperbolic line since they are not in the interior of $\Gamma$. Furthermore, the points in the interior of $\Gamma$ that lie on the line $l$ also define a hyperbolic line. Again notice that $L$ and $K$ are apart of the hyperbolic line since they are not in the interior of $\Gamma$. 
+We now consider the hyperbolic lines in our \poincare disk above. If we take the minor arc $\wideparen{AB}$ of the Euclidean circle $\Delta$, then the points in the interior of $\Gamma$ that lie on $\wideparen{AB}$ define a hyperbolic line $AB$. Notice that $A$ and $B$ are not a part of the hyperbolic line $AB$ since they are not in the interior of $\Gamma$. Similarly, the points in the interior of $\Gamma$ that lie on the line segment $\overline{LK}$ define a hyperbolic line $LK$. Again notice that $L$ and $K$ are not a part of the hyperbolic line $LK$ since they are not in the interior of $\Gamma$. 
 
-Notice that hyperbolic lines $l$ are denoted by the two (hyperbolic) ends that appear to be the endpoints of $l$ if $l$ is viewed in a Euclidean context (that is, if we view the hyperbolic line $l$ as a Euclidean line or the arc of a Euclidean circle). For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $AB$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the hyperbolic line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
+Notice that hyperbolic lines $l$ are denoted by the two (hyperbolic) ends that appear to be the endpoints of $l$ if $l$ is viewed in a Euclidean context (that is, if we view the hyperbolic line $l$ as a Euclidean line or the arc of a Euclidean circle). For example, points $A$ and $B$ are Euclidean endpoints of the minor arc $\wideparen{AB}$ of the Euclidean circle $\Delta$. Thus we denote the hyperbolic line defined by the ends $A$ and $B$ in the \poincare model by $AB$. Similarly, the hyperbolic line $LK$ in the \poincare disk is realized by the Euclidean line segment with $L$ and $K$ as endpoints. 
 
-We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are line segments lying on the lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and two points $Z$ and $W$ lying on line $XY$ in the \poincare disk, then $\overline{ZW}$ is defined to be the set of all points on line $XY$ between (and including) $Z$ and $W$.
+We now discuss hyperbolic line segments. In our above diagram, $\overline{GH}$ and $\overline{EF}$ are hyperbolic line segments lying on the hyperbolic lines $AB$ and $LK$ respectively. In general, if we have a hyperbolic line $XY$ and two points $Z$ and $W$ lying on $XY$ in the \poincare disk, then $\overline{ZW}$ is defined to be the set of all points on $XY$ between (and including) $Z$ and $W$.
 
 As demonstrated intuitively by Figure \ref{fig:construction_hyperbolic_lines}, we claim that each hyperbolic line has exactly two distinct ends and that every pair of distinct ends defines a single hyperbolic line.
 
@@ -435,7 +436,7 @@ Recall further that Guggenheimer distinguishes between line reflections defined 
 
 Now, below are our diagrams, also generated in Geogebra.
 
-%\iffalse
+\iffalse
 \begin{center}
 \includegraphics[width=160mm]{../images/t1_over_x.png} \\
 Triangle $T_1$ reflected over point $X$ 
@@ -449,7 +450,7 @@ Triangle $T_2$ reflected over point $X$
 \includegraphics[width=160mm]{../images/t2_over_y.png} \\
 Triangle $T_2$ reflected over point $Y$ 
 \end{center}
-%\fi
+\fi
 
 
 From these diagrams we notice two oddities. For one, these point reflections look more like line reflections than they do point reflections. That is, the triangles seem to be ``reflected" and ``stretched" rather than simply ``rotated." Also, it is unclear from these diagrams why we restricted our choice of points to those from the convex domain defined by the parabola $x = y^2$. We now discuss these issues and their implications in turn.
