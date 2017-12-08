@@ -277,9 +277,9 @@ Finally, later we will discuss two types of line reflections: ones passing throu
 
 \hspace{10mm} We now go forth to discuss hyperbolic point reflections and hyperbolic line reflections as laid out in Guggenheimer's paper, adding motivation and further explanation wherever possible. 
 
-However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we are not mapping this parabola to the unit disk. Similarly, we are neither mapping the points within the parabola to those in the \poincare disk nor those outside the parabola to those outside the disk. Rather, we are classifying the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process, while valid in certain fields like $\R$, is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
+However, we must begin by drawing attention to an unintuitive fact. Later in this section we will derive that the points $(x\ttc y) \in F^2$ corresponding to points in the \poincare disk are those inside the convex domain of the parabola $x = y^2$. However, we do not map this parabola to the unit disk. Similarly, we neither map the points within the parabola to those in the \poincare disk nor those outside the parabola to those outside the disk. Rather, we classify the points in $F^2$ into three disjoint subsets: those that will be in the interior of the \poincare disk (those in the convex domain defined by the parabola $x = y^2$, those that will be on the \poincare disk itself (those on the parabola $x = y^2$), and those that will be outside of the \poincare disk (those neither inside nor on the parabola $x = y^2$). This process, while valid in certain fields like $\R$, is geometrically unintuitive and problematic in other fields. These issues will be discussed further in the next section. 
 
-Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations will come from $F$. We begin with a notion inspired by Euclidean geometry and discussed in the previous section: both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. With this in mind, we establish two lemmas.
+Now, let $F$ be some real, ordered field. The coefficients of our linear fractional transformations come from $F$. We begin with a notion inspired by Euclidean geometry and discussed in the previous section: both point reflections and line reflections should be of order two. That is, we want the composition of a transformation upon itself to yield the identity transformation. With this in mind, we establish two lemmas.
 
 \begin{lemma} 
 	The composition of linear fractional transformations corresponds to the multiplication of their respective matrix encodings.
@@ -292,7 +292,7 @@ Now, let $F$ be some real, ordered field. The coefficients of our linear fractio
 	\text{ and } 
 	M_{f_2} =  \lftmat{a_2}{b_2}{c_2}{d_2}. 
 \] 
-	By Theorem \ref{thm:function_correspondence}, we may compute $f_1\circ f_2$ by multiplying the corresponding matrices above and then mapping the resulting matrix $M_{f_1}M_{f_2}$ back into a linear fractional transformation. The resulting linear fractional transformation will be $f_1\circ f_2$.
+	By Theorem \ref{thm:function_correspondence}, we may compute $f_1\circ f_2$ by multiplying the corresponding matrices above and then mapping the resulting matrix $M_{f_1}M_{f_2}$ back into a linear fractional transformation. The resulting linear fractional transformation is the one given by $f_1\circ f_2$.
 \end{proof}	
 	
 \begin{lemma}
@@ -300,7 +300,7 @@ Now, let $F$ be some real, ordered field. The coefficients of our linear fractio
 \end{lemma}
 
 \begin{proof}
-	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{As defined in Lemma \ref{thm:PGL2F} of Appendix \ref{appendixC}}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
+	Because $f$ is of order two, by definition we must have that $f \circ f$ is the identity function. In terms of matrices, by Lemma 3.1 we must then have that $M_f^2$ yields the identity of $PGL(2\ttc F)$\footnote{As defined in Definition \ref{def:PGL2F} of Appendix \ref{appendixC}}. That is, we must have that $M_f^2 = \lambda I$ for some $\lambda \in F$.
 \end{proof}
 
 Because we often interchange linear fractional transformations with their matrix encodings, we wish to have the following at our disposal:
@@ -313,7 +313,7 @@ Because we often interchange linear fractional transformations with their matrix
 	Suppose that for each $z \in \C$, $f$ is given by $f(z) = \frac{az+b}{cz+d}$ for some $a\ttc b\ttc c\ttc d \in F$. We have by (1) that $ad-bc \neq 0$. Thus, since $\det M_f = ad-bc$, we must have that $\det M_f \neq 0$ as well.
 \end{proof}
 
-With these lemmas in hand, we derive the general form of the matrix encodings of linear fractional transformations of order two. 
+With these lemmas in hand, we derive the general form of the matrices encoding linear fractional transformations of order two. 
 
 \begin{theorem}
 If $M$ is a matrix encoding some linear fractional transformation $f$, then $f$ is of order two under matrix multiplication if and only if $\Tr(M) = 0$ or $M = \lambda I$ for some $\lambda \in F$.\footnote{That is, $\lambda I$ is some representative of the identity coset of $PGL(2\ttc F)$.}
@@ -336,7 +336,7 @@ On the other hand, if $b = c = 0$, then it remains to ensure that $a^2 + bc = \l
 \[\lftmat{a}{0}{0}{a}\]
 for some $a \in F$. That is, $M$ is of the form $\lambda I$ if we take $\lambda = a$. 
 
-For the other direction, first suppose that $M$ is a matrix with trace 0. Then
+For the other direction, first suppose that $M$ is a matrix such that $\Tr(M) = 0$. Then
 \[M = \lftmat{a}{b}{c}{-a}\]
 for some $a \ttc b \ttc c \in F$. Notice that
 \begin{align*}
@@ -354,7 +354,7 @@ M^2 & = \lftmat{\gamma}{0}{0}{\gamma} \lftmat{\gamma}{0}{0}{\gamma} \\[2ex]
 It follows that $M^2 = \lambda I$ if we take $\lambda = \gamma^2$.
 \end{proof}
 
-Now, recall by Lemma 3.3 that no linear fractional transformation can be encoded in a matrix with determinant 0. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer encodes point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
+Now, recall by Lemma 3.3 that no linear fractional transformation can be encoded in a matrix with determinant 0. Thus we may only work with matrices whose determinants are either positive or negative. Guggenheimer chooses to encode point reflections in matrices with positive determinant and line reflections in matrices with negative determinant. 
 
 Let $(x \ttc y)$ be a point in the \poincare disk. Then, for the matrix encoding the point reflection over $(x \ttc y)$ to satisfy $\Tr(M) = 0$ and $\det M = -(y^2 - x) > 0$, we say that $M$ is of the form
 \begin{equation} 
@@ -364,7 +364,7 @@ As mentioned, we choose to associate each point reflection with a unique point i
 
 It is important to remember that we are not mapping this parabola to the unit disk; we are instead using this parabola to define three disjoint subsets of $F^2$. In particular, the points in $F^2$ contained in the convex domain defined by the parabola $x=y^2$ correspond to the interior of the \poincare disk, those in $F^2$ that lie on the parabola $x=y^2$ correspond to the \poincare disk itself, and those neither inside nor on the parabola $x=y^2$ correspond to points outside the \poincare disk.
 
-Notice that the points mapped from the parabola $x = y^2$, pairs $(x \ttc y) \in F_*^2$ where $y = x^2$, are the ends of our geometry. We next define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{If we take $F = \R$, then we follow the convention set forth in \cite{shuman_infinity}. However, it is unclear how to do this in an arbitrary field. Guggenheimer does not address this complication.}. We follow Guggenheimer in simply claiming that the end $\specialend$ is of special interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
+Notice that the points mapped from the parabola $x = y^2$ (pairs $(x \ttc y) \in F_*^2$ where $y = x^2$) are the ends of our geometry. We next define $F_*$ to be the extension of $F$ by $\infty$ as usual\footnote{If we take $F = \R$, then we follow the convention set forth in \cite{shuman_infinity}. However, it is unclear how to do this in an arbitrary field. Guggenheimer does not address this complication.}. We follow Guggenheimer in simply claiming that the end $\specialend$ is of special interest to us in our classification of line reflections. In particular, the reflection over a line $l$ given by $(l_1\ttc l_2)$ that does not pass through the end $\specialend$ can be encoded in the matrix
 \[\stanlinenoendmat\]
 If the line $l$ given by $(l_1\ttc l_2)$ does pass through the end $\specialend$, then the reflection over $l$ can be given by the following matrix:
 \[
