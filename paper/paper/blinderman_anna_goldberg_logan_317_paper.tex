@@ -14,12 +14,9 @@
 \usepackage[toc,page]{appendix} 
 \usepackage{listings}
 \usepackage{yhmath}
-\allowdisplaybreaks %% TODO: decide whether ro not to split pages here
-
 \usepackage[v2]{xy}
 \usepackage{amscd}  
 
-%\linespread{2}
 \setlength{\parindent}{3em}   
 \setlength{\parskip}{1em}   
 
@@ -212,9 +209,9 @@ The general linear fractional transformations, point reflections, and line refle
 \end{equation}
 along with the binary operation of function composition \cite{shuman_lfts}.
 
-Remarkably, Guggenheimer does not address the behavior of linear fractional transformations of the form in (1) when $z = -\frac{d}{c}$. However, we believe that this case corresponds to the output $\specialend$, which Guggengheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later when we discuss such line reflections further. 
+Remarkably, Guggenheimer does not address the behavior of linear fractional transformations of the form in (1) when $z = -d/c$. However, we believe that this case corresponds to the output $\specialend$, which Guggenheimer discusses when distinguishing types of lines defining line reflections. We will return to this issue later when we discuss such line reflections further. 
 
-Although Guggeheimer does not provide geometric definitions of point or line reflections, we appeal to geometric intuition from $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflection over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
+Although Guggenheimer does not provide geometric definitions of point or line reflections, we appeal to geometric intuition from $\R^2$ to understand these actions. In particular, we think of a reflection over a line $l$ as ``flipping" the plane over $l$, whence each point on $l$ itself stays fixed under this reflection. On the other hand, we imagine a point reflection over a point $P$ to rotate the plane by $\pi$ radians about $P$. In both of the diagrams below, the reflection maps $\triangle ABC$ to $\triangle A'B'C'$ (sending $A$ to $A'$, $B$ to $B'$, and $C$ to $C'$). 
 
 \begin{center}
 \begin{tabular}{cc}
@@ -273,7 +270,7 @@ Later we associate points with point reflections and lines with line reflections
 
 To reinforce the fact that matrices simply encode functions, if $f$ is any linear fractional transformation then we write $M_f$ to denote the matrix that encodes $f$. Thus we denote the matrix encoding a reflection about a point $P$ by $M_{f_P}$ and a matrix encoding a reflection over a line $l$ by $M_{f_l}$. 
 
-Finally, later we will discuss two types of line reflections: ones passing through the end $\specialend$ and ones not passing through this particular end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so (that is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$).
+Finally, later we will discuss two types of line reflections: ones passing through the end $\specialend$ and ones not passing through this particular end. Throughout, the line to which we refer passes through this end if and only if we explicitly specify that it does so. That is, if we simply say that $l$ defines some some line reflection $f_l$, then $l$ does not pass through the end $\specialend$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guggenheimer's Classifications of LFTs}
@@ -428,7 +425,7 @@ We first take our point $X$ and encode $f_X$, the reflection function over $X$, 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
 Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-z+2}{-z+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
 
-We now go forth to visualize $A_2$ and $f_X(A_2)$. We first define a map $g: \C \rightarrow \R^2$ given by $g(a + ib) = (a, b)$ for all $a+ib \in \C$. Using this map, we see that $g(A_2) = (3,5)$ and $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the points $g(A_2)$ and $g(f_X(A_2))$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct their realizations in the \poincare disk, which we denote by $g(A_2)'$ and  $g(f_X(A_2))'$ respectively. The visual intuition behind each of these steps is presented in Appendix \ref{appendixA}; here we simply wish to make clear the calculations we employ. 
+We now go forth to visualize $A_2$ and $f_X(A_2)$. We first define a map $g: \C \rightarrow \R^2$ by $g(a + ib) = (a, b)$ for all $a+ib \in \C$. Using this map, we see that $g(A_2) = (3,5)$ and $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the points $g(A_2)$ and $g(f_X(A_2))$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct their realizations in the \poincare disk, which we denote by $g(A_2)'$ and  $g(f_X(A_2))'$ respectively. The visual intuition behind each of these steps is presented in Appendix \ref{appendixA}; here we simply wish to make clear the calculations we employ. 
 
 \begin{enumerate}
 	\item Compute the Euclidean distance from the origin to point $g(A_2)$. In this case, we have $d_E((0,0),g(A_2)) = \sqrt{34}$.
@@ -441,7 +438,7 @@ We now go forth to visualize $A_2$ and $f_X(A_2)$. We first define a map $g: \C 
 		r = \frac{e^{\sqrt{34}} - 1}{e^{\sqrt{34}} + 1} = 0.99417.
 	\]
 	\item With this radius in hand, construct the circle $x^2 + y^2 = (0.99417)^2$.
-	\item We then construct the line from $(0,0)$ to $(5,3)$ which is given by $-3/5x + y = 0$. 
+	\item We then construct a line passing through $(0,0)$ and $(5,3)$. In particular, this line is given by $-3/5x + y = 0$. 
 	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.85,-.51),(0.85,.51)\}$. Following the construction from Appendix \ref{appendixA}, we want the point of intersection that is on the Euclidean ray from $O$ in the direction of $A$. Therefore $g(A_2)' = (0.85, .51)$. 
 \end{enumerate}
 
@@ -458,11 +455,11 @@ We now apply this same process to $g(f_X(A_2))$.
 		r = \frac{e^{0.946} - 1}{e^{0.946} + 1} = 0.441.
 	\]
 	\item With this radius in hand, construct the circle $x^2 + y^2 = (0.441)^2$.
-	\item We then construct the line from $(0,0)$ to $(27/29,5/29)$ which is given by the line $-5x + 27y = 0$. 
+	\item We then construct a line passing through $(0,0)$ and $(27/29,5/29)$. In particular, this line is given by $-5x + 27y = 0$. 
 	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.434,-0.08),(0.434,0.08)\}$. Following the construction from Appendix \ref{appendixA}, we want the point of intersection that is on the Euclidean ray from $O$ in the direction of $A$. Therefore $g(f_X(A_2))' = (0.434, 0.08)$. 
 \end{enumerate}
 
-This example then gives us with the two visual points $g(A_2)' = (0.85, .51)$ and $g(f_X(A_2))' = (0.434, 0.08)$.
+We use these points $g(A_2)' = (0.85, .51)$ and $g(f_X(A_2))' = (0.434, 0.08)$ to view our original points $A_2$ and $f_X(A_2)$ in the context of the \poincare disk.
 
 \end{example}
 
@@ -592,9 +589,6 @@ We next consider a new point $B$ on the ray $\overrightarrow{OA}$ and its corres
 \end{center}
 
 In particular, notice that $A$ and $B$, points in $\R^2$ on the ray $\overrightarrow{OA}$, remain on the ray $\overrightarrow{OA}$ after their translation to the \poincare disk. Further, in $\R^2$ we have the distance between points $A$ and $O$ is less than the distance between points $B$ and $O$. This relationship is preserved: in the \poincare disk we have that $A'$ is closer to the center $O$ than $B'$ is.
-
-%\vfill
-%\pagebreak
 
 Similarly, if $C$ is a point in $\R^2$ that appears to lie within $\Gamma_{\R^2}$ (that is, the distance between $C$ and the center $O$ of $\Gamma_{\R^2}$ is less than 1), then $C$ will simply be mapped to a point $C'$ on the line $\overline{OC}$ such that the distance between $O$ and $C'$ is less than the distance between $O$ and $C$. 
 
