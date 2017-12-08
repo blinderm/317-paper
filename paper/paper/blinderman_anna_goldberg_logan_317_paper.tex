@@ -527,7 +527,7 @@ In summary, we find three problems with Guggenheimer's geometry. For one, his al
 \begin{appendices}
 \section{From $\R^2$ to the \poincare Disk} \label{appendixA}
 
-Let $\Gamma_{\R^2}$ be a \poincare disk. We specify $\Gamma_{F^2}$ to mean the \poincare disk over the field $F$. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
+Let $\Gamma_{\R^2}$ be a \poincare disk, where by $\Gamma_{\R^2}$ we mean the \poincare disk over the field $\R$. Suppose that we wish to translate the Euclidean point $A$, pictured arbitrarily below, to its equivalent point $A'$ in the \poincare disk.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -558,7 +558,7 @@ where $r\in\R$ is the radius of the circle we wish to draw \cite{hyperbolic_metr
 	r = \frac{e^{d_H(O,A')} - 1}{e^{d_H(O,A')} + 1} =  \frac{e^{d_E(O,A)} - 1}{e^{d_E(O,A)} + 1}.
 \]
 
-Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta_{F^2}$.
+Since $d_E(O,A)\in\R$, we conclude that $e^{d_E(O,A)} + 1 \neq 0$. Having computed $r$, we now draw the circle $\Delta_{\R^2}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -591,7 +591,7 @@ We next consider a new point $B$ on the ray $\overrightarrow{OA}$ and its corres
 \end{tikzpicture}
 \end{center}
 
-In particular, notice that $A$ and $B$, points in $\R^2$ on the ray $\overrightarrow{OA}$, remain on the ray $\overrightarrow{OA}$ after their translation to the \poincare disk. Further, in $\R^2$ we have that $A$ is closer to the point $O$ than $B$ is closer to $O$. This relationship is preserved: in the \poincare disk we have that $A'$ is closer to the center of the disk $O$ than $B'$ is to $O$.
+In particular, notice that $A$ and $B$, points in $\R^2$ on the ray $\overrightarrow{OA}$, remain on the ray $\overrightarrow{OA}$ after their translation to the \poincare disk. Further, in $\R^2$ we have the distance between points $A$ and $O$ is less than the distance between points $B$ and $O$. This relationship is preserved: in the \poincare disk we have that $A'$ is closer to the center $O$ than $B'$ is.
 
 %\vfill
 %\pagebreak
@@ -613,7 +613,7 @@ Similarly, if $C$ is a point in $\R^2$ that appears to lie within $\Gamma_{\R^2}
 \newpage 
 \section{The Closure of Fields under Complexification} \label{appendixB}
 
-	Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$. Following \cite{complexification}'s derivation, we will prove here that $F^\C$ is a field.
+Suppose $F$ is a field for which $-1$ is not the square of any number. The complexification of a field $F$ is the process of extending $F$ to a larger set by adding in the an element $i$ such that $i^2 = -1$ and then closing off under addition and multiplication. The resulting field, which we denote $F^\C$ is called the complexification of $F$ or the complexified field $F^\C$. One of the core example of complexification is the complexified reals $\R^\C$. As it turns out, this $\R^\C$ is the complex numbers $\C$. This can also be done to finite fields such as $\Z/3\Z$. Following \cite{complexification}'s derivation, we will prove here that $F^\C$ is a field.
 
 \begin{theorem} 
 $\fc$ (as described above) is a field.
