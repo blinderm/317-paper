@@ -186,14 +186,6 @@ Henri \poincare put forth two models for visualizing hyperbolic geometry: the \p
 	\label{fig:construction_hyperbolic_lines}
 	\caption{Construction of hyperbolic lines.}
 \end{figure}
-
-	\color{blue} why i switched this around so much:
-	\begin{enumerate}
-		\item I found it very awkward to effectively talk about ends for multiple paragraphs without defining them, especially when the motivation behind them (the stuff with the rays and the points they approached) was otherwise irrelevant to our paper. It just seemed vague and then the rays seemed out of place/unnecessarily complicated
-		\item Honestly, I was sorta confused about lines vs. line segments before. In particular, both seemed to be described as ``the points between $A$ and $B$ but excluding both $A$ and $B$. I wanted it to be clear where we were excluding actual points in our disk and also when we were talking about Euclidean arcs vs. hyperbolic lines etc. etc etc. It may read a bit clunkily as a result, but I think it's at least now clear what things are and where they came from. 
-		\item I agree with these changes. My first suggestion is to also include the fact that lines in our model are collections of points of in the interior. To be fair, this is only useful in the case we want to talk about model points on these lines. This fact could be unnecessary however. My other suggestion has to do with the fact that we are defining lines with points not in the model. This feels weird initially, especially with respect to my first suggestion. Perhaps we should note that we can do this because of the observation after Figure 1 rather than just stating it outright without an explanation.
-	\end{enumerate}
-	\color{black}
 	
 Recall that points lying on the \poincare disk (eg.~$A\ttc B \ttc L$, and $K$) are currently excluded from our model. However, it will be important to discuss these points lying on $\Gamma$ later, whence we define them to be the \textit{ends} of our geometry. 
 
@@ -443,7 +435,7 @@ Recall further that Guggenheimer distinguishes between line reflections defined 
 
 Now, below are our diagrams, also generated in Geogebra.
 
-\iffalse
+%\iffalse
 \begin{center}
 \includegraphics[width=160mm]{../images/t1_over_x.png} \\
 Triangle $T_1$ reflected over point $X$ 
@@ -457,7 +449,7 @@ Triangle $T_2$ reflected over point $X$
 \includegraphics[width=160mm]{../images/t2_over_y.png} \\
 Triangle $T_2$ reflected over point $Y$ 
 \end{center}
-\fi
+%\fi
 
 
 From these diagrams we notice two oddities. For one, these point reflections look more like line reflections than they do point reflections. That is, the triangles seem to be ``reflected" and ``stretched" rather than simply ``rotated." Also, it is unclear from these diagrams why we restricted our choice of points to those from the convex domain defined by the parabola $x = y^2$. We now discuss these issues and their implications in turn.
@@ -995,7 +987,6 @@ Below is the code we used to apply point reflections and line reflections to var
 \bibliography{bibliography}
 
 \nocite{guggen_book}
-
-\noindent\todo{[AB][LG] cite the rest of our sources}
+\nocite{half_plane_model}
 
 \end{document}
