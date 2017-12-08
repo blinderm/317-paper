@@ -425,13 +425,13 @@ We first take our point $X$ and encode $f_X$, the reflection function over $X$, 
 \[M_{f_X} = \lftmat{-1}{2}{-1}{1}.\]
 Notice that for simplicity, we chose $\lambda = 1$. Now, we know by (2) that for all $z \in \C$, $f_X$ is given by $f_X(z) = \frac{-z+2}{-z+1}$. Therefore we have that $f_X(A_2) = \frac{27+5i}{29}$. 
 
-We now go forth to visualize $f_X(A_2)$. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding\footnote{We have that $a + ib \in \C$ corresponds to the point $(a\ttc b)$ in $\R^2$. Conversely, we say that $(a\ttc b)$ in $\R^2$ corresponds to $a+ib$ in $\C$.} points in $\R^2$, which we will denote by  $A_{2_{\R^2}}$ and $f_X(A_2)_{\R^2}$. In particular, we let $A_{2_{\R^2}} = (3,5)$ and $f_X(A_2)_{\R^2} = (27/29, 5/29)$. Now, given the point $A_{2_{\R^2}}$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $A_{2_{\R^2}}'$ in the \poincare disk. 
+We now go forth to visualize $A_2$ and $f_X(A_2)$. First, we take $A_2$ and $f_X(A_2)$ and map them to their corresponding\footnote{We have that $a + ib \in \C$ corresponds to the point $(a\ttc b)$ in $\R^2$. Conversely, we say that $(a\ttc b)$ in $\R^2$ corresponds to $a+ib$ in $\C$.} points in $\R^2$. Let's call this map from $\C$ to $\R^2$ $g$. In particular, $g(A_2) = (3,5)$ and $g(f_X(A_2)) = (27/29, 5/29)$. Now, given the point $g(A_2)$ in $\R^2$, we apply the methodology from Appendix \ref{appendixA} to construct the accompanying point $g(A_2')$ in the \poincare disk. 
 
 \begin{enumerate}
-	\item Compute the Euclidean distance from the origin to point $A_{2_{\R^2}}$. In this case, we have $d_E((0,0),A_{2_{\R^2}}) = \sqrt{34}$.
-	\item Next, we want to find the radius of the circle that is equal to the Euclidean distance in hyperbolic distance. In particular, let $d_H(O,A_{2_{\R^2}}') = d_E(O,A_{2_{\R^2}})$. Therefore, we have that
+	\item Compute the Euclidean distance from the origin to point $A_2$. In this case, we have $d_E((0,0),g(A_2)) = \sqrt{34}$.
+	\item Next, we want to find the radius of the circle that is equal to the Euclidean distance in hyperbolic distance. In particular, let $d_H((0,0), g(A_2')) = d_E((0,0), g(A_2))$. Therefore, we have that
 	\[
-		d_H(O,A_{2_{\R^2}}') = \sqrt{34} = \ln\frac{1 + r}{1 - r}.
+		d_H((0,0), g(A_2)') = \sqrt{34} = \ln\frac{1 + r}{1 - r}.
 	\]
 	\item Solving for $r$, we conclude that 
 	\[
@@ -439,10 +439,28 @@ We now go forth to visualize $f_X(A_2)$. First, we take $A_2$ and $f_X(A_2)$ and
 	\]
 	\item With this radius in hand, construct the circle $x^2 + y^2 = (0.99417)^2$.
 	\item We then construct the line from $(0,0)$ to $(5,3)$ which is given by $-3/5x + y = 0$. 
-	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.85,-.51),(0.85,.51)\}$. Since $A$ is positive in both coordinates, we want the point of intersection that is also positive in both coordinates. Therefore $A' = (0.85, .51)$. \todo{[LG] why are we just allowed to flip this}
+	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.85,-.51),(0.85,.51)\}$. Following the construction from Appendix \ref{appendixA}, we want the point of intersection that is on the Euclidean ray from $O$ in the direction of $A$. Therefore $g(A_2') = (0.85, .51)$. 
 \end{enumerate}
 
-The point $A_{2_\R}'$ is also in $\R^2$ but is the point $A_2$ viewed\footnote{By viewed, we mean that $A_{2_\R}'$ is $A_{2_\R}$ in the \poincare model.} from the \poincare disk. \todo{[LG] not sure what this means/does} We apply this same process to $f_X(A_2)_\R$.
+We apply this same process to $g(f_X(A_2))$.
+
+\begin{enumerate}
+	\item Compute the Euclidean distance from the origin to point $f_X(A_2)$. In this case, we have $d_E((0,0),g(f_X(A_2))) = 0.946$.
+	\item Next, we want to find the radius of the circle that is equal to the Euclidean distance in hyperbolic distance. In particular, let $d_H((0,0), g(f_X(A_2)')) = d_E((0,0), g(f_X(A_2)))$. Therefore, we have that
+	\[
+		d_H((0,0), g(f_X(A_2))') = 0.946 = \ln\frac{1 + r}{1 - r}.
+	\]
+	\item Solving for $r$, we conclude that 
+	\[
+		r = \frac{e^{0.946} - 1}{e^{0.946} + 1} = 0.441.
+	\]
+	\item With this radius in hand, construct the circle $x^2 + y^2 = (0.441)^2$.
+	\item We then construct the line from $(0,0)$ to $(27/29,5/29)$ which is given by the line $-5x + 27y = 0$. 
+	\item Finally, we find the points of intersection between the circle and the line: $\{(-0.434,-0.08),(0.434,0.08)\}$. Following the construction from Appendix \ref{appendixA}, we want the point of intersection that is on the Euclidean ray from $O$ in the direction of $A$. Therefore $g(f_X(A_2)') = (0.434, 0.08)$. 
+\end{enumerate}
+
+This example then gives us with the two visual points $g(A_2') = (0.85, .51)$ and $g(f_X(A_2)') = (0.434, 0.08)$.
+
 \end{example}
 
 As we consider these visualizations, recall the three types of points in the \poincare disk. Points in the interior of the disk are mapped from the convex domain given by the parabola $x = y^2$. Points outside the \poincare disk are strictly outside the domain given by $x = y^2$. The points on the \poincare disk -- the ends of our geometry -- are mapped from points lying on the parabola $x=y^2$.
